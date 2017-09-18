@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yNH-kn-y2N">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Separator Label View Controller-->
+        <scene sceneID="pMc-4i-FGS">
+            <objects>
+                <viewController id="yNH-kn-y2N" customClass="SeparatorLabelViewController" customModule="_0000ui_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="REh-Pa-GxY"/>
+                        <viewControllerLayoutGuide type="bottom" id="NMp-EM-eqw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="91K-e8-A6h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宽度必须给够" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0J-Kz-dSQ" customClass="BSSeparatorLabel" customModule="_0000ui_swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="323" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="j0J-Kz-dSQ" secondAttribute="trailing" id="VYc-aG-dCz"/>
+                            <constraint firstItem="j0J-Kz-dSQ" firstAttribute="leading" secondItem="91K-e8-A6h" secondAttribute="leading" id="Zqa-jr-lkI"/>
+                            <constraint firstItem="j0J-Kz-dSQ" firstAttribute="centerY" secondItem="91K-e8-A6h" secondAttribute="centerY" id="v5e-iO-tqm"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7gL-iI-0IG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="255"/>
+        </scene>
+    </scenes>
+</document>

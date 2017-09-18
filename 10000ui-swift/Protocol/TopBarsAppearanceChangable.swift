@@ -12,6 +12,7 @@ enum TopBarsAppearanceStyle {
     case `default`
     case clearBackground
     case hidden
+    case custom(color: UIColor)
 }
 
 protocol TopBarsAppearanceChangable {
@@ -22,14 +23,14 @@ protocol TopBarsAppearanceChangable {
 extension TopBarsAppearanceChangable where Self: UIViewController {
     
     func setTopBarsAppearanceStyle(_ style: TopBarsAppearanceStyle, animated: Bool) {
-        navigationController?.navigationBar.isTranslucent = true
+        
         switch style {
         case .default:
             navigationController?.setNavigationBarHidden(false, animated: animated)
             navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
             navigationController?.navigationBar.shadowImage = nil
             navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black, NSFontAttributeName:UIFont.systemFont(ofSize: 16)]
-            navigationController?.navigationBar.tintColor = UIColor.white
+            navigationController?.navigationBar.tintColor = UIColor.black
             
             UIApplication.shared.setStatusBarStyle(.default, animated: animated)
         case .hidden:
@@ -42,6 +43,14 @@ extension TopBarsAppearanceChangable where Self: UIViewController {
             
             navigationController?.navigationBar.setBackgroundImage(UIImage.bs.image(withColor: .clear), for: .default)
             navigationController?.navigationBar.shadowImage = UIImage.bs.image(withColor: .clear)
+            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:UIFont.systemFont(ofSize: 16)]
+            navigationController?.navigationBar.tintColor = UIColor.white
+            
+            UIApplication.shared.setStatusBarStyle(.lightContent, animated: animated)
+        case let .custom(color):
+            navigationController?.setNavigationBarHidden(false, animated: animated)
+            
+            navigationController?.navigationBar.setBackgroundImage(UIImage.bs.image(withColor: color), for: .default)
             navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:UIFont.systemFont(ofSize: 16)]
             navigationController?.navigationBar.tintColor = UIColor.white
             

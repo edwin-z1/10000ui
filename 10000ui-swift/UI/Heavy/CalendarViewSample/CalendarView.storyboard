@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bh1-px-L90">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calendar View Controller-->
+        <scene sceneID="9jY-Zd-nW9">
+            <objects>
+                <viewController id="bh1-px-L90" customClass="CalendarViewController" customModule="_0000ui_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vtK-Gh-uQn"/>
+                        <viewControllerLayoutGuide type="bottom" id="hzf-6J-LYI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dbf-1R-k1g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5B-OL-9SU" customClass="BSCalendarView" customModule="_0000ui_swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hzf-6J-LYI" firstAttribute="top" secondItem="X5B-OL-9SU" secondAttribute="bottom" id="KYy-eV-P4a"/>
+                            <constraint firstItem="X5B-OL-9SU" firstAttribute="leading" secondItem="Dbf-1R-k1g" secondAttribute="leading" id="VhF-rE-LG6"/>
+                            <constraint firstItem="X5B-OL-9SU" firstAttribute="top" secondItem="vtK-Gh-uQn" secondAttribute="bottom" id="d93-Xi-K6x"/>
+                            <constraint firstAttribute="trailing" secondItem="X5B-OL-9SU" secondAttribute="trailing" id="x3g-T1-5dK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendarView" destination="X5B-OL-9SU" id="Pou-Z9-LTW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Si8-hy-ShM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="949"/>
+        </scene>
+    </scenes>
+</document>

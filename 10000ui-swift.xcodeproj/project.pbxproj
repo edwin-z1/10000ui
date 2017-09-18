@@ -11,17 +11,60 @@
 		84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84329F071F3D4F47008AD0B4 /* Main.storyboard */; };
 		84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */; };
 		84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0C1F3D4F47008AD0B4 /* LaunchScreen.storyboard */; };
-		84329F371F3D5241008AD0B4 /* CGFloat+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F331F3D5241008AD0B4 /* CGFloat+bs.swift */; };
-		84329F381F3D5241008AD0B4 /* CGPoint+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F341F3D5241008AD0B4 /* CGPoint+bs.swift */; };
-		84329F391F3D5241008AD0B4 /* BSCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F351F3D5241008AD0B4 /* BSCircleSlider.swift */; };
-		84329F3A1F3D5241008AD0B4 /* CircleSliderSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F361F3D5241008AD0B4 /* CircleSliderSampleViewController.swift */; };
-		84329F3C1F3D540A008AD0B4 /* CircleSlider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84329F3B1F3D540A008AD0B4 /* CircleSlider.storyboard */; };
 		84329F3E1F3D54A7008AD0B4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */; };
 		8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6231F3D5D9C00781302 /* Adaptable.swift */; };
 		8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6241F3D5D9C00781302 /* Namespace.swift */; };
 		8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6251F3D5D9C00781302 /* TopBarsAppearanceChangable.swift */; };
-		8457E62B1F3D5F2400781302 /* UIImage+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E62A1F3D5F2400781302 /* UIImage+bs.swift */; };
-		84C0344A1F3D8CCC00586126 /* UIViewController+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C034491F3D8CCC00586126 /* UIViewController+bs.swift */; };
+		845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA8961F453298003594C6 /* CGFloat+bs.swift */; };
+		845CA89D1F453298003594C6 /* CGPoint+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA8971F453298003594C6 /* CGPoint+bs.swift */; };
+		845CA89E1F453298003594C6 /* UIImage+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA89A1F453298003594C6 /* UIImage+bs.swift */; };
+		845CA89F1F453298003594C6 /* UIViewController+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA89B1F453298003594C6 /* UIViewController+bs.swift */; };
+		8486B0B91F6FC9E2002C3FE2 /* SeparatorLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B0B01F6FC9E2002C3FE2 /* SeparatorLabel.storyboard */; };
+		8486B0BA1F6FC9E2002C3FE2 /* SeparatorLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B0B11F6FC9E2002C3FE2 /* SeparatorLabelViewController.swift */; };
+		8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B0B61F6FC9E2002C3FE2 /* CircleSlider.storyboard */; };
+		8486B0BD1F6FC9E2002C3FE2 /* CircleSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B0B71F6FC9E2002C3FE2 /* CircleSliderViewController.swift */; };
+		8486B1211F6FCCDB002C3FE2 /* BSNumbersCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B10C1F6FCCDA002C3FE2 /* BSNumbersCollectionCell.m */; };
+		8486B1221F6FCCDB002C3FE2 /* BSNumbersCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B10E1F6FCCDA002C3FE2 /* BSNumbersCollectionHeaderView.m */; };
+		8486B1231F6FCCDB002C3FE2 /* BSNumbersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1101F6FCCDA002C3FE2 /* BSNumbersView.m */; };
+		8486B1241F6FCCDB002C3FE2 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1141F6FCCDA002C3FE2 /* NSObject+Extension.m */; };
+		8486B1251F6FCCDB002C3FE2 /* NSString+BSNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1161F6FCCDA002C3FE2 /* NSString+BSNumbers.m */; };
+		8486B1261F6FCCDB002C3FE2 /* flightsInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1171F6FCCDA002C3FE2 /* flightsInfo.plist */; };
+		8486B1271F6FCCDB002C3FE2 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B11A1F6FCCDA002C3FE2 /* Flight.m */; };
+		8486B1281F6FCCDB002C3FE2 /* NumbersView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B11B1F6FCCDA002C3FE2 /* NumbersView.storyboard */; };
+		8486B1291F6FCCDB002C3FE2 /* NumbersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B11D1F6FCCDA002C3FE2 /* NumbersViewController.m */; };
+		8486B12A1F6FCCDB002C3FE2 /* SampleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B11F1F6FCCDB002C3FE2 /* SampleCollectionCell.m */; };
+		8486B12B1F6FCCDB002C3FE2 /* SampleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1201F6FCCDB002C3FE2 /* SampleCollectionCell.xib */; };
+		8486B12E1F6FCE6C002C3FE2 /* BSSeparatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B12D1F6FCE6C002C3FE2 /* BSSeparatorLabel.swift */; };
+		8486B1311F6FCE73002C3FE2 /* BSCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1301F6FCE73002C3FE2 /* BSCircleSlider.swift */; };
+		8486B15D1F6FCFF1002C3FE2 /* BSCalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1501F6FCFF1002C3FE2 /* BSCalendarDay.swift */; };
+		8486B15E1F6FCFF1002C3FE2 /* BSCalendarDayCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1511F6FCFF1002C3FE2 /* BSCalendarDayCollectionCell.swift */; };
+		8486B15F1F6FCFF1002C3FE2 /* BSCalendarDayCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1521F6FCFF1002C3FE2 /* BSCalendarDayCollectionReusableHeaderView.swift */; };
+		8486B1601F6FCFF1002C3FE2 /* BSCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1531F6FCFF1002C3FE2 /* BSCalendarManager.swift */; };
+		8486B1611F6FCFF1002C3FE2 /* BSCalendarMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1541F6FCFF1002C3FE2 /* BSCalendarMonth.swift */; };
+		8486B1621F6FCFF1002C3FE2 /* BSCalendarMonthCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1551F6FCFF1002C3FE2 /* BSCalendarMonthCollectionCell.swift */; };
+		8486B1631F6FCFF1002C3FE2 /* BSCalendarMonthSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1561F6FCFF1002C3FE2 /* BSCalendarMonthSelectView.swift */; };
+		8486B1641F6FCFF1002C3FE2 /* BSCalendarPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1571F6FCFF1002C3FE2 /* BSCalendarPreference.swift */; };
+		8486B1651F6FCFF1002C3FE2 /* BSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1581F6FCFF1002C3FE2 /* BSCalendarView.swift */; };
+		8486B1661F6FCFF1002C3FE2 /* Date+CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1591F6FCFF1002C3FE2 /* Date+CalendarView.swift */; };
+		8486B1681F6FCFF1002C3FE2 /* CalendarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B15B1F6FCFF1002C3FE2 /* CalendarView.storyboard */; };
+		8486B1691F6FCFF1002C3FE2 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B15C1F6FCFF1002C3FE2 /* CalendarViewController.swift */; };
+		8486B17B1F6FD07A002C3FE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16B1F6FD07A002C3FE2 /* Constants.swift */; };
+		8486B17C1F6FD07A002C3FE2 /* Date+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16C1F6FD07A002C3FE2 /* Date+Bundle.swift */; };
+		8486B17D1F6FD07A002C3FE2 /* Date+Comparators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16D1F6FD07A002C3FE2 /* Date+Comparators.swift */; };
+		8486B17E1F6FD07A002C3FE2 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16E1F6FD07A002C3FE2 /* Date+Components.swift */; };
+		8486B17F1F6FD07A002C3FE2 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16F1F6FD07A002C3FE2 /* Date+Format.swift */; };
+		8486B1801F6FD07A002C3FE2 /* Date+Inits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1701F6FD07A002C3FE2 /* Date+Inits.swift */; };
+		8486B1811F6FD07A002C3FE2 /* Date+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1711F6FD07A002C3FE2 /* Date+Manipulations.swift */; };
+		8486B1821F6FD07A002C3FE2 /* Date+TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1721F6FD07A002C3FE2 /* Date+TimeAgo.swift */; };
+		8486B1831F6FD07A002C3FE2 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1731F6FD07A002C3FE2 /* DateTools.bundle */; };
+		8486B1841F6FD07A002C3FE2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1741F6FD07A002C3FE2 /* Enums.swift */; };
+		8486B1851F6FD07A002C3FE2 /* Integer+DateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1751F6FD07A002C3FE2 /* Integer+DateTools.swift */; };
+		8486B1861F6FD07A002C3FE2 /* TimeChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1761F6FD07A002C3FE2 /* TimeChunk.swift */; };
+		8486B1871F6FD07A002C3FE2 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1771F6FD07A002C3FE2 /* TimePeriod.swift */; };
+		8486B1881F6FD07A002C3FE2 /* TimePeriodChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1781F6FD07A002C3FE2 /* TimePeriodChain.swift */; };
+		8486B1891F6FD07A002C3FE2 /* TimePeriodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1791F6FD07A002C3FE2 /* TimePeriodCollection.swift */; };
+		8486B18A1F6FD07A002C3FE2 /* TimePeriodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B17A1F6FD07A002C3FE2 /* TimePeriodGroup.swift */; };
+		8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,17 +74,71 @@
 		84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84329F0D1F3D4F47008AD0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84329F0F1F3D4F47008AD0B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84329F331F3D5241008AD0B4 /* CGFloat+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+bs.swift"; sourceTree = "<group>"; };
-		84329F341F3D5241008AD0B4 /* CGPoint+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+bs.swift"; sourceTree = "<group>"; };
-		84329F351F3D5241008AD0B4 /* BSCircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCircleSlider.swift; sourceTree = "<group>"; };
-		84329F361F3D5241008AD0B4 /* CircleSliderSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSliderSampleViewController.swift; sourceTree = "<group>"; };
-		84329F3B1F3D540A008AD0B4 /* CircleSlider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CircleSlider.storyboard; sourceTree = "<group>"; };
 		84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		8457E6231F3D5D9C00781302 /* Adaptable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adaptable.swift; sourceTree = "<group>"; };
 		8457E6241F3D5D9C00781302 /* Namespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
 		8457E6251F3D5D9C00781302 /* TopBarsAppearanceChangable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarsAppearanceChangable.swift; sourceTree = "<group>"; };
-		8457E62A1F3D5F2400781302 /* UIImage+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+bs.swift"; sourceTree = "<group>"; };
-		84C034491F3D8CCC00586126 /* UIViewController+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+bs.swift"; sourceTree = "<group>"; };
+		845CA8961F453298003594C6 /* CGFloat+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+bs.swift"; sourceTree = "<group>"; };
+		845CA8971F453298003594C6 /* CGPoint+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+bs.swift"; sourceTree = "<group>"; };
+		845CA89A1F453298003594C6 /* UIImage+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+bs.swift"; sourceTree = "<group>"; };
+		845CA89B1F453298003594C6 /* UIViewController+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+bs.swift"; sourceTree = "<group>"; };
+		8486B0B01F6FC9E2002C3FE2 /* SeparatorLabel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeparatorLabel.storyboard; sourceTree = "<group>"; };
+		8486B0B11F6FC9E2002C3FE2 /* SeparatorLabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorLabelViewController.swift; sourceTree = "<group>"; };
+		8486B0B61F6FC9E2002C3FE2 /* CircleSlider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CircleSlider.storyboard; sourceTree = "<group>"; };
+		8486B0B71F6FC9E2002C3FE2 /* CircleSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleSliderViewController.swift; sourceTree = "<group>"; };
+		8486B0C31F6FCAC9002C3FE2 /* 10000ui-swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "10000ui-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		8486B10B1F6FCCDA002C3FE2 /* BSNumbersCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNumbersCollectionCell.h; sourceTree = "<group>"; };
+		8486B10C1F6FCCDA002C3FE2 /* BSNumbersCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNumbersCollectionCell.m; sourceTree = "<group>"; };
+		8486B10D1F6FCCDA002C3FE2 /* BSNumbersCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNumbersCollectionHeaderView.h; sourceTree = "<group>"; };
+		8486B10E1F6FCCDA002C3FE2 /* BSNumbersCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNumbersCollectionHeaderView.m; sourceTree = "<group>"; };
+		8486B10F1F6FCCDA002C3FE2 /* BSNumbersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNumbersView.h; sourceTree = "<group>"; };
+		8486B1101F6FCCDA002C3FE2 /* BSNumbersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNumbersView.m; sourceTree = "<group>"; };
+		8486B1111F6FCCDA002C3FE2 /* BSNumbersViewEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNumbersViewEnum.h; sourceTree = "<group>"; };
+		8486B1121F6FCCDA002C3FE2 /* BSNumbersViewMarcos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNumbersViewMarcos.h; sourceTree = "<group>"; };
+		8486B1131F6FCCDA002C3FE2 /* NSObject+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
+		8486B1141F6FCCDA002C3FE2 /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
+		8486B1151F6FCCDA002C3FE2 /* NSString+BSNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BSNumbers.h"; sourceTree = "<group>"; };
+		8486B1161F6FCCDA002C3FE2 /* NSString+BSNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BSNumbers.m"; sourceTree = "<group>"; };
+		8486B1171F6FCCDA002C3FE2 /* flightsInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = flightsInfo.plist; sourceTree = "<group>"; };
+		8486B1191F6FCCDA002C3FE2 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
+		8486B11A1F6FCCDA002C3FE2 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
+		8486B11B1F6FCCDA002C3FE2 /* NumbersView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NumbersView.storyboard; sourceTree = "<group>"; };
+		8486B11C1F6FCCDA002C3FE2 /* NumbersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumbersViewController.h; sourceTree = "<group>"; };
+		8486B11D1F6FCCDA002C3FE2 /* NumbersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumbersViewController.m; sourceTree = "<group>"; };
+		8486B11E1F6FCCDB002C3FE2 /* SampleCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCollectionCell.h; sourceTree = "<group>"; };
+		8486B11F1F6FCCDB002C3FE2 /* SampleCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCollectionCell.m; sourceTree = "<group>"; };
+		8486B1201F6FCCDB002C3FE2 /* SampleCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleCollectionCell.xib; sourceTree = "<group>"; };
+		8486B12D1F6FCE6C002C3FE2 /* BSSeparatorLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSSeparatorLabel.swift; sourceTree = "<group>"; };
+		8486B1301F6FCE73002C3FE2 /* BSCircleSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCircleSlider.swift; sourceTree = "<group>"; };
+		8486B1501F6FCFF1002C3FE2 /* BSCalendarDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarDay.swift; sourceTree = "<group>"; };
+		8486B1511F6FCFF1002C3FE2 /* BSCalendarDayCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarDayCollectionCell.swift; sourceTree = "<group>"; };
+		8486B1521F6FCFF1002C3FE2 /* BSCalendarDayCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarDayCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
+		8486B1531F6FCFF1002C3FE2 /* BSCalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarManager.swift; sourceTree = "<group>"; };
+		8486B1541F6FCFF1002C3FE2 /* BSCalendarMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarMonth.swift; sourceTree = "<group>"; };
+		8486B1551F6FCFF1002C3FE2 /* BSCalendarMonthCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarMonthCollectionCell.swift; sourceTree = "<group>"; };
+		8486B1561F6FCFF1002C3FE2 /* BSCalendarMonthSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarMonthSelectView.swift; sourceTree = "<group>"; };
+		8486B1571F6FCFF1002C3FE2 /* BSCalendarPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarPreference.swift; sourceTree = "<group>"; };
+		8486B1581F6FCFF1002C3FE2 /* BSCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCalendarView.swift; sourceTree = "<group>"; };
+		8486B1591F6FCFF1002C3FE2 /* Date+CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+CalendarView.swift"; sourceTree = "<group>"; };
+		8486B15B1F6FCFF1002C3FE2 /* CalendarView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CalendarView.storyboard; sourceTree = "<group>"; };
+		8486B15C1F6FCFF1002C3FE2 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8486B16B1F6FD07A002C3FE2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8486B16C1F6FD07A002C3FE2 /* Date+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Bundle.swift"; sourceTree = "<group>"; };
+		8486B16D1F6FD07A002C3FE2 /* Date+Comparators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Comparators.swift"; sourceTree = "<group>"; };
+		8486B16E1F6FD07A002C3FE2 /* Date+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
+		8486B16F1F6FD07A002C3FE2 /* Date+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
+		8486B1701F6FD07A002C3FE2 /* Date+Inits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Inits.swift"; sourceTree = "<group>"; };
+		8486B1711F6FD07A002C3FE2 /* Date+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Manipulations.swift"; sourceTree = "<group>"; };
+		8486B1721F6FD07A002C3FE2 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgo.swift"; sourceTree = "<group>"; };
+		8486B1731F6FD07A002C3FE2 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
+		8486B1741F6FD07A002C3FE2 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		8486B1751F6FD07A002C3FE2 /* Integer+DateTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Integer+DateTools.swift"; sourceTree = "<group>"; };
+		8486B1761F6FD07A002C3FE2 /* TimeChunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeChunk.swift; sourceTree = "<group>"; };
+		8486B1771F6FD07A002C3FE2 /* TimePeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
+		8486B1781F6FD07A002C3FE2 /* TimePeriodChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodChain.swift; sourceTree = "<group>"; };
+		8486B1791F6FD07A002C3FE2 /* TimePeriodCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodCollection.swift; sourceTree = "<group>"; };
+		8486B17A1F6FD07A002C3FE2 /* TimePeriodGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodGroup.swift; sourceTree = "<group>"; };
+		8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+bs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +173,12 @@
 			children = (
 				84329F031F3D4F47008AD0B4 /* AppDelegate.swift */,
 				84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */,
+				84329F071F3D4F47008AD0B4 /* Main.storyboard */,
 				8457E6291F3D5F1000781302 /* Extension */,
 				8457E6221F3D5D9C00781302 /* Protocol */,
 				84329F261F3D50D4008AD0B4 /* UI */,
-				84329F071F3D4F47008AD0B4 /* Main.storyboard */,
 				84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */,
+				8486B0C31F6FCAC9002C3FE2 /* 10000ui-swift-Bridging-Header.h */,
 				84329F0C1F3D4F47008AD0B4 /* LaunchScreen.storyboard */,
 				84329F0F1F3D4F47008AD0B4 /* Info.plist */,
 			);
@@ -90,29 +188,11 @@
 		84329F261F3D50D4008AD0B4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				84329F311F3D5241008AD0B4 /* CircleSliderSample */,
+				8486B0AB1F6FC9E2002C3FE2 /* Heavy */,
+				8486B0AC1F6FC9E2002C3FE2 /* Light */,
+				8486B0B21F6FC9E2002C3FE2 /* Middle */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		84329F311F3D5241008AD0B4 /* CircleSliderSample */ = {
-			isa = PBXGroup;
-			children = (
-				84329F321F3D5241008AD0B4 /* CircleSlider */,
-				84329F361F3D5241008AD0B4 /* CircleSliderSampleViewController.swift */,
-				84329F3B1F3D540A008AD0B4 /* CircleSlider.storyboard */,
-			);
-			path = CircleSliderSample;
-			sourceTree = "<group>";
-		};
-		84329F321F3D5241008AD0B4 /* CircleSlider */ = {
-			isa = PBXGroup;
-			children = (
-				84329F331F3D5241008AD0B4 /* CGFloat+bs.swift */,
-				84329F341F3D5241008AD0B4 /* CGPoint+bs.swift */,
-				84329F351F3D5241008AD0B4 /* BSCircleSlider.swift */,
-			);
-			path = CircleSlider;
 			sourceTree = "<group>";
 		};
 		8457E6221F3D5D9C00781302 /* Protocol */ = {
@@ -128,10 +208,193 @@
 		8457E6291F3D5F1000781302 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				8457E62A1F3D5F2400781302 /* UIImage+bs.swift */,
-				84C034491F3D8CCC00586126 /* UIViewController+bs.swift */,
+				845CA8951F453298003594C6 /* CoreGraphics */,
+				845CA8981F453298003594C6 /* Foundation */,
+				845CA8991F453298003594C6 /* UIKit */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		845CA8951F453298003594C6 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				845CA8961F453298003594C6 /* CGFloat+bs.swift */,
+				845CA8971F453298003594C6 /* CGPoint+bs.swift */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		845CA8981F453298003594C6 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		845CA8991F453298003594C6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */,
+				845CA89A1F453298003594C6 /* UIImage+bs.swift */,
+				845CA89B1F453298003594C6 /* UIViewController+bs.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8486B0AB1F6FC9E2002C3FE2 /* Heavy */ = {
+			isa = PBXGroup;
+			children = (
+				8486B14E1F6FCFF1002C3FE2 /* CalendarViewSample */,
+				8486B1091F6FCCDA002C3FE2 /* NumbersViewSample-OC */,
+			);
+			path = Heavy;
+			sourceTree = "<group>";
+		};
+		8486B0AC1F6FC9E2002C3FE2 /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				8486B0AD1F6FC9E2002C3FE2 /* SeparatorLabelSample */,
+			);
+			path = Light;
+			sourceTree = "<group>";
+		};
+		8486B0AD1F6FC9E2002C3FE2 /* SeparatorLabelSample */ = {
+			isa = PBXGroup;
+			children = (
+				8486B12C1F6FCE6C002C3FE2 /* BSSeparatorLabel */,
+				8486B0B01F6FC9E2002C3FE2 /* SeparatorLabel.storyboard */,
+				8486B0B11F6FC9E2002C3FE2 /* SeparatorLabelViewController.swift */,
+			);
+			path = SeparatorLabelSample;
+			sourceTree = "<group>";
+		};
+		8486B0B21F6FC9E2002C3FE2 /* Middle */ = {
+			isa = PBXGroup;
+			children = (
+				8486B0B31F6FC9E2002C3FE2 /* CircleSliderSample */,
+			);
+			path = Middle;
+			sourceTree = "<group>";
+		};
+		8486B0B31F6FC9E2002C3FE2 /* CircleSliderSample */ = {
+			isa = PBXGroup;
+			children = (
+				8486B12F1F6FCE73002C3FE2 /* BSCircleSlider */,
+				8486B0B61F6FC9E2002C3FE2 /* CircleSlider.storyboard */,
+				8486B0B71F6FC9E2002C3FE2 /* CircleSliderViewController.swift */,
+			);
+			path = CircleSliderSample;
+			sourceTree = "<group>";
+		};
+		8486B1091F6FCCDA002C3FE2 /* NumbersViewSample-OC */ = {
+			isa = PBXGroup;
+			children = (
+				8486B10A1F6FCCDA002C3FE2 /* BSNumbersView */,
+				8486B1171F6FCCDA002C3FE2 /* flightsInfo.plist */,
+				8486B1181F6FCCDA002C3FE2 /* Model */,
+				8486B11B1F6FCCDA002C3FE2 /* NumbersView.storyboard */,
+				8486B11C1F6FCCDA002C3FE2 /* NumbersViewController.h */,
+				8486B11D1F6FCCDA002C3FE2 /* NumbersViewController.m */,
+				8486B11E1F6FCCDB002C3FE2 /* SampleCollectionCell.h */,
+				8486B11F1F6FCCDB002C3FE2 /* SampleCollectionCell.m */,
+				8486B1201F6FCCDB002C3FE2 /* SampleCollectionCell.xib */,
+			);
+			path = "NumbersViewSample-OC";
+			sourceTree = "<group>";
+		};
+		8486B10A1F6FCCDA002C3FE2 /* BSNumbersView */ = {
+			isa = PBXGroup;
+			children = (
+				8486B10B1F6FCCDA002C3FE2 /* BSNumbersCollectionCell.h */,
+				8486B10C1F6FCCDA002C3FE2 /* BSNumbersCollectionCell.m */,
+				8486B10D1F6FCCDA002C3FE2 /* BSNumbersCollectionHeaderView.h */,
+				8486B10E1F6FCCDA002C3FE2 /* BSNumbersCollectionHeaderView.m */,
+				8486B10F1F6FCCDA002C3FE2 /* BSNumbersView.h */,
+				8486B1101F6FCCDA002C3FE2 /* BSNumbersView.m */,
+				8486B1111F6FCCDA002C3FE2 /* BSNumbersViewEnum.h */,
+				8486B1121F6FCCDA002C3FE2 /* BSNumbersViewMarcos.h */,
+				8486B1131F6FCCDA002C3FE2 /* NSObject+Extension.h */,
+				8486B1141F6FCCDA002C3FE2 /* NSObject+Extension.m */,
+				8486B1151F6FCCDA002C3FE2 /* NSString+BSNumbers.h */,
+				8486B1161F6FCCDA002C3FE2 /* NSString+BSNumbers.m */,
+			);
+			path = BSNumbersView;
+			sourceTree = "<group>";
+		};
+		8486B1181F6FCCDA002C3FE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8486B1191F6FCCDA002C3FE2 /* Flight.h */,
+				8486B11A1F6FCCDA002C3FE2 /* Flight.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8486B12C1F6FCE6C002C3FE2 /* BSSeparatorLabel */ = {
+			isa = PBXGroup;
+			children = (
+				8486B12D1F6FCE6C002C3FE2 /* BSSeparatorLabel.swift */,
+			);
+			path = BSSeparatorLabel;
+			sourceTree = "<group>";
+		};
+		8486B12F1F6FCE73002C3FE2 /* BSCircleSlider */ = {
+			isa = PBXGroup;
+			children = (
+				8486B1301F6FCE73002C3FE2 /* BSCircleSlider.swift */,
+			);
+			path = BSCircleSlider;
+			sourceTree = "<group>";
+		};
+		8486B14E1F6FCFF1002C3FE2 /* CalendarViewSample */ = {
+			isa = PBXGroup;
+			children = (
+				8486B14F1F6FCFF1002C3FE2 /* BSCalendarView */,
+				8486B15B1F6FCFF1002C3FE2 /* CalendarView.storyboard */,
+				8486B15C1F6FCFF1002C3FE2 /* CalendarViewController.swift */,
+			);
+			path = CalendarViewSample;
+			sourceTree = "<group>";
+		};
+		8486B14F1F6FCFF1002C3FE2 /* BSCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				8486B16A1F6FD07A002C3FE2 /* DateTools */,
+				8486B1501F6FCFF1002C3FE2 /* BSCalendarDay.swift */,
+				8486B1511F6FCFF1002C3FE2 /* BSCalendarDayCollectionCell.swift */,
+				8486B1521F6FCFF1002C3FE2 /* BSCalendarDayCollectionReusableHeaderView.swift */,
+				8486B1531F6FCFF1002C3FE2 /* BSCalendarManager.swift */,
+				8486B1541F6FCFF1002C3FE2 /* BSCalendarMonth.swift */,
+				8486B1551F6FCFF1002C3FE2 /* BSCalendarMonthCollectionCell.swift */,
+				8486B1561F6FCFF1002C3FE2 /* BSCalendarMonthSelectView.swift */,
+				8486B1571F6FCFF1002C3FE2 /* BSCalendarPreference.swift */,
+				8486B1581F6FCFF1002C3FE2 /* BSCalendarView.swift */,
+				8486B1591F6FCFF1002C3FE2 /* Date+CalendarView.swift */,
+			);
+			path = BSCalendarView;
+			sourceTree = "<group>";
+		};
+		8486B16A1F6FD07A002C3FE2 /* DateTools */ = {
+			isa = PBXGroup;
+			children = (
+				8486B16B1F6FD07A002C3FE2 /* Constants.swift */,
+				8486B16C1F6FD07A002C3FE2 /* Date+Bundle.swift */,
+				8486B16D1F6FD07A002C3FE2 /* Date+Comparators.swift */,
+				8486B16E1F6FD07A002C3FE2 /* Date+Components.swift */,
+				8486B16F1F6FD07A002C3FE2 /* Date+Format.swift */,
+				8486B1701F6FD07A002C3FE2 /* Date+Inits.swift */,
+				8486B1711F6FD07A002C3FE2 /* Date+Manipulations.swift */,
+				8486B1721F6FD07A002C3FE2 /* Date+TimeAgo.swift */,
+				8486B1731F6FD07A002C3FE2 /* DateTools.bundle */,
+				8486B1741F6FD07A002C3FE2 /* Enums.swift */,
+				8486B1751F6FD07A002C3FE2 /* Integer+DateTools.swift */,
+				8486B1761F6FD07A002C3FE2 /* TimeChunk.swift */,
+				8486B1771F6FD07A002C3FE2 /* TimePeriod.swift */,
+				8486B1781F6FD07A002C3FE2 /* TimePeriodChain.swift */,
+				8486B1791F6FD07A002C3FE2 /* TimePeriodCollection.swift */,
+				8486B17A1F6FD07A002C3FE2 /* TimePeriodGroup.swift */,
+			);
+			path = DateTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +430,7 @@
 					84329EFF1F3D4F47008AD0B4 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = FCG76RJRPL;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -194,10 +458,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */,
 				84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */,
+				8486B0B91F6FC9E2002C3FE2 /* SeparatorLabel.storyboard in Resources */,
 				84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */,
+				8486B1261F6FCCDB002C3FE2 /* flightsInfo.plist in Resources */,
 				84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */,
-				84329F3C1F3D540A008AD0B4 /* CircleSlider.storyboard in Resources */,
+				8486B1281F6FCCDB002C3FE2 /* NumbersView.storyboard in Resources */,
+				8486B12B1F6FCCDB002C3FE2 /* SampleCollectionCell.xib in Resources */,
+				8486B1681F6FCFF1002C3FE2 /* CalendarView.storyboard in Resources */,
+				8486B1831F6FD07A002C3FE2 /* DateTools.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,17 +478,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8486B15E1F6FCFF1002C3FE2 /* BSCalendarDayCollectionCell.swift in Sources */,
+				8486B17B1F6FD07A002C3FE2 /* Constants.swift in Sources */,
+				8486B1611F6FCFF1002C3FE2 /* BSCalendarMonth.swift in Sources */,
 				8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */,
+				8486B1841F6FD07A002C3FE2 /* Enums.swift in Sources */,
+				8486B17C1F6FD07A002C3FE2 /* Date+Bundle.swift in Sources */,
+				8486B17E1F6FD07A002C3FE2 /* Date+Components.swift in Sources */,
+				8486B1691F6FCFF1002C3FE2 /* CalendarViewController.swift in Sources */,
+				8486B15F1F6FCFF1002C3FE2 /* BSCalendarDayCollectionReusableHeaderView.swift in Sources */,
+				8486B12A1F6FCCDB002C3FE2 /* SampleCollectionCell.m in Sources */,
+				8486B1311F6FCE73002C3FE2 /* BSCircleSlider.swift in Sources */,
 				84329F3E1F3D54A7008AD0B4 /* TableViewController.swift in Sources */,
+				8486B1641F6FCFF1002C3FE2 /* BSCalendarPreference.swift in Sources */,
+				8486B1861F6FD07A002C3FE2 /* TimeChunk.swift in Sources */,
+				845CA89D1F453298003594C6 /* CGPoint+bs.swift in Sources */,
+				8486B1821F6FD07A002C3FE2 /* Date+TimeAgo.swift in Sources */,
+				8486B12E1F6FCE6C002C3FE2 /* BSSeparatorLabel.swift in Sources */,
+				8486B1601F6FCFF1002C3FE2 /* BSCalendarManager.swift in Sources */,
+				8486B1881F6FD07A002C3FE2 /* TimePeriodChain.swift in Sources */,
+				8486B1811F6FD07A002C3FE2 /* Date+Manipulations.swift in Sources */,
+				8486B1251F6FCCDB002C3FE2 /* NSString+BSNumbers.m in Sources */,
+				8486B1291F6FCCDB002C3FE2 /* NumbersViewController.m in Sources */,
+				845CA89F1F453298003594C6 /* UIViewController+bs.swift in Sources */,
+				8486B1621F6FCFF1002C3FE2 /* BSCalendarMonthCollectionCell.swift in Sources */,
+				8486B1631F6FCFF1002C3FE2 /* BSCalendarMonthSelectView.swift in Sources */,
 				8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */,
-				84C0344A1F3D8CCC00586126 /* UIViewController+bs.swift in Sources */,
-				84329F371F3D5241008AD0B4 /* CGFloat+bs.swift in Sources */,
-				84329F391F3D5241008AD0B4 /* BSCircleSlider.swift in Sources */,
-				84329F3A1F3D5241008AD0B4 /* CircleSliderSampleViewController.swift in Sources */,
-				8457E62B1F3D5F2400781302 /* UIImage+bs.swift in Sources */,
+				8486B17D1F6FD07A002C3FE2 /* Date+Comparators.swift in Sources */,
+				8486B1231F6FCCDB002C3FE2 /* BSNumbersView.m in Sources */,
+				845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */,
+				8486B0BD1F6FC9E2002C3FE2 /* CircleSliderViewController.swift in Sources */,
+				8486B18A1F6FD07A002C3FE2 /* TimePeriodGroup.swift in Sources */,
+				8486B17F1F6FD07A002C3FE2 /* Date+Format.swift in Sources */,
+				8486B1851F6FD07A002C3FE2 /* Integer+DateTools.swift in Sources */,
+				845CA89E1F453298003594C6 /* UIImage+bs.swift in Sources */,
 				84329F041F3D4F47008AD0B4 /* AppDelegate.swift in Sources */,
-				84329F381F3D5241008AD0B4 /* CGPoint+bs.swift in Sources */,
+				8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */,
+				8486B15D1F6FCFF1002C3FE2 /* BSCalendarDay.swift in Sources */,
+				8486B1241F6FCCDB002C3FE2 /* NSObject+Extension.m in Sources */,
+				8486B1801F6FD07A002C3FE2 /* Date+Inits.swift in Sources */,
+				8486B1271F6FCCDB002C3FE2 /* Flight.m in Sources */,
 				8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */,
+				8486B0BA1F6FC9E2002C3FE2 /* SeparatorLabelViewController.swift in Sources */,
+				8486B1651F6FCFF1002C3FE2 /* BSCalendarView.swift in Sources */,
+				8486B1871F6FD07A002C3FE2 /* TimePeriod.swift in Sources */,
+				8486B1211F6FCCDB002C3FE2 /* BSNumbersCollectionCell.m in Sources */,
+				8486B1891F6FD07A002C3FE2 /* TimePeriodCollection.swift in Sources */,
+				8486B1661F6FCFF1002C3FE2 /* Date+CalendarView.swift in Sources */,
+				8486B1221F6FCCDB002C3FE2 /* BSNumbersCollectionHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,12 +648,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FCG76RJRPL;
 				INFOPLIST_FILE = "10000ui-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.blurryssky.-0000ui-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "10000ui-swift/10000ui-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -355,12 +665,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FCG76RJRPL;
 				INFOPLIST_FILE = "10000ui-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.blurryssky.-0000ui-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "10000ui-swift/10000ui-swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

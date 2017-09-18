@@ -8,24 +8,41 @@
 
 import UIKit
 
+struct GroupInfo {
+    static let sectionTitles = ["Light", "Middle", "Heavy"]
+    static let sectionContents = [["SeparatorLabel"],
+                                  ["CircleSlider"],
+                                  ["NumbersView", "CalendarView"]]
+}
+
 class TableViewController: UITableViewController, TopBarsAppearanceChangable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setTopBarsAppearanceStyle(.default, animated: true)
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return GroupInfo.sectionContents.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return GroupInfo.sectionContents[section].count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
+        cell.textLabel?.text = GroupInfo.sectionContents[indexPath.section][indexPath.row]
+        return cell
+    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var vc: UIViewController?
-        switch indexPath.row {
-        case 0:
-            vc = UIStoryboard(name: "CircleSlider", bundle: nil).instantiateInitialViewController()!
-        default:
-            break
-        }
-        if let vc = vc {
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let title = GroupInfo.sectionContents[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(UIStoryboard(name: title, bundle: nil).instantiateInitialViewController()!, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return GroupInfo.sectionTitles[section]
     }
 }
