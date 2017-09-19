@@ -1,0 +1,6 @@
+framework module Pods_10000ui_swift {
+  umbrella header "Pods-10000ui-swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F735609AFA3A3B9F2D29E8E /* Pods_10000ui_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0A2CDE384FF744D220403E /* Pods_10000ui_swift.framework */; };
 		84329F041F3D4F47008AD0B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F031F3D4F47008AD0B4 /* AppDelegate.swift */; };
 		84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84329F071F3D4F47008AD0B4 /* Main.storyboard */; };
 		84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */; };
@@ -48,26 +49,22 @@
 		8486B1661F6FCFF1002C3FE2 /* Date+CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1591F6FCFF1002C3FE2 /* Date+CalendarView.swift */; };
 		8486B1681F6FCFF1002C3FE2 /* CalendarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B15B1F6FCFF1002C3FE2 /* CalendarView.storyboard */; };
 		8486B1691F6FCFF1002C3FE2 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B15C1F6FCFF1002C3FE2 /* CalendarViewController.swift */; };
-		8486B17B1F6FD07A002C3FE2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16B1F6FD07A002C3FE2 /* Constants.swift */; };
-		8486B17C1F6FD07A002C3FE2 /* Date+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16C1F6FD07A002C3FE2 /* Date+Bundle.swift */; };
-		8486B17D1F6FD07A002C3FE2 /* Date+Comparators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16D1F6FD07A002C3FE2 /* Date+Comparators.swift */; };
-		8486B17E1F6FD07A002C3FE2 /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16E1F6FD07A002C3FE2 /* Date+Components.swift */; };
-		8486B17F1F6FD07A002C3FE2 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B16F1F6FD07A002C3FE2 /* Date+Format.swift */; };
-		8486B1801F6FD07A002C3FE2 /* Date+Inits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1701F6FD07A002C3FE2 /* Date+Inits.swift */; };
-		8486B1811F6FD07A002C3FE2 /* Date+Manipulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1711F6FD07A002C3FE2 /* Date+Manipulations.swift */; };
-		8486B1821F6FD07A002C3FE2 /* Date+TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1721F6FD07A002C3FE2 /* Date+TimeAgo.swift */; };
-		8486B1831F6FD07A002C3FE2 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1731F6FD07A002C3FE2 /* DateTools.bundle */; };
-		8486B1841F6FD07A002C3FE2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1741F6FD07A002C3FE2 /* Enums.swift */; };
-		8486B1851F6FD07A002C3FE2 /* Integer+DateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1751F6FD07A002C3FE2 /* Integer+DateTools.swift */; };
-		8486B1861F6FD07A002C3FE2 /* TimeChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1761F6FD07A002C3FE2 /* TimeChunk.swift */; };
-		8486B1871F6FD07A002C3FE2 /* TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1771F6FD07A002C3FE2 /* TimePeriod.swift */; };
-		8486B1881F6FD07A002C3FE2 /* TimePeriodChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1781F6FD07A002C3FE2 /* TimePeriodChain.swift */; };
-		8486B1891F6FD07A002C3FE2 /* TimePeriodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1791F6FD07A002C3FE2 /* TimePeriodCollection.swift */; };
-		8486B18A1F6FD07A002C3FE2 /* TimePeriodGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B17A1F6FD07A002C3FE2 /* TimePeriodGroup.swift */; };
 		8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */; };
+		8486B1981F70B5AD002C3FE2 /* BSCycleThroughCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B18F1F70B5AD002C3FE2 /* BSCycleThroughCollectionCell.swift */; };
+		8486B1991F70B5AD002C3FE2 /* BSCycleThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1901F70B5AD002C3FE2 /* BSCycleThroughView.swift */; };
+		8486B19A1F70B5AD002C3FE2 /* CycleThroughView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1911F70B5AD002C3FE2 /* CycleThroughView.storyboard */; };
+		8486B19B1F70B5AD002C3FE2 /* CycleThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1921F70B5AD002C3FE2 /* CycleThroughViewController.swift */; };
+		8486B19C1F70B5AD002C3FE2 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1941F70B5AD002C3FE2 /* 1.jpg */; };
+		8486B19D1F70B5AD002C3FE2 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1951F70B5AD002C3FE2 /* 2.jpg */; };
+		8486B19E1F70B5AD002C3FE2 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1961F70B5AD002C3FE2 /* 3.jpg */; };
+		8486B19F1F70B5AD002C3FE2 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1971F70B5AD002C3FE2 /* 4.jpg */; };
+		8486B1A71F70B879002C3FE2 /* BSScrollingLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1A31F70B879002C3FE2 /* BSScrollingLabelView.m */; };
+		8486B1A81F70B879002C3FE2 /* ScrollingLabelView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1A41F70B879002C3FE2 /* ScrollingLabelView.storyboard */; };
+		8486B1A91F70B879002C3FE2 /* ScrollingLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1A61F70B879002C3FE2 /* ScrollingLabelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78DEACC071D6AC0C2D52449D /* Pods-10000ui-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10000ui-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		84329F001F3D4F47008AD0B4 /* 10000ui-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10000ui-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84329F031F3D4F47008AD0B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84329F081F3D4F47008AD0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,23 +119,22 @@
 		8486B1591F6FCFF1002C3FE2 /* Date+CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+CalendarView.swift"; sourceTree = "<group>"; };
 		8486B15B1F6FCFF1002C3FE2 /* CalendarView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CalendarView.storyboard; sourceTree = "<group>"; };
 		8486B15C1F6FCFF1002C3FE2 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		8486B16B1F6FD07A002C3FE2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8486B16C1F6FD07A002C3FE2 /* Date+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Bundle.swift"; sourceTree = "<group>"; };
-		8486B16D1F6FD07A002C3FE2 /* Date+Comparators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Comparators.swift"; sourceTree = "<group>"; };
-		8486B16E1F6FD07A002C3FE2 /* Date+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
-		8486B16F1F6FD07A002C3FE2 /* Date+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
-		8486B1701F6FD07A002C3FE2 /* Date+Inits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Inits.swift"; sourceTree = "<group>"; };
-		8486B1711F6FD07A002C3FE2 /* Date+Manipulations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Manipulations.swift"; sourceTree = "<group>"; };
-		8486B1721F6FD07A002C3FE2 /* Date+TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+TimeAgo.swift"; sourceTree = "<group>"; };
-		8486B1731F6FD07A002C3FE2 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
-		8486B1741F6FD07A002C3FE2 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		8486B1751F6FD07A002C3FE2 /* Integer+DateTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Integer+DateTools.swift"; sourceTree = "<group>"; };
-		8486B1761F6FD07A002C3FE2 /* TimeChunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeChunk.swift; sourceTree = "<group>"; };
-		8486B1771F6FD07A002C3FE2 /* TimePeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriod.swift; sourceTree = "<group>"; };
-		8486B1781F6FD07A002C3FE2 /* TimePeriodChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodChain.swift; sourceTree = "<group>"; };
-		8486B1791F6FD07A002C3FE2 /* TimePeriodCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodCollection.swift; sourceTree = "<group>"; };
-		8486B17A1F6FD07A002C3FE2 /* TimePeriodGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePeriodGroup.swift; sourceTree = "<group>"; };
 		8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+bs.swift"; sourceTree = "<group>"; };
+		8486B18F1F70B5AD002C3FE2 /* BSCycleThroughCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCycleThroughCollectionCell.swift; sourceTree = "<group>"; };
+		8486B1901F70B5AD002C3FE2 /* BSCycleThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSCycleThroughView.swift; sourceTree = "<group>"; };
+		8486B1911F70B5AD002C3FE2 /* CycleThroughView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CycleThroughView.storyboard; sourceTree = "<group>"; };
+		8486B1921F70B5AD002C3FE2 /* CycleThroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughViewController.swift; sourceTree = "<group>"; };
+		8486B1941F70B5AD002C3FE2 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		8486B1951F70B5AD002C3FE2 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		8486B1961F70B5AD002C3FE2 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		8486B1971F70B5AD002C3FE2 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		8486B1A21F70B879002C3FE2 /* BSScrollingLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSScrollingLabelView.h; sourceTree = "<group>"; };
+		8486B1A31F70B879002C3FE2 /* BSScrollingLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSScrollingLabelView.m; sourceTree = "<group>"; };
+		8486B1A41F70B879002C3FE2 /* ScrollingLabelView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScrollingLabelView.storyboard; sourceTree = "<group>"; };
+		8486B1A51F70B879002C3FE2 /* ScrollingLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingLabelViewController.h; sourceTree = "<group>"; };
+		8486B1A61F70B879002C3FE2 /* ScrollingLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingLabelViewController.m; sourceTree = "<group>"; };
+		AB0FAEED9AE54A99280D78B2 /* Pods-10000ui-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10000ui-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift.release.xcconfig"; sourceTree = "<group>"; };
+		BF0A2CDE384FF744D220403E /* Pods_10000ui_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_10000ui_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F735609AFA3A3B9F2D29E8E /* Pods_10000ui_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +154,8 @@
 			children = (
 				84329F021F3D4F47008AD0B4 /* 10000ui-swift */,
 				84329F011F3D4F47008AD0B4 /* Products */,
+				FE6221C2FF4806ABB1676AA8 /* Pods */,
+				C59465463A295A04498F94FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +252,7 @@
 		8486B0AC1F6FC9E2002C3FE2 /* Light */ = {
 			isa = PBXGroup;
 			children = (
+				8486B1A01F70B879002C3FE2 /* ScrollingLabelSample-OC */,
 				8486B0AD1F6FC9E2002C3FE2 /* SeparatorLabelSample */,
 			);
 			path = Light;
@@ -271,6 +271,7 @@
 		8486B0B21F6FC9E2002C3FE2 /* Middle */ = {
 			isa = PBXGroup;
 			children = (
+				8486B18D1F70B5AD002C3FE2 /* CycleThroughViewSample */,
 				8486B0B31F6FC9E2002C3FE2 /* CircleSliderSample */,
 			);
 			path = Middle;
@@ -359,7 +360,6 @@
 		8486B14F1F6FCFF1002C3FE2 /* BSCalendarView */ = {
 			isa = PBXGroup;
 			children = (
-				8486B16A1F6FD07A002C3FE2 /* DateTools */,
 				8486B1501F6FCFF1002C3FE2 /* BSCalendarDay.swift */,
 				8486B1511F6FCFF1002C3FE2 /* BSCalendarDayCollectionCell.swift */,
 				8486B1521F6FCFF1002C3FE2 /* BSCalendarDayCollectionReusableHeaderView.swift */,
@@ -374,27 +374,72 @@
 			path = BSCalendarView;
 			sourceTree = "<group>";
 		};
-		8486B16A1F6FD07A002C3FE2 /* DateTools */ = {
+		8486B18D1F70B5AD002C3FE2 /* CycleThroughViewSample */ = {
 			isa = PBXGroup;
 			children = (
-				8486B16B1F6FD07A002C3FE2 /* Constants.swift */,
-				8486B16C1F6FD07A002C3FE2 /* Date+Bundle.swift */,
-				8486B16D1F6FD07A002C3FE2 /* Date+Comparators.swift */,
-				8486B16E1F6FD07A002C3FE2 /* Date+Components.swift */,
-				8486B16F1F6FD07A002C3FE2 /* Date+Format.swift */,
-				8486B1701F6FD07A002C3FE2 /* Date+Inits.swift */,
-				8486B1711F6FD07A002C3FE2 /* Date+Manipulations.swift */,
-				8486B1721F6FD07A002C3FE2 /* Date+TimeAgo.swift */,
-				8486B1731F6FD07A002C3FE2 /* DateTools.bundle */,
-				8486B1741F6FD07A002C3FE2 /* Enums.swift */,
-				8486B1751F6FD07A002C3FE2 /* Integer+DateTools.swift */,
-				8486B1761F6FD07A002C3FE2 /* TimeChunk.swift */,
-				8486B1771F6FD07A002C3FE2 /* TimePeriod.swift */,
-				8486B1781F6FD07A002C3FE2 /* TimePeriodChain.swift */,
-				8486B1791F6FD07A002C3FE2 /* TimePeriodCollection.swift */,
-				8486B17A1F6FD07A002C3FE2 /* TimePeriodGroup.swift */,
+				8486B18E1F70B5AD002C3FE2 /* BSCycleThroughView */,
+				8486B1911F70B5AD002C3FE2 /* CycleThroughView.storyboard */,
+				8486B1921F70B5AD002C3FE2 /* CycleThroughViewController.swift */,
+				8486B1931F70B5AD002C3FE2 /* Resource */,
 			);
-			path = DateTools;
+			path = CycleThroughViewSample;
+			sourceTree = "<group>";
+		};
+		8486B18E1F70B5AD002C3FE2 /* BSCycleThroughView */ = {
+			isa = PBXGroup;
+			children = (
+				8486B18F1F70B5AD002C3FE2 /* BSCycleThroughCollectionCell.swift */,
+				8486B1901F70B5AD002C3FE2 /* BSCycleThroughView.swift */,
+			);
+			path = BSCycleThroughView;
+			sourceTree = "<group>";
+		};
+		8486B1931F70B5AD002C3FE2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8486B1941F70B5AD002C3FE2 /* 1.jpg */,
+				8486B1951F70B5AD002C3FE2 /* 2.jpg */,
+				8486B1961F70B5AD002C3FE2 /* 3.jpg */,
+				8486B1971F70B5AD002C3FE2 /* 4.jpg */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8486B1A01F70B879002C3FE2 /* ScrollingLabelSample-OC */ = {
+			isa = PBXGroup;
+			children = (
+				8486B1A11F70B879002C3FE2 /* BSScrollingLabelView */,
+				8486B1A41F70B879002C3FE2 /* ScrollingLabelView.storyboard */,
+				8486B1A51F70B879002C3FE2 /* ScrollingLabelViewController.h */,
+				8486B1A61F70B879002C3FE2 /* ScrollingLabelViewController.m */,
+			);
+			path = "ScrollingLabelSample-OC";
+			sourceTree = "<group>";
+		};
+		8486B1A11F70B879002C3FE2 /* BSScrollingLabelView */ = {
+			isa = PBXGroup;
+			children = (
+				8486B1A21F70B879002C3FE2 /* BSScrollingLabelView.h */,
+				8486B1A31F70B879002C3FE2 /* BSScrollingLabelView.m */,
+			);
+			path = BSScrollingLabelView;
+			sourceTree = "<group>";
+		};
+		C59465463A295A04498F94FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A2CDE384FF744D220403E /* Pods_10000ui_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE6221C2FF4806ABB1676AA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78DEACC071D6AC0C2D52449D /* Pods-10000ui-swift.debug.xcconfig */,
+				AB0FAEED9AE54A99280D78B2 /* Pods-10000ui-swift.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,9 +449,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84329F121F3D4F47008AD0B4 /* Build configuration list for PBXNativeTarget "10000ui-swift" */;
 			buildPhases = (
+				91D195C08834B0F5DC48F317 /* [CP] Check Pods Manifest.lock */,
 				84329EFC1F3D4F47008AD0B4 /* Sources */,
 				84329EFD1F3D4F47008AD0B4 /* Frameworks */,
 				84329EFE1F3D4F47008AD0B4 /* Resources */,
+				8FA9DC1A7C592EC1454BA260 /* [CP] Embed Pods Frameworks */,
+				45544BFB016CEB3A345307B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -458,20 +506,73 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8486B19C1F70B5AD002C3FE2 /* 1.jpg in Resources */,
 				8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */,
 				84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */,
 				8486B0B91F6FC9E2002C3FE2 /* SeparatorLabel.storyboard in Resources */,
+				8486B19E1F70B5AD002C3FE2 /* 3.jpg in Resources */,
 				84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */,
+				8486B1A81F70B879002C3FE2 /* ScrollingLabelView.storyboard in Resources */,
+				8486B19A1F70B5AD002C3FE2 /* CycleThroughView.storyboard in Resources */,
+				8486B19D1F70B5AD002C3FE2 /* 2.jpg in Resources */,
+				8486B19F1F70B5AD002C3FE2 /* 4.jpg in Resources */,
 				8486B1261F6FCCDB002C3FE2 /* flightsInfo.plist in Resources */,
 				84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */,
 				8486B1281F6FCCDB002C3FE2 /* NumbersView.storyboard in Resources */,
 				8486B12B1F6FCCDB002C3FE2 /* SampleCollectionCell.xib in Resources */,
 				8486B1681F6FCFF1002C3FE2 /* CalendarView.storyboard in Resources */,
-				8486B1831F6FD07A002C3FE2 /* DateTools.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45544BFB016CEB3A345307B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FA9DC1A7C592EC1454BA260 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91D195C08834B0F5DC48F317 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84329EFC1F3D4F47008AD0B4 /* Sources */ = {
@@ -479,51 +580,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				8486B15E1F6FCFF1002C3FE2 /* BSCalendarDayCollectionCell.swift in Sources */,
-				8486B17B1F6FD07A002C3FE2 /* Constants.swift in Sources */,
 				8486B1611F6FCFF1002C3FE2 /* BSCalendarMonth.swift in Sources */,
 				8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */,
-				8486B1841F6FD07A002C3FE2 /* Enums.swift in Sources */,
-				8486B17C1F6FD07A002C3FE2 /* Date+Bundle.swift in Sources */,
-				8486B17E1F6FD07A002C3FE2 /* Date+Components.swift in Sources */,
 				8486B1691F6FCFF1002C3FE2 /* CalendarViewController.swift in Sources */,
 				8486B15F1F6FCFF1002C3FE2 /* BSCalendarDayCollectionReusableHeaderView.swift in Sources */,
 				8486B12A1F6FCCDB002C3FE2 /* SampleCollectionCell.m in Sources */,
 				8486B1311F6FCE73002C3FE2 /* BSCircleSlider.swift in Sources */,
 				84329F3E1F3D54A7008AD0B4 /* TableViewController.swift in Sources */,
+				8486B1A91F70B879002C3FE2 /* ScrollingLabelViewController.m in Sources */,
 				8486B1641F6FCFF1002C3FE2 /* BSCalendarPreference.swift in Sources */,
-				8486B1861F6FD07A002C3FE2 /* TimeChunk.swift in Sources */,
 				845CA89D1F453298003594C6 /* CGPoint+bs.swift in Sources */,
-				8486B1821F6FD07A002C3FE2 /* Date+TimeAgo.swift in Sources */,
 				8486B12E1F6FCE6C002C3FE2 /* BSSeparatorLabel.swift in Sources */,
 				8486B1601F6FCFF1002C3FE2 /* BSCalendarManager.swift in Sources */,
-				8486B1881F6FD07A002C3FE2 /* TimePeriodChain.swift in Sources */,
-				8486B1811F6FD07A002C3FE2 /* Date+Manipulations.swift in Sources */,
 				8486B1251F6FCCDB002C3FE2 /* NSString+BSNumbers.m in Sources */,
 				8486B1291F6FCCDB002C3FE2 /* NumbersViewController.m in Sources */,
+				8486B19B1F70B5AD002C3FE2 /* CycleThroughViewController.swift in Sources */,
 				845CA89F1F453298003594C6 /* UIViewController+bs.swift in Sources */,
 				8486B1621F6FCFF1002C3FE2 /* BSCalendarMonthCollectionCell.swift in Sources */,
 				8486B1631F6FCFF1002C3FE2 /* BSCalendarMonthSelectView.swift in Sources */,
 				8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */,
-				8486B17D1F6FD07A002C3FE2 /* Date+Comparators.swift in Sources */,
 				8486B1231F6FCCDB002C3FE2 /* BSNumbersView.m in Sources */,
+				8486B1981F70B5AD002C3FE2 /* BSCycleThroughCollectionCell.swift in Sources */,
 				845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */,
 				8486B0BD1F6FC9E2002C3FE2 /* CircleSliderViewController.swift in Sources */,
-				8486B18A1F6FD07A002C3FE2 /* TimePeriodGroup.swift in Sources */,
-				8486B17F1F6FD07A002C3FE2 /* Date+Format.swift in Sources */,
-				8486B1851F6FD07A002C3FE2 /* Integer+DateTools.swift in Sources */,
 				845CA89E1F453298003594C6 /* UIImage+bs.swift in Sources */,
 				84329F041F3D4F47008AD0B4 /* AppDelegate.swift in Sources */,
+				8486B1A71F70B879002C3FE2 /* BSScrollingLabelView.m in Sources */,
 				8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */,
+				8486B1991F70B5AD002C3FE2 /* BSCycleThroughView.swift in Sources */,
 				8486B15D1F6FCFF1002C3FE2 /* BSCalendarDay.swift in Sources */,
 				8486B1241F6FCCDB002C3FE2 /* NSObject+Extension.m in Sources */,
-				8486B1801F6FD07A002C3FE2 /* Date+Inits.swift in Sources */,
 				8486B1271F6FCCDB002C3FE2 /* Flight.m in Sources */,
 				8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */,
 				8486B0BA1F6FC9E2002C3FE2 /* SeparatorLabelViewController.swift in Sources */,
 				8486B1651F6FCFF1002C3FE2 /* BSCalendarView.swift in Sources */,
-				8486B1871F6FD07A002C3FE2 /* TimePeriod.swift in Sources */,
 				8486B1211F6FCCDB002C3FE2 /* BSNumbersCollectionCell.m in Sources */,
-				8486B1891F6FD07A002C3FE2 /* TimePeriodCollection.swift in Sources */,
 				8486B1661F6FCFF1002C3FE2 /* Date+CalendarView.swift in Sources */,
 				8486B1221F6FCCDB002C3FE2 /* BSNumbersCollectionHeaderView.m in Sources */,
 			);
@@ -646,6 +737,7 @@
 		};
 		84329F131F3D4F47008AD0B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78DEACC071D6AC0C2D52449D /* Pods-10000ui-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -663,6 +755,7 @@
 		};
 		84329F141F3D4F47008AD0B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB0FAEED9AE54A99280D78B2 /* Pods-10000ui-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
