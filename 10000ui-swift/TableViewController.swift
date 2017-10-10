@@ -10,7 +10,7 @@ import UIKit
 
 struct GroupInfo {
     static let sectionTitles = ["Light", "Middle", "Heavy"]
-    static let sectionContents = [["SeparatorLabel", "ScrollingLabelView-OC"],
+    static let sectionContents = [["SeparatorLabel", "RaceLampView-OC"],
                                   ["CircleSlider", "CycleThroughView"],
                                   ["NumbersView-OC", "CalendarView"]]
 }

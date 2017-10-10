@@ -454,7 +454,7 @@ extension Kingfisher where Base: Image {
     
     /// Create an image with blur effect based on `self`.
     ///
-    /// - parameter radius: The blur radius should be used when creating blue.
+    /// - parameter radius: The blur radius should be used when creating blur effect.
     ///
     /// - returns: An image with blur effect applied.
     ///
@@ -608,7 +608,7 @@ extension Kingfisher where Base: Image {
         #if os(watchOS)
             return base
         #else
-            return apply(.colorControl(brightness, contrast, saturation, inputEV))
+            return apply(.colorControl((brightness, contrast, saturation, inputEV)))
         #endif
     }
 }

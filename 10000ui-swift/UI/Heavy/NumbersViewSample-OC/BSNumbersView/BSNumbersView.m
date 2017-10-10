@@ -9,7 +9,7 @@
 #import "BSNumbersView.h"
 #import "BSNumbersCollectionCell.h"
 #import "BSNumbersCollectionHeaderView.h"
-#import "NSString+BSNumbers.h"
+#import "NSString+BSNumbersView.h"
 #import "BSNumbersViewMarcos.h"
 #import <objc/runtime.h>
 
@@ -185,7 +185,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
             //遍历行
             for (NSInteger row = 0; row < _rows; row ++) {
                 
-                NSIndexPath *indexPath = [NSIndexPath indexPathForColumn:column inRow:row];
+                BSIndexPath *indexPath = [BSIndexPath indexPathForColumn:column inRow:row];
                 NSString *string = [_dataSource numbersView:self attributedStringForItemAtIndexPath:indexPath].string;
                 
                 CGFloat itemWidth = 0;
@@ -406,7 +406,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
     return s;
 }
 
-- (NSIndexPath *)convertIndexPath:(NSIndexPath *)indexPath fromCollectionView:(UICollectionView *)collectionView {
+- (BSIndexPath *)convertIndexPath:(NSIndexPath *)indexPath fromCollectionView:(UICollectionView *)collectionView {
     
     NSInteger row = 0;
     NSInteger column = 0;
@@ -424,7 +424,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
         column = indexPath.item + _columnsToFreeze;
     }
     
-    return [NSIndexPath indexPathForColumn:column inRow:row];
+    return [BSIndexPath indexPathForColumn:column inRow:row];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -452,7 +452,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSIndexPath *convertedIndexPath = [self convertIndexPath:indexPath fromCollectionView:collectionView];
+    BSIndexPath *convertedIndexPath = [self convertIndexPath:indexPath fromCollectionView:collectionView];
     UICollectionViewCell *cell = nil;
     if ([_dataSource respondsToSelector:@selector(numbersView:cellForItemAtIndexPath:)]) {
         cell = [_dataSource numbersView:self cellForItemAtIndexPath:convertedIndexPath];
@@ -461,7 +461,8 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellReuseIdentifer forIndexPath:indexPath];
         ((BSNumbersCollectionCell *)cell).textHorizontalMargin = _textHorizontalMargin;
         
-        ((BSNumbersCollectionCell *)cell).attributedString = [_dataSource numbersView:self attributedStringForItemAtIndexPath:convertedIndexPath];
+        NSAttributedString *attributedString = [_dataSource numbersView:self attributedStringForItemAtIndexPath:convertedIndexPath];
+        ((BSNumbersCollectionCell *)cell).attributedString = attributedString;
     }
     return cell;
 }
@@ -482,7 +483,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSIndexPath *convertedIndexPath = [self convertIndexPath:indexPath fromCollectionView:collectionView];
+    BSIndexPath *convertedIndexPath = [self convertIndexPath:indexPath fromCollectionView:collectionView];
     return CGSizeMake(_columnWidths[convertedIndexPath.column].floatValue, _rowHeights[convertedIndexPath.row].floatValue);
 }
 
@@ -503,7 +504,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
         return;
     }
     
-    NSIndexPath *convertedIndexPath = [self convertIndexPath:indexPath fromCollectionView:collectionView];
+    BSIndexPath *convertedIndexPath = [self convertIndexPath:indexPath fromCollectionView:collectionView];
     [_delegate numbersView:self didSelectItemAtIndexPath:convertedIndexPath];
 }
 
@@ -585,7 +586,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
     [_bodySlideCollectionView reloadData];
 }
 
-- (void)reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths {
+- (void)reloadItemsAtIndexPaths:(NSArray<BSIndexPath *> *)indexPaths {
     
 
     NSMutableArray *headerFreezeIndexPaths = [NSMutableArray new];
@@ -593,7 +594,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
     NSMutableArray *freezeIndexPaths = [NSMutableArray new];
     NSMutableArray *slideIndexPaths = [NSMutableArray new];
     
-    for (NSIndexPath *indexPath in indexPaths) {
+    for (BSIndexPath *indexPath in indexPaths) {
         //exsit header
         if (_isFreezeFirstRow) {
             //if header
@@ -602,22 +603,22 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
                 //if freeze
                 if (indexPath.column < _columnsToFreeze) {
                     
-                    [headerFreezeIndexPaths addObject:indexPath];
+                    [headerFreezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row]];
                     
                 } else {
                     
-                    [headerSlideIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
+                    [headerSlideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
                 }
                 //body
             } else {
                 
                 //if freeze
-                if (indexPath.row < _columnsToFreeze) {
+                if (indexPath.column < _columnsToFreeze) {
                     
-                    [freezeIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.column inSection:indexPath.row - 1]];
+                    [freezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row - 1]];
                 } else {
                     
-                    [slideIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.column - _columnsToFreeze inSection:indexPath.row - 1]];
+                    [slideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row - 1]];
                 }
             }
             
@@ -626,10 +627,10 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
             //if freeze
             if (indexPath.column < _columnsToFreeze) {
                 
-                [freezeIndexPaths addObject:indexPath];
+                [freezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row]];
             } else {
                 
-                [slideIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
+                [slideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
             }
         }
     }
@@ -658,7 +659,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
     [_bodySlideCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
 }
 
-- (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(BSIndexPath *)indexPath {
     NSInteger row = 0;
     NSInteger column = 0;
     UICollectionView *collectionView = nil;
@@ -705,25 +706,6 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
 
 @end
 
-@implementation NSIndexPath (BSNumbersView)
 
-+ (instancetype)indexPathForColumn:(NSInteger)column inRow:(NSInteger)row {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-    indexPath.column = column;
-    return indexPath;
-}
 
-- (void)setColumn:(NSInteger)column {
-    objc_setAssociatedObject(self, @selector(column), @(column), OBJC_ASSOCIATION_ASSIGN);
-}
 
-- (NSInteger)column {
-    NSNumber *columnNumber = objc_getAssociatedObject(self, _cmd);
-    return columnNumber.integerValue;
-}
-
-- (NSString *)bs_description {
-    return [NSString stringWithFormat:@"row = %ld, column = %ld", (long)self.row, (long)self.column];
-}
-
-@end

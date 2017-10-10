@@ -11,6 +11,6 @@ target '10000ui-swift' do
   pod 'DateToolsSwift', '2.0.3'
 
   # CycleThroughView
-  pod 'Kingfisher', '3.10.3'
+  pod 'Kingfisher', '~> 3.11.0'
 
 end

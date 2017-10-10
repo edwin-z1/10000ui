@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BSNumbersViewEnum.h"
+#import "BSIndexPath.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,10 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 - (NSInteger)numberOfRowsInNumbersView:(BSNumbersView *)numbersView;
 - (NSInteger)numberOfColumnsInNumbersView:(BSNumbersView *)numbersView;
-- (__kindof NSAttributedString * _Nullable)numbersView:(BSNumbersView *)numbersView attributedStringForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (__kindof NSAttributedString * _Nullable)numbersView:(BSNumbersView *)numbersView attributedStringForItemAtIndexPath:(BSIndexPath *)indexPath;
 
 @optional
-- (__kindof UICollectionViewCell * _Nullable)numbersView:(BSNumbersView *)numbersView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+- (__kindof UICollectionViewCell * _Nullable)numbersView:(BSNumbersView *)numbersView cellForItemAtIndexPath:(BSIndexPath *)indexPath;
 @end
 
 @protocol BSNumbersViewDelegate<NSObject>
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 - (CGFloat)numbersView:(BSNumbersView *)numbersView heightForRow:(NSInteger)row;
 - (CGFloat)numbersView:(BSNumbersView *)numbersView widthForColumn:(NSInteger)column;
-- (void)numbersView:(BSNumbersView *)numbersView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)numbersView:(BSNumbersView *)numbersView didSelectItemAtIndexPath:(BSIndexPath *)indexPath;
 
 @end
 
@@ -54,7 +55,7 @@ UIKIT_EXTERN const CGFloat BSNumbersViewAutomaticDimension;
 @property (nonatomic, strong) IBInspectable UIColor *columnSeparatorColor;
 
 - (void)reloadData;
-- (void)reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths;
+- (void)reloadItemsAtIndexPaths:(NSArray<BSIndexPath *> *)indexPaths;
 
 ///default is 100
 @property (nonatomic) IBInspectable CGFloat itemMinWidth;
@@ -70,17 +71,7 @@ UIKIT_EXTERN const CGFloat BSNumbersViewAutomaticDimension;
 - (void)registerClass:(nullable Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
 - (void)registerNib:(nullable UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier;
 
-- (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
-
-@end
-
-@interface NSIndexPath (BSNumbersView)
-
-+ (instancetype)indexPathForColumn:(NSInteger)column inRow:(NSInteger)row;
-
-@property (nonatomic, readonly) NSInteger column;
-
-- (NSString *)bs_description;
+- (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(BSIndexPath *)indexPath;
 
 @end
 

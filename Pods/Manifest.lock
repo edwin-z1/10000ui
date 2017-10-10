@@ -1,15 +1,15 @@
 PODS:
   - DateToolsSwift (2.0.3)
-  - Kingfisher (3.10.3)
+  - Kingfisher (3.11.0)
 
 DEPENDENCIES:
   - DateToolsSwift (= 2.0.3)
-  - Kingfisher (= 3.10.3)
+  - Kingfisher (~> 3.11.0)
 
 SPEC CHECKSUMS:
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
-  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
+  Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
 
-PODFILE CHECKSUM: 601702a6a42a5b013b58e2f7ad16a75fdf7c90d6
+PODFILE CHECKSUM: 1f88bf2ad16a51c8e0324124ba086fe628bad068
 
 COCOAPODS: 1.2.1

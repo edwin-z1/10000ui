@@ -1,6 +1,6 @@
 //
 //  CGPoint+bs.swift
-//  BSCircleSlider
+//  CircleSlider
 //
 //  Created by 张亚东 on 16/5/28.
 //  Copyright © 2016年 blurryssky. All rights reserved.

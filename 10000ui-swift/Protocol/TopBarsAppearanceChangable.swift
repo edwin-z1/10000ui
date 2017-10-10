@@ -1,6 +1,6 @@
 //
 //  TopBarsAppearanceChangable.swift
-//  blurryssky
+//  10000ui-swift
 //
 //  Created by 张亚东 on 01/06/2017.
 //  Copyright © 2017 Jumei. All rights reserved.
@@ -29,7 +29,7 @@ extension TopBarsAppearanceChangable where Self: UIViewController {
             navigationController?.setNavigationBarHidden(false, animated: animated)
             navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
             navigationController?.navigationBar.shadowImage = nil
-            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black, NSFontAttributeName:UIFont.systemFont(ofSize: 16)]
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.black, NSAttributedStringKey.font:UIFont.systemFont(ofSize: 16)]
             navigationController?.navigationBar.tintColor = UIColor.black
             
             UIApplication.shared.setStatusBarStyle(.default, animated: animated)
@@ -43,7 +43,7 @@ extension TopBarsAppearanceChangable where Self: UIViewController {
             
             navigationController?.navigationBar.setBackgroundImage(UIImage.bs.image(withColor: .clear), for: .default)
             navigationController?.navigationBar.shadowImage = UIImage.bs.image(withColor: .clear)
-            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:UIFont.systemFont(ofSize: 16)]
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white, NSAttributedStringKey.font:UIFont.systemFont(ofSize: 16)]
             navigationController?.navigationBar.tintColor = UIColor.white
             
             UIApplication.shared.setStatusBarStyle(.lightContent, animated: animated)
@@ -51,7 +51,7 @@ extension TopBarsAppearanceChangable where Self: UIViewController {
             navigationController?.setNavigationBarHidden(false, animated: animated)
             
             navigationController?.navigationBar.setBackgroundImage(UIImage.bs.image(withColor: color), for: .default)
-            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:UIFont.systemFont(ofSize: 16)]
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white, NSAttributedStringKey.font:UIFont.systemFont(ofSize: 16)]
             navigationController?.navigationBar.tintColor = UIColor.white
             
             UIApplication.shared.setStatusBarStyle(.lightContent, animated: animated)
