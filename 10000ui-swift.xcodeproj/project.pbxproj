@@ -61,6 +61,10 @@
 		84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */; };
 		84B4D4C21F7E3FCB00FC85BE /* CycleThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */; };
 		84B7660A1F7E45460042B682 /* RaceLampViewSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B766091F7E45460042B682 /* RaceLampViewSampleViewController.swift */; };
+		84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C387A71F8DCF80009F3076 /* LoadingViewController.storyboard */; };
+		84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AA1F8DCFE3009F3076 /* LoadingView.swift */; };
+		84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */; };
+		84C387AF1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AE1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift */; };
 		84C3FCC21F8B7DA9009E24D3 /* BSIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCC11F8B7DA9009E24D3 /* BSIndexPath.m */; };
 		84C3FCF81F8C7E41009E24D3 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCF71F8C7E41009E24D3 /* PopoverController.swift */; };
 		84C3FCFA1F8CAE25009E24D3 /* UIColor+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCF91F8CAE25009E24D3 /* UIColor+bs.swift */; };
@@ -142,6 +146,10 @@
 		84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughCollectionCell.swift; sourceTree = "<group>"; };
 		84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughView.swift; sourceTree = "<group>"; };
 		84B766091F7E45460042B682 /* RaceLampViewSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceLampViewSampleViewController.swift; sourceTree = "<group>"; };
+		84C387A71F8DCF80009F3076 /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
+		84C387AA1F8DCFE3009F3076 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		84C387AE1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewControllerSampleViewController.swift; sourceTree = "<group>"; };
 		84C3FCC01F8B7DA9009E24D3 /* BSIndexPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSIndexPath.h; sourceTree = "<group>"; };
 		84C3FCC11F8B7DA9009E24D3 /* BSIndexPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSIndexPath.m; sourceTree = "<group>"; };
 		84C3FCF71F8C7E41009E24D3 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
@@ -278,6 +286,7 @@
 		8486B0AC1F6FC9E2002C3FE2 /* Light */ = {
 			isa = PBXGroup;
 			children = (
+				84C387A61F8DCE8A009F3076 /* LoadingViewControllerSample */,
 				8486B1A01F70B879002C3FE2 /* RaceLampViewSample-OC */,
 				8486B0AD1F6FC9E2002C3FE2 /* SeparatorLabelSample */,
 			);
@@ -449,6 +458,25 @@
 			path = CycleThroughView;
 			sourceTree = "<group>";
 		};
+		84C387A61F8DCE8A009F3076 /* LoadingViewControllerSample */ = {
+			isa = PBXGroup;
+			children = (
+				84C387A91F8DCF8A009F3076 /* LoadingViewController */,
+				84C387A71F8DCF80009F3076 /* LoadingViewController.storyboard */,
+				84C387AE1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift */,
+			);
+			path = LoadingViewControllerSample;
+			sourceTree = "<group>";
+		};
+		84C387A91F8DCF8A009F3076 /* LoadingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C387AA1F8DCFE3009F3076 /* LoadingView.swift */,
+				84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */,
+			);
+			path = LoadingViewController;
+			sourceTree = "<group>";
+		};
 		84C3FCF61F8C7E41009E24D3 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +593,7 @@
 			files = (
 				8486B19C1F70B5AD002C3FE2 /* 1.jpg in Resources */,
 				8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */,
+				84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */,
 				84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */,
 				8486B0B91F6FC9E2002C3FE2 /* SeparatorLabel.storyboard in Resources */,
 				8486B19E1F70B5AD002C3FE2 /* 3.jpg in Resources */,
@@ -645,6 +674,7 @@
 				8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */,
 				8486B1691F6FCFF1002C3FE2 /* CalendarViewSampleViewController.swift in Sources */,
 				84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */,
+				84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */,
 				8486B15F1F6FCFF1002C3FE2 /* CalendarDayCollectionReusableHeaderView.swift in Sources */,
 				84656E0A1F8B13C20030D69D /* NumbersViewSampleCollectionCell.swift in Sources */,
 				84C3FD0C1F8CB36D009E24D3 /* DialogViewContentView.swift in Sources */,
@@ -669,11 +699,13 @@
 				8486B1231F6FCCDB002C3FE2 /* BSNumbersView.m in Sources */,
 				84B7660A1F7E45460042B682 /* RaceLampViewSampleViewController.swift in Sources */,
 				845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */,
+				84C387AF1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift in Sources */,
 				8486B0BD1F6FC9E2002C3FE2 /* CircleSliderSampleViewController.swift in Sources */,
 				845CA89E1F453298003594C6 /* UIImage+bs.swift in Sources */,
 				84329F041F3D4F47008AD0B4 /* AppDelegate.swift in Sources */,
 				8486B1A71F70B879002C3FE2 /* BSRaceLampView.m in Sources */,
 				8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */,
+				84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */,
 				84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */,
 				84656E081F8B113D0030D69D /* NumbersViewSampleViewController.swift in Sources */,
 				8486B15D1F6FCFF1002C3FE2 /* CalendarDay.swift in Sources */,

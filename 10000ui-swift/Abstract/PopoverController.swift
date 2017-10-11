@@ -13,10 +13,10 @@ class PopoverController: UIViewController {
     typealias Animations = () -> Void
     typealias Completion = (Bool) -> Void
     var animationDuration: TimeInterval = 0.15
-    var presentAnimations: Animations? = { }
-    var dismissAnimations: Animations? = { }
-    var presentCompletion: Completion? = { _ in }
-    var dismissCompletion: Completion? = { _ in }
+    var presentAnimations: Animations?
+    var dismissAnimations: Animations?
+    var presentCompletion: Completion?
+    var dismissCompletion: Completion?
     
     var statusBarStyle: UIStatusBarStyle = .default
     var isStatusBarHidden: Bool = false
@@ -66,65 +66,9 @@ class PopoverController: UIViewController {
         view.insertSubview(maskView, at: 0)
     }
     
-    //MARK:Public
-    
-    @discardableResult
-    func present() -> Bool {
-        
-        guard animating == false else {
-            return false
-        }
-        animating = true
-        isPresented = true
-        PopoverController.isAnyPresented = true
-        
-        prepareForShow()
-        
-        UIView.animate(withDuration: animationDuration, animations: { [unowned self] in
-            
-            self.maskView.alpha = 1
-            self.presentAnimations?()
-            
-            }, completion: { [unowned self] (finished: Bool) in
-                
-                self.animating = false
-                self.presentCompletion?(finished)
-        })
-        return true
-    }
-    
-    func dismiss() {
-        guard animating == false else {
-            return
-        }
-        animating = true
-        
-        UIView.animate(withDuration: animationDuration, animations: { [unowned self] in
-            
-            self.maskView.alpha = 0
-            self.dismissAnimations?()
-            
-            }, completion: { [unowned self] (finished: Bool) in
-                
-                self.finishForDismiss()
-                
-                self.animating = false
-                self.isPresented = false
-                PopoverController.isAnyPresented = false
-                self.dismissCompletion?(finished)
-        })
-    }
 }
 
-extension PopoverController {
-    
-    @objc func handleTap(_ tap: UITapGestureRecognizer) {
-        dismiss()
-    }
-}
-
-//MARK:Private
-private extension PopoverController {
+fileprivate extension PopoverController {
     
     func prepareForShow() {
         
@@ -150,6 +94,63 @@ private extension PopoverController {
         window.rootViewController = self
         
         return window
+    }
+    
+    @objc func handleTap(_ tap: UITapGestureRecognizer) {
+        dismiss()
+    }
+}
+
+//  MARK:Public
+extension PopoverController {
+    
+    @discardableResult
+    func present() -> Bool {
+        
+        guard !animating,
+            !PopoverController.isAnyPresented,
+            !isPresented else {
+                return false
+        }
+        animating = true
+        isPresented = true
+        PopoverController.isAnyPresented = true
+        
+        prepareForShow()
+        
+        UIView.animate(withDuration: animationDuration, animations: { [unowned self] in
+            
+            self.maskView.alpha = 1
+            self.presentAnimations?()
+            
+            }, completion: { [unowned self] (finished: Bool) in
+                
+                self.animating = false
+                self.presentCompletion?(finished)
+        })
+        return true
+    }
+    
+    func dismiss() {
+        guard !animating else {
+            return
+        }
+        animating = true
+        
+        UIView.animate(withDuration: animationDuration, animations: { [unowned self] in
+            
+            self.maskView.alpha = 0
+            self.dismissAnimations?()
+            
+            }, completion: { [unowned self] (finished: Bool) in
+                
+                self.finishForDismiss()
+                
+                self.animating = false
+                self.isPresented = false
+                PopoverController.isAnyPresented = false
+                self.dismissCompletion?(finished)
+        })
     }
 }
 

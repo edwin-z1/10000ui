@@ -25,11 +25,9 @@ class DialogViewController: PopoverController {
     convenience init(dialogStyle: DialogViewControllerStyle) {
         self.init()
         self.dialogStyle = dialogStyle
-        dialogViewContentView.dialogStyle = dialogStyle
-        setup()
     }
     
-    fileprivate(set) var dialogStyle: DialogViewControllerStyle?
+    fileprivate(set) var dialogStyle: DialogViewControllerStyle!
     fileprivate lazy var dialogViewContentView: DialogViewContentView = {
         let dialog = DialogViewContentView.instantiateFromNib() as! DialogViewContentView
         dialog.layer.cornerRadius = self.dialogViewCornerRadius
@@ -37,18 +35,14 @@ class DialogViewController: PopoverController {
         return dialog
     }()
     
-    @discardableResult
-    override func present() -> Bool {
-        
-        guard !PopoverController.isAnyPresented,
-            !isPresented else {
-            return false
-        }
-        return super.present()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dialogViewContentView.dialogStyle = dialogStyle
+        setup()
     }
 }
 
-private extension DialogViewController {
+fileprivate extension DialogViewController {
     
     func setup() {
         
@@ -60,8 +54,8 @@ private extension DialogViewController {
         // override
         isTapGestureEnabled = false
         maskColor = UIColor.bs.color(hexString: "000000", alpha: 0.5)!
-        dialogViewContentView.alpha = 0
         
+        dialogViewContentView.alpha = 0
         presentAnimations = { [weak self] in
             self?.dialogViewContentView.alpha = 1
         }
