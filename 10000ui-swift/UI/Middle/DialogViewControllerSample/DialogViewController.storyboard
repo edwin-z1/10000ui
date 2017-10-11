@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHJ-Jv-XAd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dialog View Controller Sample View Controller-->
+        <scene sceneID="ZIQ-jU-2xi">
+            <objects>
+                <viewController id="iHJ-Jv-XAd" customClass="DialogViewControllerSampleViewController" customModule="_0000ui_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jR7-Zp-iN3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWh-f6-FM1">
+                                <rect key="frame" x="112" y="144" width="150" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="show 1 button dialog"/>
+                                <connections>
+                                    <action selector="handleShow1ButtonDialogButton:" destination="iHJ-Jv-XAd" eventType="touchUpInside" id="dAt-lK-h3N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYR-pp-C8g">
+                                <rect key="frame" x="107" y="236" width="160" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="show 2 buttons dialog"/>
+                                <connections>
+                                    <action selector="handleShow2ButtonDialogButton:" destination="iHJ-Jv-XAd" eventType="touchUpInside" id="IBe-C6-Ebz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6r-yX-vsG">
+                                <rect key="frame" x="93" y="328" width="188" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="show more buttons dialog"/>
+                                <connections>
+                                    <action selector="handleShowMoreButtonDialogButton:" destination="iHJ-Jv-XAd" eventType="touchUpInside" id="Czm-vO-gra"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA2-lY-hb0">
+                                <rect key="frame" x="107" y="420" width="160" height="30"/>
+                                <state key="normal" title="show dialog with image"/>
+                                <connections>
+                                    <action selector="handleShowDialogWithImageButton:" destination="iHJ-Jv-XAd" eventType="touchUpInside" id="p5T-aJ-wzm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EA2-lY-hb0" firstAttribute="centerX" secondItem="jR7-Zp-iN3" secondAttribute="centerX" id="Drr-TL-YyH"/>
+                            <constraint firstItem="J6r-yX-vsG" firstAttribute="top" secondItem="MYR-pp-C8g" secondAttribute="bottom" constant="60" id="EKZ-8D-oBt"/>
+                            <constraint firstItem="J6r-yX-vsG" firstAttribute="centerX" secondItem="jR7-Zp-iN3" secondAttribute="centerX" id="Tj6-pF-pC2"/>
+                            <constraint firstItem="EA2-lY-hb0" firstAttribute="top" secondItem="J6r-yX-vsG" secondAttribute="bottom" constant="60" id="VZV-Xc-faZ"/>
+                            <constraint firstItem="MYR-pp-C8g" firstAttribute="centerX" secondItem="jR7-Zp-iN3" secondAttribute="centerX" id="gUU-I0-Edb"/>
+                            <constraint firstItem="MYR-pp-C8g" firstAttribute="top" secondItem="gWh-f6-FM1" secondAttribute="bottom" constant="60" id="jOw-yf-AyT"/>
+                            <constraint firstItem="gWh-f6-FM1" firstAttribute="top" secondItem="eKF-6O-LuV" secondAttribute="top" constant="80" id="jo1-mw-De4"/>
+                            <constraint firstItem="gWh-f6-FM1" firstAttribute="centerX" secondItem="jR7-Zp-iN3" secondAttribute="centerX" id="zcG-SJ-FM0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eKF-6O-LuV"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfv-sC-gh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129" y="113"/>
+        </scene>
+    </scenes>
+</document>

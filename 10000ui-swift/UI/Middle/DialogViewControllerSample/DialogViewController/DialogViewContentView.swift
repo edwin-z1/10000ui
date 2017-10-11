@@ -3,20 +3,20 @@
 //  10000ui-swift
 //
 //  Created by 张亚东 on 19/05/2017.
-//  Copyright © 2017 Jumei. All rights reserved.
+//  Copyright © 2017 blurryssky. All rights reserved.
 //
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 private struct Defaults {
-    static var contentWidth: CGFloat = 305
-    static var singleActionHeight: CGFloat = 49
+    static var actionHeight: CGFloat = 49
 }
 
 class DialogViewContentView: UIView {
     
-    var dialogStyle: DialogStyle! {
+    var dialogStyle: DialogViewControllerStyle! {
         didSet {
             setupSubviews()
         }
@@ -26,25 +26,21 @@ class DialogViewContentView: UIView {
     @IBOutlet weak var styleBgView: UIView!
     @IBOutlet weak var actionBgView: UIView!
     
-    @IBOutlet weak var constraintactionActionBgViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var constraintActionBgViewHeight: NSLayoutConstraint!
     
-    fileprivate(set) var actions: [BSDialogAction] = []
-    fileprivate(set) var actionButtons: [UIButton] = []
+    fileprivate var actions: [DialogAction] = []
+    fileprivate var actionButtons: [UIButton] = []
     
     lazy var textStyleView: DialogTextStyleView = {
-        let dialog = DialogTextStyleView.instanceFromNib() as! DialogTextStyleView
+        let dialog = DialogTextStyleView.instantiateFromNib() as! DialogTextStyleView
         return dialog
     }()
     
-    lazy var imageStyleFillView: BSDialogImageStyleView = {
-        let dialog = BSDialogImageStyleView.instanceFromNib() as! BSDialogImageStyleView
+    lazy var imageStyleView: DialogImageStyleView = {
+        let dialog = DialogImageStyleView.instantiateFromNib() as! DialogImageStyleView
         return dialog
     }()
     
-    lazy var imageStyleCenterView: DialogImageStyleCenterView = {
-        let dialog = DialogImageStyleCenterView.instanceFromNib() as! DialogImageStyleCenterView
-        return dialog
-    }()
 }
 
 private extension DialogViewContentView {
@@ -52,42 +48,28 @@ private extension DialogViewContentView {
     func setupSubviews() {
         
         switch dialogStyle! {
-        case let .imageCenter(imageUrl, image, title, message):
-            setupImageStyleCenter(imageUrl: imageUrl, image: image, title: title, message: message)
-        case let .imageFill(imageUrl, image, message):
-            setupImageStyleFill(imageUrl: imageUrl, image: image, message: message)
+        case let .image(remoteImage, localImage, message):
+            setupImageStyle(remoteImage: remoteImage, localImage: localImage, message: message)
         case let .text(title, message):
             setupTextStyle(title: title, message: message)
         }
     }
     
-    func setupImageStyleCenter(imageUrl: String?, image: UIImage?, title: String, message: String) {
+    func setupImageStyle(remoteImage: (url: URL, width: CGFloat, height: CGFloat)?, localImage: UIImage?, message: String) {
 
-        if let imgUrl = imageUrl {
-            imageStyleCenterView.imgView.setImage(with: imgUrl)
-        } else if let img = image {
-            imageStyleCenterView.imgView.image = img
+        if let (url, width, height) = remoteImage {
+            imageStyleView.constraintImgViewWidth.constant = width
+            imageStyleView.constraintImgViewHeight.constant = height
+            imageStyleView.imgView.kf.setImage(with: ImageResource(downloadURL: url))
+        } else if let localImage = localImage {
+            imageStyleView.constraintImgViewWidth.constant = localImage.size.width
+            imageStyleView.constraintImgViewHeight.constant = localImage.size.height
+            imageStyleView.imgView.image = localImage
         }
         
-        imageStyleCenterView.titleLabel.text = title
-        imageStyleCenterView.messageLabel.text = message
-        styleBgView.addSubview(imageStyleCenterView)
-        imageStyleCenterView.snp.makeConstraints { (maker) in
-            maker.edges.equalToSuperview()
-        }
-    }
-    
-    func setupImageStyleFill(imageUrl: String?, image: UIImage?, message: String) {
-
-        if let imgUrl = imageUrl {
-            imageStyleFillView.imgView.setImage(with: imgUrl)
-        } else if let img = image {
-            imageStyleFillView.imgView.image = img
-        }
-
-        imageStyleFillView.messageLabel.text = message
-        styleBgView.addSubview(imageStyleFillView)
-        imageStyleFillView.snp.makeConstraints { (maker) in
+        imageStyleView.messageLabel.text = message
+        styleBgView.addSubview(imageStyleView)
+        imageStyleView.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
     }
@@ -106,10 +88,10 @@ private extension DialogViewContentView {
 private extension DialogViewContentView {
     
     func setupSingleAction() {
-        constraintactionActionBgViewHeight.constant = Defaults.singleActionHeight
+        constraintActionBgViewHeight.constant = Defaults.actionHeight
         
         let firstAction = actions.first!
-        let button = newActionButton(BSDialogAction: firstAction)
+        let button = newActionButton(dialogAction: firstAction)
         actionBgView.addSubview(button)
         button.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
@@ -117,25 +99,28 @@ private extension DialogViewContentView {
     }
     
     func setupDoubleAction() {
-        constraintactionActionBgViewHeight.constant = Defaults.singleActionHeight
+        constraintActionBgViewHeight.constant = Defaults.actionHeight
         
         let firstAction = actions.first!
         let lastAction = actions.last!
-        let firstButton = newActionButton(BSDialogAction: firstAction)
+        let firstButton = newActionButton(dialogAction: firstAction)
         actionBgView.addSubview(firstButton)
+        
+        let lastButton = newActionButton(dialogAction: lastAction)
+        actionBgView.addSubview(lastButton)
+        
         firstButton.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
             maker.left.equalToSuperview()
-            maker.width.equalTo(Defaults.contentWidth/2)
+            maker.right.equalTo(lastButton.snp.left)
             maker.bottom.equalToSuperview()
         }
         
-        let lastButton = newActionButton(BSDialogAction: lastAction)
-        actionBgView.addSubview(lastButton)
         lastButton.snp.makeConstraints { (maker) in
             maker.top.equalToSuperview()
+            maker.left.equalTo(firstButton.snp.right)
             maker.right.equalToSuperview()
-            maker.width.equalTo(Defaults.contentWidth/2)
+            maker.width.equalTo(firstButton)
             maker.bottom.equalToSuperview()
         }
         
@@ -150,11 +135,11 @@ private extension DialogViewContentView {
     }
     
     func setupMultiAction() {
-        constraintactionActionBgViewHeight.constant = Defaults.singleActionHeight * CGFloat(actions.count)
+        constraintActionBgViewHeight.constant = Defaults.actionHeight * CGFloat(actions.count)
         
         var lastButton: UIButton?
         for action in actions {
-            let button = newActionButton(BSDialogAction: action)
+            let button = newActionButton(dialogAction: action)
             actionBgView.addSubview(button)
             button.snp.makeConstraints { (maker) in
                 if let lastButton = lastButton {
@@ -164,24 +149,22 @@ private extension DialogViewContentView {
                 }
                 maker.left.equalToSuperview()
                 maker.right.equalToSuperview()
-                maker.height.equalTo(Defaults.singleActionHeight)
+                maker.height.equalTo(Defaults.actionHeight)
             }
             lastButton = button
         }
     }
     
-    func newActionButton(BSDialogAction: BSDialogAction) -> UIButton {
-        let button = UIButton()
-        button.titleLabel?.font = UIFont.sp.mediumSystemFont(size: 18)
-        switch BSDialogAction.style! {
-        case .destructive:
-            button.setTitleColor(UIColor.sp.lightGreen, for: .normal)
+    func newActionButton(dialogAction: DialogAction) -> UIButton {
+        let button = UIButton(type: .system)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        switch dialogAction.style {
         case .default:
-            button.setTitleColor(UIColor.sp.gray, for: .normal)
+            button.setTitleColor(#colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1), for: .normal)
         case let .customColor(hexString):
-            button.setTitleColor(UIColor(hexString: hexString) ?? UIColor.sp.gray, for: .normal)
+            button.setTitleColor(UIColor.bs.color(hexString: hexString) ?? #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1), for: .normal)
         }
-        button.setTitle(BSDialogAction.title, for: .normal)
+        button.setTitle(dialogAction.title, for: .normal)
         button.addTarget(self, action: #selector(handleActionButton(_:)), for: .touchUpInside)
         actionButtons.append(button)
         
@@ -209,13 +192,14 @@ private extension DialogViewContentView {
 
 extension DialogViewContentView {
     
-    func addAction(_ action: BSDialogAction) {
+    func addAction(_ action: DialogAction) {
         
         actions.append(action)
         actionBgView.subviews.forEach {
             $0.removeFromSuperview()
         }
         actionButtons.removeAll(keepingCapacity: false)
+        
         if actions.count == 1 {
             setupSingleAction()
         } else if actions.count == 2 {

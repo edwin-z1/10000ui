@@ -3,7 +3,7 @@
 //  10000ui-swift
 //
 //  Created by 张亚东 on 01/06/2017.
-//  Copyright © 2017 Jumei. All rights reserved.
+//  Copyright © 2017 blurryssky. All rights reserved.
 //
 
 import UIKit

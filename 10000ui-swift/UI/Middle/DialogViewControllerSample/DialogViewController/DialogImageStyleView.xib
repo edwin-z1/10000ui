@@ -11,18 +11,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BSDialogImageStyleView" customModule="_0000ui_swift" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DialogImageStyleView" customModule="_0000ui_swift" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="305" height="230"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refund" translatesAutoresizingMaskIntoConstraints="NO" id="rt5-ya-9eY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bh3" translatesAutoresizingMaskIntoConstraints="NO" id="rt5-ya-9eY">
                     <rect key="frame" x="0.0" y="0.0" width="305" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="305" id="cCH-qJ-XlX"/>
                         <constraint firstAttribute="height" constant="150" id="eGH-Wi-96z"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="押金会立即退回，退款后，您将不能使用" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwP-Zw-geO">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="押金会立即退回，退款后，您将不能使用" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwP-Zw-geO">
                     <rect key="frame" x="25" y="165" width="255" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,7 +43,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constraintImgViewHeight" destination="eGH-Wi-96z" id="3go-97-f7q"/>
-                <outlet property="constraintImgViewWidth" destination="cCH-qJ-XlX" id="Prr-qb-7iS"/>
+                <outlet property="constraintImgViewWidth" destination="cCH-qJ-XlX" id="ihZ-pv-zlF"/>
                 <outlet property="imgView" destination="rt5-ya-9eY" id="VyJ-zg-ZPo"/>
                 <outlet property="messageLabel" destination="cwP-Zw-geO" id="8K6-o6-lBI"/>
             </connections>
@@ -51,6 +51,6 @@
         </view>
     </objects>
     <resources>
-        <image name="refund" width="290" height="150"/>
+        <image name="bh3" width="305" height="190"/>
     </resources>
 </document>

@@ -12,5 +12,7 @@ target '10000ui-swift' do
 
   # CycleThroughView
   pod 'Kingfisher', '~> 3.11.0'
+  # DialogViewController
+  pod 'SnapKit', '~> 3.2.0'
 
 end

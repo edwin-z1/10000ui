@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clipsSubviews="YES" contentMode="scaleToFill" id="vP2-wb-LWN" customClass="DialogViewContentView" customModule="SharePower" customModuleProvider="target">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="vP2-wb-LWN" customClass="DialogViewContentView" customModule="_0000ui_swift" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="412" height="338"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -41,7 +41,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="actionBgView" destination="efX-id-cj6" id="PJv-DL-EB2"/>
-                <outlet property="constraintactionActionBgViewHeight" destination="cBK-iz-uI3" id="zjg-vn-qIX"/>
+                <outlet property="constraintActionBgViewHeight" destination="cBK-iz-uI3" id="N0z-mW-hR4"/>
                 <outlet property="styleBgView" destination="aSf-tl-lp1" id="5ny-pl-Idu"/>
             </connections>
             <point key="canvasLocation" x="52" y="298"/>

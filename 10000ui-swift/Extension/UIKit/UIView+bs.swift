@@ -81,6 +81,14 @@ extension NamespaceBox where Source: UIView {
             return source.frame.size.height
         }
     }
+    
+}
+
+extension UIView {
+    
+    static func instantiateFromNib() -> UIView? {
+        return Bundle.main.loadNibNamed(String(describing: self.self), owner: nil, options: nil)?.first as? UIView
+    }
 }
 
 
