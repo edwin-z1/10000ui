@@ -223,7 +223,7 @@ fileprivate extension CalendarView {
     func updateHeightContinuous() {
         let scrollView = collectionView
         
-        guard scrollView.contentOffset.x < scrollView.contentSize.width,
+        guard scrollView.contentOffset.x < (scrollView.contentSize.width - scrollView.bounds.width),
             scrollView.contentOffset.x > 0 else {
             return
         }
@@ -328,6 +328,7 @@ extension CalendarView: UICollectionViewDelegate {
             scrollDirection = .left
         }
     }
+    
 }
 
 extension CalendarView: UIScrollViewDelegate {

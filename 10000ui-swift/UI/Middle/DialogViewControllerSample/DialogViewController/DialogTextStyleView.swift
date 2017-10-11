@@ -12,5 +12,4 @@ class DialogTextStyleView: UIView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-
 }
