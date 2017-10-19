@@ -10,7 +10,7 @@ import UIKit
 
 class RaceLampViewSampleViewController: UIViewController {
     
-    @IBOutlet weak var scrollingLabelView: BSRaceLampView!
+    @IBOutlet weak var raceLampView: BSRaceLampView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,10 @@ class RaceLampViewSampleViewController: UIViewController {
         if (range.location != NSNotFound) {
             attrString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: range)
         }
-        scrollingLabelView.attributedText = attrString
+        raceLampView.attributedText = attrString
         
-        scrollingLabelView.stayTimeInterval = 1
-        scrollingLabelView.velocity = 150
+        raceLampView.stayTimeInterval = 1
+        raceLampView.velocity = 150
     }
 
 }

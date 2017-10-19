@@ -36,7 +36,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollingLabelView" destination="gi1-2L-cvk" id="Q7Q-8l-0pE"/>
+                        <outlet property="raceLampView" destination="gi1-2L-cvk" id="whr-eR-WsN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
