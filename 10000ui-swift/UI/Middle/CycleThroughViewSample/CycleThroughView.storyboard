@@ -24,14 +24,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4JG-3Y-h4r">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="vy6-sn-gSZ" customClass="CycleThroughView" customModule="_0000ui_swift" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="WPV-Ks-3ni">
-                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WPV-Ks-3ni" id="kvw-kh-w2g">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -50,10 +45,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cycleThroughView" destination="vy6-sn-gSZ" id="51R-zI-7EG"/>
+                        <outlet property="cycleThroughView" destination="TF9-k8-LYE" id="MNd-wM-yhC"/>
+                        <outlet property="tableView" destination="4JG-3Y-h4r" id="7l9-1p-ClB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="TF9-k8-LYE" customClass="CycleThroughView" customModule="_0000ui_swift" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
         </scene>
     </scenes>

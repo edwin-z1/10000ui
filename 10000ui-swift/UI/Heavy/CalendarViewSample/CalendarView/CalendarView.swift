@@ -88,7 +88,7 @@ class CalendarView: UIView {
     
     fileprivate var scrollDirection: UserScrollDirection = .left
     
-    fileprivate var shouldUpdateFrame = true
+    fileprivate var isUserInteracted = false
     
     fileprivate lazy var calendarManager = CalendarManager()
     
@@ -106,13 +106,12 @@ class CalendarView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        guard shouldUpdateFrame == true else {
+        guard isUserInteracted == false else {
             return
         }
         updateFrame()
         scrollToCurrentDisplayingMonth()
     }
-    
 }
 
 extension CalendarView {
@@ -178,7 +177,7 @@ fileprivate extension CalendarView {
         guard let index = optionalIndex else {
            return
         }
-        collectionView.setContentOffset(CGPoint(x: collectionView.bs.width * CGFloat(index), y: 0), animated: false)
+        collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: false)
     }
 }
 
@@ -257,21 +256,21 @@ fileprivate extension CalendarView {
 fileprivate extension CalendarView {
     
     func handlePreviousMonthButton() {
-        shouldUpdateFrame = false
+        isUserInteracted = true
         
         let displayingMonth = currentDisplayingMonth.date.month
         let previousMonth = displayingMonth - 1
-        let index = CGFloat(previousMonth - preference.monthSelectRange.lowerBound)
-        collectionView.setContentOffset(CGPoint(x: collectionView.bs.width * index, y: 0), animated: true)
+        let index = previousMonth - preference.monthSelectRange.lowerBound
+        collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: true)
     }
     
     func handleNextMonthButton() {
-        shouldUpdateFrame = false
+        isUserInteracted = true
         
         let displayingMonth = currentDisplayingMonth.date.month
         let nextMonth = displayingMonth + 1
-        let index = CGFloat(nextMonth - preference.monthSelectRange.lowerBound)
-        collectionView.setContentOffset(CGPoint(x: collectionView.bs.width * index, y: 0), animated: true)
+        let index = nextMonth - preference.monthSelectRange.lowerBound
+        collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: true)
     }
 }
 
@@ -353,7 +352,7 @@ extension CalendarView: UIScrollViewDelegate {
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        shouldUpdateFrame = false
+        isUserInteracted = true
     }
 }
 

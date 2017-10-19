@@ -476,7 +476,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
         
         return headerView;
     } else {
-        return nil;
+        return [UICollectionReusableView new];
     }
 }
 

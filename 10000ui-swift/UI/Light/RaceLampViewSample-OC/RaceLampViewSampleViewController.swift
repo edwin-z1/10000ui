@@ -24,7 +24,8 @@ class RaceLampViewSampleViewController: UIViewController {
         }
         scrollingLabelView.attributedText = attrString
         
-        scrollingLabelView.stayTimeInterval = 2
+        scrollingLabelView.stayTimeInterval = 1
+        scrollingLabelView.velocity = 150
     }
 
 }
