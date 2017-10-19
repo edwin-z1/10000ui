@@ -10,9 +10,9 @@ import UIKit
 
 struct GroupInfo {
     static let sectionTitles = ["Light", "Middle", "Heavy"]
-    static let sectionContents = [["LoadingViewController", "SeparatorLabel", "RaceLampView-OC"],
+    static let sectionContents = [["LoadingViewController", "SeparatorLabel", "RaceLampView(Objective-C)"],
                                   ["DialogViewController", "CircleSlider", "CycleThroughView"],
-                                  ["NumbersView-OC", "CalendarView"]]
+                                  ["NumbersView(Objective-C)", "CalendarView"]]
 }
 
 class TableViewController: UITableViewController, TopBarsAppearanceChangable {
@@ -38,7 +38,7 @@ class TableViewController: UITableViewController, TopBarsAppearanceChangable {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let title = GroupInfo.sectionContents[indexPath.section][indexPath.row].replacingOccurrences(of: "-OC", with: "")
+        let title = GroupInfo.sectionContents[indexPath.section][indexPath.row].replacingOccurrences(of: "(Objective-C)", with: "")
         navigationController?.pushViewController(UIStoryboard(name: title, bundle: nil).instantiateInitialViewController()!, animated: true)
     }
     
