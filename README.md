@@ -10,14 +10,16 @@
 ![RaceLampView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Light/RaceLampView.gif)
 
 # Middle
+## FadingLabel
+![FadingLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/FadingLabel.gif)
 ## DialogViewController
 ![DialogViewController](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Middle/DialogViewController.gif)
-## CircleSlider
-![CircleSlider](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Middle/CircleSlider.gif)
 ## CycleThroughView
 ![CycleThroughView](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Middle/CycleThroughView.gif)
 
 # Heavy
+## CircleSlider
+![CircleSlider](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Heavy/CircleSlider.gif)
 ## NumbersView(Objective-C)
 ![NumbersView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Heavy/NumbersView.gif)
 ## CalendarView
