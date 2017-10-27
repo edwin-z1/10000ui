@@ -11,8 +11,8 @@ import UIKit
 struct GroupInfo {
     static let sectionTitles = ["Light", "Middle", "Heavy"]
     static let sectionContents = [["LoadingViewController", "SeparatorLabel", "RaceLampView(Objective-C)"],
-                                  ["DialogViewController", "CircleSlider", "CycleThroughView"],
-                                  ["NumbersView(Objective-C)", "CalendarView"]]
+                                  ["FadingLabel", "DialogViewController", "CycleThroughView"],
+                                  ["CircleSlider", "NumbersView(Objective-C)", "CalendarView"]]
 }
 
 class TableViewController: UITableViewController, TopBarsAppearanceChangable {

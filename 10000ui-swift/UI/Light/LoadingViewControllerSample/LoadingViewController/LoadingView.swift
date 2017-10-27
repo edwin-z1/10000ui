@@ -75,13 +75,6 @@ class LoadingView: UIView {
     }
 }
 
-fileprivate extension LoadingView {
-    
-    func setup() {
-        layer.addSublayer(indicatorLayer)
-    }
-}
-
 extension LoadingView {
     
     func startAnimation() {
@@ -93,3 +86,11 @@ extension LoadingView {
         indicatorLayer.removeAllAnimations()
     }
 }
+
+fileprivate extension LoadingView {
+    
+    func setup() {
+        layer.addSublayer(indicatorLayer)
+    }
+}
+

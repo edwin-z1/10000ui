@@ -84,6 +84,137 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - Public
+
+- (void)reloadData {
+    
+    if (![self prepareReload]) {
+        return;
+    }
+    
+    [_headerFreezeCollectionView reloadData];
+    [_headerSlideCollectionView reloadData];
+    [_bodyFreezeCollectionView reloadData];
+    [_bodySlideCollectionView reloadData];
+}
+
+- (void)reloadItemsAtIndexPaths:(NSArray<BSIndexPath *> *)indexPaths {
+    
+    
+    NSMutableArray *headerFreezeIndexPaths = [NSMutableArray new];
+    NSMutableArray *headerSlideIndexPaths = [NSMutableArray new];
+    NSMutableArray *freezeIndexPaths = [NSMutableArray new];
+    NSMutableArray *slideIndexPaths = [NSMutableArray new];
+    
+    for (BSIndexPath *indexPath in indexPaths) {
+        //exsit header
+        if (_isFreezeFirstRow) {
+            //if header
+            if (indexPath.row == 0) {
+                
+                //if freeze
+                if (indexPath.column < _columnsToFreeze) {
+                    
+                    [headerFreezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row]];
+                    
+                } else {
+                    
+                    [headerSlideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
+                }
+                //body
+            } else {
+                
+                //if freeze
+                if (indexPath.column < _columnsToFreeze) {
+                    
+                    [freezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row - 1]];
+                } else {
+                    
+                    [slideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row - 1]];
+                }
+            }
+            
+            //body only
+        } else {
+            //if freeze
+            if (indexPath.column < _columnsToFreeze) {
+                
+                [freezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row]];
+            } else {
+                
+                [slideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
+            }
+        }
+    }
+    
+    if (![self prepareReload]) {
+        return;
+    }
+    
+    [_headerFreezeCollectionView reloadItemsAtIndexPaths:headerFreezeIndexPaths];
+    [_headerSlideCollectionView reloadItemsAtIndexPaths:headerSlideIndexPaths];
+    [_bodyFreezeCollectionView reloadItemsAtIndexPaths:freezeIndexPaths];
+    [_bodySlideCollectionView reloadItemsAtIndexPaths:slideIndexPaths];
+}
+
+- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
+    [_headerFreezeCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
+    [_headerSlideCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
+    [_bodyFreezeCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
+    [_bodySlideCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
+}
+
+- (void)registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier {
+    [_headerFreezeCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+    [_headerSlideCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+    [_bodyFreezeCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+    [_bodySlideCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
+}
+
+- (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(BSIndexPath *)indexPath {
+    NSInteger row = 0;
+    NSInteger column = 0;
+    UICollectionView *collectionView = nil;
+    if (_isFreezeFirstRow) {
+        
+        if (indexPath.row < 1) {
+            if (indexPath.column < _columnsToFreeze) {
+                collectionView = _headerFreezeCollectionView;
+                row = indexPath.row;
+                column = indexPath.column;
+                
+            } else {
+                collectionView = _headerSlideCollectionView;
+                row = indexPath.row;
+                column = indexPath.column - _columnsToFreeze;
+            }
+        } else {
+            if (indexPath.column < _columnsToFreeze) {
+                collectionView = _bodyFreezeCollectionView;
+                row = indexPath.row - 1;
+                column = indexPath.column;
+            } else {
+                collectionView = _bodySlideCollectionView;
+                row = indexPath.row - 1;
+                column = indexPath.column - _columnsToFreeze;
+            }
+        }
+        
+    } else {
+        
+        if (indexPath.column < _columnsToFreeze) {
+            collectionView = _bodyFreezeCollectionView;
+            row = indexPath.row;
+            column = indexPath.column;
+        } else {
+            collectionView = _bodySlideCollectionView;
+            row = indexPath.row;
+            column = indexPath.column - _columnsToFreeze;
+        }
+    }
+    return [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:[NSIndexPath indexPathForItem:column inSection:row]];
+}
+
 #pragma mark - Notification
 
 - (void)handleNotification:(NSNotification *)noti {
@@ -571,138 +702,6 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
         _freezeColumnSeparatorLayer.strokeColor = columnSeparatorColor.CGColor;
     }
 }
-
-#pragma mark - Public
-
-- (void)reloadData {
-    
-    if (![self prepareReload]) {
-        return;
-    }
-    
-    [_headerFreezeCollectionView reloadData];
-    [_headerSlideCollectionView reloadData];
-    [_bodyFreezeCollectionView reloadData];
-    [_bodySlideCollectionView reloadData];
-}
-
-- (void)reloadItemsAtIndexPaths:(NSArray<BSIndexPath *> *)indexPaths {
-    
-
-    NSMutableArray *headerFreezeIndexPaths = [NSMutableArray new];
-    NSMutableArray *headerSlideIndexPaths = [NSMutableArray new];
-    NSMutableArray *freezeIndexPaths = [NSMutableArray new];
-    NSMutableArray *slideIndexPaths = [NSMutableArray new];
-    
-    for (BSIndexPath *indexPath in indexPaths) {
-        //exsit header
-        if (_isFreezeFirstRow) {
-            //if header
-            if (indexPath.row == 0) {
-                
-                //if freeze
-                if (indexPath.column < _columnsToFreeze) {
-                    
-                    [headerFreezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row]];
-                    
-                } else {
-                    
-                    [headerSlideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
-                }
-                //body
-            } else {
-                
-                //if freeze
-                if (indexPath.column < _columnsToFreeze) {
-                    
-                    [freezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row - 1]];
-                } else {
-                    
-                    [slideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row - 1]];
-                }
-            }
-            
-            //body only
-        } else {
-            //if freeze
-            if (indexPath.column < _columnsToFreeze) {
-                
-                [freezeIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column inSection:indexPath.row]];
-            } else {
-                
-                [slideIndexPaths addObject:[NSIndexPath indexPathForItem:indexPath.column - _columnsToFreeze inSection:indexPath.row]];
-            }
-        }
-    }
-    
-    if (![self prepareReload]) {
-        return;
-    }
-    
-    [_headerFreezeCollectionView reloadItemsAtIndexPaths:headerFreezeIndexPaths];
-    [_headerSlideCollectionView reloadItemsAtIndexPaths:headerSlideIndexPaths];
-    [_bodyFreezeCollectionView reloadItemsAtIndexPaths:freezeIndexPaths];
-    [_bodySlideCollectionView reloadItemsAtIndexPaths:slideIndexPaths];
-}
-
-- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
-    [_headerFreezeCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
-    [_headerSlideCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
-    [_bodyFreezeCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
-    [_bodySlideCollectionView registerClass:cellClass forCellWithReuseIdentifier:identifier];
-}
-
-- (void)registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier {
-    [_headerFreezeCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
-    [_headerSlideCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
-    [_bodyFreezeCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
-    [_bodySlideCollectionView registerNib:nib forCellWithReuseIdentifier:identifier];
-}
-
-- (UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(BSIndexPath *)indexPath {
-    NSInteger row = 0;
-    NSInteger column = 0;
-    UICollectionView *collectionView = nil;
-    if (_isFreezeFirstRow) {
-        
-        if (indexPath.row < 1) {
-            if (indexPath.column < _columnsToFreeze) {
-                collectionView = _headerFreezeCollectionView;
-                row = indexPath.row;
-                column = indexPath.column;
-                
-            } else {
-                collectionView = _headerSlideCollectionView;
-                row = indexPath.row;
-                column = indexPath.column - _columnsToFreeze;
-            }
-        } else {
-            if (indexPath.column < _columnsToFreeze) {
-                collectionView = _bodyFreezeCollectionView;
-                row = indexPath.row - 1;
-                column = indexPath.column;
-            } else {
-                collectionView = _bodySlideCollectionView;
-                row = indexPath.row - 1;
-                column = indexPath.column - _columnsToFreeze;
-            }
-        }
-        
-    } else {
-        
-        if (indexPath.column < _columnsToFreeze) {
-            collectionView = _bodyFreezeCollectionView;
-            row = indexPath.row;
-            column = indexPath.column;
-        } else {
-            collectionView = _bodySlideCollectionView;
-            row = indexPath.row;
-            column = indexPath.column - _columnsToFreeze;
-        }
-    }
-    return [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:[NSIndexPath indexPathForItem:column inSection:row]];
-}
-
 
 @end
 

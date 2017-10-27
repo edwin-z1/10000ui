@@ -42,6 +42,14 @@ class DialogViewController: PopoverController {
     }
 }
 
+extension DialogViewController {
+    
+    func addAction(_ action: DialogAction) -> DialogViewController {
+        dialogViewContentView.addAction(action)
+        return self
+    }
+}
+
 fileprivate extension DialogViewController {
     
     func setup() {
@@ -65,10 +73,3 @@ fileprivate extension DialogViewController {
     }
 }
 
-extension DialogViewController {
-    
-    func addAction(_ action: DialogAction) -> DialogViewController {
-        dialogViewContentView.addAction(action)
-        return self
-    }
-}

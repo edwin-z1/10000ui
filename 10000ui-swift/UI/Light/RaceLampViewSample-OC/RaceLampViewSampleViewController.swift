@@ -25,7 +25,7 @@ class RaceLampViewSampleViewController: UIViewController {
         raceLampView.attributedText = attrString
         
         raceLampView.stayTimeInterval = 1
-        raceLampView.velocity = 150
+        raceLampView.velocity = 100
     }
 
 }

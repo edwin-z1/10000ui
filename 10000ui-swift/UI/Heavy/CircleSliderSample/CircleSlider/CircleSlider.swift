@@ -210,10 +210,55 @@ class CircleSlider: UIControl {
     }
 }
 
+extension CircleSlider {
+    
+    func setValue(value: CGFloat, animated: Bool) {
+        
+        if animated == false {
+            self.value = value
+            
+        } else {
+            
+            guard isAnimating == false else {
+                return
+            }
+            isAnimating = true
+            
+            let targetValue = min(maximumValue, max(minimumValue, value))
+            
+            let fromFraction = getPinnedFraction(withValue: self.value)
+            let toFraction = getPinnedFraction(withValue: targetValue)
+            
+            strokeEndAnimation.fromValue = fromFraction
+            strokeEndAnimation.toValue = toFraction
+            minimumTrackLayer.add(strokeEndAnimation, forKey: "stroke_end")
+            
+            var path = getCirclePath(fromFraction: fromFraction, toFraction: toFraction)
+            if self.value > targetValue {
+                path = getCirclePath(fromFraction: fromFraction, toFraction: toFraction, clockwise: false)
+            }
+            pathAnimation.path = path.cgPath
+            thumbImgView.layer.add(pathAnimation, forKey: "position")
+        }
+    }
+}
+
 fileprivate extension CircleSlider {
     
     var centerInBounds: CGPoint {
         return CGPoint(x: bounds.width/2, y: bounds.height/2)
+    }
+    
+    var maxRadius: CGFloat {
+        var radius = min(bounds.width, bounds.height)/2
+        
+        if let thumbImage = thumbImage {
+            radius -= max(max(thumbImage.size.width, thumbImage.size.height), lineWidth)/2
+        } else {
+            radius -= lineWidth/2
+        }
+        
+        return radius
     }
     
     func setup(){
@@ -299,51 +344,6 @@ fileprivate extension CircleSlider {
             respondsRadius += min(thumbImage.size.width, thumbImage.size.height)/2
         }
         return dis < respondsRadius
-    }
-}
-
-extension CircleSlider {
-    
-    var maxRadius: CGFloat {
-        var radius = min(bounds.width, bounds.height)/2
-        
-        if let thumbImage = thumbImage {
-            radius -= max(max(thumbImage.size.width, thumbImage.size.height), lineWidth)/2
-        } else {
-            radius -= lineWidth/2
-        }
-        
-        return radius
-    }
-    
-    func setValue(value: CGFloat, animated: Bool) {
-        
-        if animated == false {
-            self.value = value
-            
-        } else {
-            
-            guard isAnimating == false else {
-                return
-            }
-            isAnimating = true
-            
-            let targetValue = min(maximumValue, max(minimumValue, value))
-            
-            let fromFraction = getPinnedFraction(withValue: self.value)
-            let toFraction = getPinnedFraction(withValue: targetValue)
-
-            strokeEndAnimation.fromValue = fromFraction
-            strokeEndAnimation.toValue = toFraction
-            minimumTrackLayer.add(strokeEndAnimation, forKey: "stroke_end")
-            
-            var path = getCirclePath(fromFraction: fromFraction, toFraction: toFraction)
-            if self.value > targetValue {
-                path = getCirclePath(fromFraction: fromFraction, toFraction: toFraction, clockwise: false)
-            }
-            pathAnimation.path = path.cgPath
-            thumbImgView.layer.add(pathAnimation, forKey: "position")
-        }
     }
 }
 
