@@ -11,7 +11,7 @@
 
 # Middle
 ## CircularRevealTransition
-![CircularRevealTransition]https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/CircularRevealTransition.gif
+![CircularRevealTransition](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/CircularRevealTransition.gif)
 ## FadingLabel
 ![FadingLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/FadingLabel.gif)
 ## DialogViewController
