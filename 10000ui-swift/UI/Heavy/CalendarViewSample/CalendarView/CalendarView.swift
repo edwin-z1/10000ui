@@ -162,6 +162,7 @@ fileprivate extension CalendarView {
     
     func setupSubviews() {
  
+        clipsToBounds = true
         addSubview(monthSelectView)
         weekLabels.forEach {
             addSubview($0)

@@ -11,7 +11,7 @@ import UIKit
 struct GroupInfo {
     static let sectionTitles = ["Light", "Middle", "Heavy"]
     static let sectionContents = [["LoadingViewController", "SeparatorLabel", "RaceLampView(Objective-C)"],
-                                  ["FadingLabel", "DialogViewController", "CycleThroughView"],
+                                  ["CircularRevealTransition", "FadingLabel", "DialogViewController", "CycleThroughView"],
                                   ["CircleSlider", "NumbersView(Objective-C)", "CalendarView"]]
 }
 

@@ -15,6 +15,7 @@
 		84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */; };
 		84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0C1F3D4F47008AD0B4 /* LaunchScreen.storyboard */; };
 		84329F3E1F3D54A7008AD0B4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */; };
+		8447F2EE1FB1A40200471BB4 /* UINavigationController+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447F2ED1FB1A40200471BB4 /* UINavigationController+bs.swift */; };
 		8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6231F3D5D9C00781302 /* Adaptable.swift */; };
 		8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6241F3D5D9C00781302 /* Namespace.swift */; };
 		8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6251F3D5D9C00781302 /* TopBarsAppearanceChangable.swift */; };
@@ -27,6 +28,9 @@
 		84656E0A1F8B13C20030D69D /* NumbersViewSampleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84656E091F8B13C20030D69D /* NumbersViewSampleCollectionCell.swift */; };
 		84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84656E0B1F8B1C0D0030D69D /* NSObject+bs.swift */; };
 		84656E151F8B29FB0030D69D /* NSString+BSNumbersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84656E131F8B29FB0030D69D /* NSString+BSNumbersView.m */; };
+		8475033B1FAC5D6A008CFF86 /* LayerPercentDrivenInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475033A1FAC5D6A008CFF86 /* LayerPercentDrivenInteractiveTransition.swift */; };
+		8475033D1FAFFF82008CFF86 /* CircularRevealTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475033C1FAFFF82008CFF86 /* CircularRevealTransitionAnimator.swift */; };
+		8475033F1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8475033E1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift */; };
 		8486B0B91F6FC9E2002C3FE2 /* SeparatorLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B0B01F6FC9E2002C3FE2 /* SeparatorLabel.storyboard */; };
 		8486B0BA1F6FC9E2002C3FE2 /* SeparatorLabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B0B11F6FC9E2002C3FE2 /* SeparatorLabelSampleViewController.swift */; };
 		8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B0B61F6FC9E2002C3FE2 /* CircleSlider.storyboard */; };
@@ -64,6 +68,10 @@
 		84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */; };
 		84B4D4C21F7E3FCB00FC85BE /* CycleThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */; };
 		84B7660A1F7E45460042B682 /* RaceLampViewSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B766091F7E45460042B682 /* RaceLampViewSampleViewController.swift */; };
+		84B8DF821FAAFABC006D3258 /* CircularRevealTransition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B8DF811FAAFABC006D3258 /* CircularRevealTransition.storyboard */; };
+		84B8DF841FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DF831FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift */; };
+		84B8DF871FAAFC40006D3258 /* CircularRevealTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DF861FAAFC40006D3258 /* CircularRevealTransition.swift */; };
+		84B8DF8B1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DF8A1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift */; };
 		84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C387A71F8DCF80009F3076 /* LoadingViewController.storyboard */; };
 		84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AA1F8DCFE3009F3076 /* LoadingView.swift */; };
 		84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */; };
@@ -94,6 +102,7 @@
 		84329F0D1F3D4F47008AD0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84329F0F1F3D4F47008AD0B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8447F2ED1FB1A40200471BB4 /* UINavigationController+bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+bs.swift"; sourceTree = "<group>"; };
 		8457E6231F3D5D9C00781302 /* Adaptable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adaptable.swift; sourceTree = "<group>"; };
 		8457E6241F3D5D9C00781302 /* Namespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
 		8457E6251F3D5D9C00781302 /* TopBarsAppearanceChangable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarsAppearanceChangable.swift; sourceTree = "<group>"; };
@@ -107,6 +116,9 @@
 		84656E0B1F8B1C0D0030D69D /* NSObject+bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+bs.swift"; sourceTree = "<group>"; };
 		84656E131F8B29FB0030D69D /* NSString+BSNumbersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BSNumbersView.m"; sourceTree = "<group>"; };
 		84656E141F8B29FB0030D69D /* NSString+BSNumbersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BSNumbersView.h"; sourceTree = "<group>"; };
+		8475033A1FAC5D6A008CFF86 /* LayerPercentDrivenInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerPercentDrivenInteractiveTransition.swift; sourceTree = "<group>"; };
+		8475033C1FAFFF82008CFF86 /* CircularRevealTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionAnimator.swift; sourceTree = "<group>"; };
+		8475033E1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionInteractiveController.swift; sourceTree = "<group>"; };
 		8486B0B01F6FC9E2002C3FE2 /* SeparatorLabel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SeparatorLabel.storyboard; sourceTree = "<group>"; };
 		8486B0B11F6FC9E2002C3FE2 /* SeparatorLabelSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorLabelSampleViewController.swift; sourceTree = "<group>"; };
 		8486B0B61F6FC9E2002C3FE2 /* CircleSlider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CircleSlider.storyboard; sourceTree = "<group>"; };
@@ -152,6 +164,10 @@
 		84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughCollectionCell.swift; sourceTree = "<group>"; };
 		84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughView.swift; sourceTree = "<group>"; };
 		84B766091F7E45460042B682 /* RaceLampViewSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceLampViewSampleViewController.swift; sourceTree = "<group>"; };
+		84B8DF811FAAFABC006D3258 /* CircularRevealTransition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircularRevealTransition.storyboard; sourceTree = "<group>"; };
+		84B8DF831FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionSampleViewController.swift; sourceTree = "<group>"; };
+		84B8DF861FAAFC40006D3258 /* CircularRevealTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransition.swift; sourceTree = "<group>"; };
+		84B8DF8A1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionSampleViewController2.swift; sourceTree = "<group>"; };
 		84C387A71F8DCF80009F3076 /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
 		84C387AA1F8DCFE3009F3076 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +347,7 @@
 		8486B0B21F6FC9E2002C3FE2 /* Middle */ = {
 			isa = PBXGroup;
 			children = (
+				84B8DF801FAAF998006D3258 /* CircularRevealTransitionSample */,
 				84257A071F99986B00B1A7E5 /* FadingLabelSample */,
 				84C3FCFB1F8CB36C009E24D3 /* DialogViewControllerSample */,
 				8486B18D1F70B5AD002C3FE2 /* CycleThroughViewSample */,
@@ -483,6 +500,29 @@
 			path = CycleThroughView;
 			sourceTree = "<group>";
 		};
+		84B8DF801FAAF998006D3258 /* CircularRevealTransitionSample */ = {
+			isa = PBXGroup;
+			children = (
+				84B8DF851FAAFAD7006D3258 /* CircularRevealTransition */,
+				84B8DF811FAAFABC006D3258 /* CircularRevealTransition.storyboard */,
+				84B8DF831FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift */,
+				84B8DF8A1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift */,
+				8447F2ED1FB1A40200471BB4 /* UINavigationController+bs.swift */,
+			);
+			path = CircularRevealTransitionSample;
+			sourceTree = "<group>";
+		};
+		84B8DF851FAAFAD7006D3258 /* CircularRevealTransition */ = {
+			isa = PBXGroup;
+			children = (
+				84B8DF861FAAFC40006D3258 /* CircularRevealTransition.swift */,
+				8475033C1FAFFF82008CFF86 /* CircularRevealTransitionAnimator.swift */,
+				8475033E1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift */,
+				8475033A1FAC5D6A008CFF86 /* LayerPercentDrivenInteractiveTransition.swift */,
+			);
+			path = CircularRevealTransition;
+			sourceTree = "<group>";
+		};
 		84C387A61F8DCE8A009F3076 /* LoadingViewControllerSample */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8486B19C1F70B5AD002C3FE2 /* 1.jpg in Resources */,
+				84B8DF821FAAFABC006D3258 /* CircularRevealTransition.storyboard in Resources */,
 				8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */,
 				84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */,
 				84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */,
@@ -707,24 +748,30 @@
 				84C3FD0C1F8CB36D009E24D3 /* DialogViewContentView.swift in Sources */,
 				84C3FD071F8CB36D009E24D3 /* DialogAction.swift in Sources */,
 				8486B1311F6FCE73002C3FE2 /* CircleSlider.swift in Sources */,
+				84B8DF841FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift in Sources */,
 				84C3FD0A1F8CB36D009E24D3 /* DialogTextStyleView.swift in Sources */,
 				84C3FD081F8CB36D009E24D3 /* DialogImageStyleView.swift in Sources */,
+				8475033D1FAFFF82008CFF86 /* CircularRevealTransitionAnimator.swift in Sources */,
 				84C3FCC21F8B7DA9009E24D3 /* BSIndexPath.m in Sources */,
 				84329F3E1F3D54A7008AD0B4 /* TableViewController.swift in Sources */,
 				8486B1641F6FCFF1002C3FE2 /* CalendarPreference.swift in Sources */,
 				845CA89D1F453298003594C6 /* CGPoint+bs.swift in Sources */,
+				8475033B1FAC5D6A008CFF86 /* LayerPercentDrivenInteractiveTransition.swift in Sources */,
 				8486B12E1F6FCE6C002C3FE2 /* SeparatorLabel.swift in Sources */,
 				8486B1601F6FCFF1002C3FE2 /* CalendarManager.swift in Sources */,
 				8486B19B1F70B5AD002C3FE2 /* CycleThroughSampleViewController.swift in Sources */,
+				84B8DF8B1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift in Sources */,
 				845CA89F1F453298003594C6 /* UIViewController+bs.swift in Sources */,
 				8486B1621F6FCFF1002C3FE2 /* CalendarMonthCollectionCell.swift in Sources */,
 				8486B1631F6FCFF1002C3FE2 /* CalendarMonthSelectView.swift in Sources */,
+				8447F2EE1FB1A40200471BB4 /* UINavigationController+bs.swift in Sources */,
 				84C3FCFA1F8CAE25009E24D3 /* UIColor+bs.swift in Sources */,
 				8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */,
 				846155611FA039BB006F9BE4 /* FadingLabel.swift in Sources */,
 				84C3FCF81F8C7E41009E24D3 /* PopoverController.swift in Sources */,
 				84C3FD101F8CB36D009E24D3 /* DialogViewControllerSampleViewController.swift in Sources */,
 				8486B1231F6FCCDB002C3FE2 /* BSNumbersView.m in Sources */,
+				84B8DF871FAAFC40006D3258 /* CircularRevealTransition.swift in Sources */,
 				84B7660A1F7E45460042B682 /* RaceLampViewSampleViewController.swift in Sources */,
 				845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */,
 				84C387AF1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift in Sources */,
@@ -735,6 +782,7 @@
 				8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */,
 				84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */,
 				84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */,
+				8475033F1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift in Sources */,
 				84656E081F8B113D0030D69D /* NumbersViewSampleViewController.swift in Sources */,
 				8486B15D1F6FCFF1002C3FE2 /* CalendarDay.swift in Sources */,
 				84C3FD0E1F8CB36D009E24D3 /* DialogViewController.swift in Sources */,
