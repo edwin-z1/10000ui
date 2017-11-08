@@ -17,7 +17,7 @@ class CircularRevealTransitionSampleViewController2: UIViewController {
     fileprivate lazy var pushButton : UIButton = {
         let button = UIButton()
         button.setTitle("Push", for: .normal)
-        button.setTitleColor(UIColor.darkText, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.bounds = CGRect(origin: .zero, size: .init(width: 44, height: 44))
         return button
     }()
@@ -30,7 +30,7 @@ class CircularRevealTransitionSampleViewController2: UIViewController {
         view.layer.insertSublayer(gradientLayer, at: 0)
         
         let randomX = CGFloat(arc4random()%UInt32(view.bounds.width - 40) + 20)
-        let randomY = CGFloat(arc4random()%UInt32(view.bounds.height - 80) + 40)
+        let randomY = CGFloat(arc4random()%UInt32(view.bounds.height - 80 - 64) + 40 + 64)
         pushButton.center = CGPoint(x: randomX, y: randomY)
         pushButton.addTarget(self, action: #selector(handlePushButton(_:)), for: .touchUpInside)
         view.addSubview(pushButton)
