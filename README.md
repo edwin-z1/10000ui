@@ -10,6 +10,8 @@
 ![RaceLampView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Light/RaceLampView.gif)
 
 # Middle
+## CircularRevealTransition
+![CircularRevealTransition]https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/CircularRevealTransition.gif
 ## FadingLabel
 ![FadingLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/FadingLabel.gif)
 ## DialogViewController
