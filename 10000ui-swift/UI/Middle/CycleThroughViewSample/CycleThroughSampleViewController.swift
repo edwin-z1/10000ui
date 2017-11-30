@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let insetsTop: CGFloat = 160
+private let insetsTop: CGFloat = 180
 
 class CycleThroughSampleViewController: UIViewController {
 

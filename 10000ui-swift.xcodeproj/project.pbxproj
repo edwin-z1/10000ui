@@ -72,6 +72,10 @@
 		84B8DF841FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DF831FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift */; };
 		84B8DF871FAAFC40006D3258 /* CircularRevealTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DF861FAAFC40006D3258 /* CircularRevealTransition.swift */; };
 		84B8DF8B1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DF8A1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift */; };
+		84BE367B1FCFA61B005F81D0 /* RectFillLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE367A1FCFA61B005F81D0 /* RectFillLabel.swift */; };
+		84BE367E1FCFA82C005F81D0 /* RectFillLabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE367D1FCFA82C005F81D0 /* RectFillLabelSampleViewController.swift */; };
+		84BE36801FCFA841005F81D0 /* RectFillLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE367F1FCFA841005F81D0 /* RectFillLabel.storyboard */; };
+		84BE36821FCFA9D7005F81D0 /* group_info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BE36811FCFA9D7005F81D0 /* group_info.plist */; };
 		84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C387A71F8DCF80009F3076 /* LoadingViewController.storyboard */; };
 		84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AA1F8DCFE3009F3076 /* LoadingView.swift */; };
 		84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */; };
@@ -168,6 +172,10 @@
 		84B8DF831FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionSampleViewController.swift; sourceTree = "<group>"; };
 		84B8DF861FAAFC40006D3258 /* CircularRevealTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransition.swift; sourceTree = "<group>"; };
 		84B8DF8A1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealTransitionSampleViewController2.swift; sourceTree = "<group>"; };
+		84BE367A1FCFA61B005F81D0 /* RectFillLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectFillLabel.swift; sourceTree = "<group>"; };
+		84BE367D1FCFA82C005F81D0 /* RectFillLabelSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectFillLabelSampleViewController.swift; sourceTree = "<group>"; };
+		84BE367F1FCFA841005F81D0 /* RectFillLabel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RectFillLabel.storyboard; sourceTree = "<group>"; };
+		84BE36811FCFA9D7005F81D0 /* group_info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = group_info.plist; sourceTree = "<group>"; };
 		84C387A71F8DCF80009F3076 /* LoadingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingViewController.storyboard; sourceTree = "<group>"; };
 		84C387AA1F8DCFE3009F3076 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +258,7 @@
 				84329F261F3D50D4008AD0B4 /* UI */,
 				84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */,
 				8486B0C31F6FCAC9002C3FE2 /* 10000ui-swift-Bridging-Header.h */,
+				84BE36811FCFA9D7005F81D0 /* group_info.plist */,
 				84329F0C1F3D4F47008AD0B4 /* LaunchScreen.storyboard */,
 				84329F0F1F3D4F47008AD0B4 /* Info.plist */,
 			);
@@ -327,6 +336,7 @@
 		8486B0AC1F6FC9E2002C3FE2 /* Light */ = {
 			isa = PBXGroup;
 			children = (
+				84BE36791FCFA3B0005F81D0 /* RectFillLabelSample */,
 				84C387A61F8DCE8A009F3076 /* LoadingViewControllerSample */,
 				8486B0AD1F6FC9E2002C3FE2 /* SeparatorLabelSample */,
 				8486B1A01F70B879002C3FE2 /* RaceLampViewSample-OC */,
@@ -523,6 +533,24 @@
 			path = CircularRevealTransition;
 			sourceTree = "<group>";
 		};
+		84BE36791FCFA3B0005F81D0 /* RectFillLabelSample */ = {
+			isa = PBXGroup;
+			children = (
+				84BE367C1FCFA621005F81D0 /* RectFillLabel */,
+				84BE367D1FCFA82C005F81D0 /* RectFillLabelSampleViewController.swift */,
+				84BE367F1FCFA841005F81D0 /* RectFillLabel.storyboard */,
+			);
+			path = RectFillLabelSample;
+			sourceTree = "<group>";
+		};
+		84BE367C1FCFA621005F81D0 /* RectFillLabel */ = {
+			isa = PBXGroup;
+			children = (
+				84BE367A1FCFA61B005F81D0 /* RectFillLabel.swift */,
+			);
+			path = RectFillLabel;
+			sourceTree = "<group>";
+		};
 		84C387A61F8DCE8A009F3076 /* LoadingViewControllerSample */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +691,7 @@
 			files = (
 				8486B19C1F70B5AD002C3FE2 /* 1.jpg in Resources */,
 				84B8DF821FAAFABC006D3258 /* CircularRevealTransition.storyboard in Resources */,
+				84BE36821FCFA9D7005F81D0 /* group_info.plist in Resources */,
 				8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */,
 				84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */,
 				84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */,
@@ -674,6 +703,7 @@
 				84C3FD091F8CB36D009E24D3 /* DialogImageStyleView.xib in Resources */,
 				84C3FD0F1F8CB36D009E24D3 /* DialogViewController.storyboard in Resources */,
 				8486B19D1F70B5AD002C3FE2 /* 2.jpg in Resources */,
+				84BE36801FCFA841005F81D0 /* RectFillLabel.storyboard in Resources */,
 				84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */,
 				8486B19F1F70B5AD002C3FE2 /* 4.jpg in Resources */,
 				84C3FD0D1F8CB36D009E24D3 /* DialogViewContentView.xib in Resources */,
@@ -744,6 +774,7 @@
 				8486B15E1F6FCFF1002C3FE2 /* CalendarDayCollectionCell.swift in Sources */,
 				8486B1611F6FCFF1002C3FE2 /* CalendarMonth.swift in Sources */,
 				84257A0E1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift in Sources */,
+				84BE367E1FCFA82C005F81D0 /* RectFillLabelSampleViewController.swift in Sources */,
 				8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */,
 				8486B1691F6FCFF1002C3FE2 /* CalendarViewSampleViewController.swift in Sources */,
 				84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */,
@@ -780,6 +811,7 @@
 				84B7660A1F7E45460042B682 /* RaceLampViewSampleViewController.swift in Sources */,
 				845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */,
 				84C387AF1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift in Sources */,
+				84BE367B1FCFA61B005F81D0 /* RectFillLabel.swift in Sources */,
 				8486B0BD1F6FC9E2002C3FE2 /* CircleSliderSampleViewController.swift in Sources */,
 				845CA89E1F453298003594C6 /* UIImage+bs.swift in Sources */,
 				84329F041F3D4F47008AD0B4 /* AppDelegate.swift in Sources */,

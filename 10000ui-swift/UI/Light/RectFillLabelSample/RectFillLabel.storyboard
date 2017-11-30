@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JaH-ZT-HAX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rect Fill Label Sample View Controller-->
+        <scene sceneID="O4O-8c-Ru4">
+            <objects>
+                <viewController storyboardIdentifier="RectFillLabelSampleViewController" id="JaH-ZT-HAX" customClass="RectFillLabelSampleViewController" customModule="_0000ui_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aiy-1h-uNP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oHW-s6-EyS">
+                                <rect key="frame" x="22" y="318.5" width="331" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是一段用来测试的文字, 需要稍微长一点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRy-y6-Fqf" customClass="RectFillLabel" customModule="_0000ui_swift" customModuleProvider="target">
+                                <rect key="frame" x="26.5" y="203" width="321" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TRy-y6-Fqf" firstAttribute="centerX" secondItem="aiy-1h-uNP" secondAttribute="centerX" id="8W6-Nn-Db2"/>
+                            <constraint firstItem="oHW-s6-EyS" firstAttribute="leading" secondItem="i4p-8I-aSg" secondAttribute="leading" constant="24" id="MDv-hx-lsF"/>
+                            <constraint firstItem="oHW-s6-EyS" firstAttribute="centerY" secondItem="aiy-1h-uNP" secondAttribute="centerY" id="aNz-8E-BRT"/>
+                            <constraint firstAttribute="trailing" secondItem="oHW-s6-EyS" secondAttribute="trailing" constant="24" id="jhq-41-cD7"/>
+                            <constraint firstAttribute="centerY" secondItem="TRy-y6-Fqf" secondAttribute="centerY" constant="120" id="no7-Qg-zXe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i4p-8I-aSg"/>
+                    </view>
+                    <connections>
+                        <outlet property="rectFillLabel" destination="TRy-y6-Fqf" id="hqb-UF-wK0"/>
+                        <outlet property="slider" destination="oHW-s6-EyS" id="dij-Ih-iJ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDN-mg-TIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="101"/>
+        </scene>
+    </scenes>
+</document>

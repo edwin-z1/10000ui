@@ -98,7 +98,7 @@ static const CGFloat FontSize = 17;
     [_animationView.layer removeAllAnimations];
     
     //
-    CGFloat textWidth = [self correctTextWidth];
+    CGFloat textWidth = [self getCorrectTextWidth];
     CGFloat firstLabelWidth = 0;
     if (textWidth + 5 > _animationView.bounds.size.width) {
         firstLabelWidth = textWidth + _labelSpacing;
@@ -123,7 +123,7 @@ static const CGFloat FontSize = 17;
     _secondLabel.frame = CGRectOffset(_firstLabel.frame, firstLabelWidth, 0);
 }
 
-- (CGFloat)correctTextWidth {
+- (CGFloat)getCorrectTextWidth {
     
     NSAttributedString *aAttributedString = nil;
     if (_attributedText) {
