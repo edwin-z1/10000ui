@@ -1,7 +1,9 @@
 # 10000ui-swift
-一个一个发UI太麻烦了，都集在这里吧
+一个一个发UI太麻烦了，都集在这里吧，以前的仓库的更新都会在这里
 
 # Light
+## RectFillLabel
+![RectFillLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Light/RectFillLabel.gif)
 ## LoadingViewController
 ![LoadingViewController](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Light/LoadingViewController.gif)
 ## SeparatorLabel
