@@ -47,8 +47,8 @@ fileprivate extension CircularRevealTransitionInteractiveController {
         switch gestureRecognizer.state {
         case .began:
             let isInteractive = transitionAnimator.transitionContext?.isInteractive
+            // 防止连续滑动造成nested pop
             guard isInteractive ?? true else {
-                // 防止连续滑动造成nested pop
                 gestureRecognizer.isEnabled = false
                 gestureRecognizer.isEnabled = true
                 interactiveTransition = nil

@@ -29,11 +29,13 @@ class CycleThroughSampleViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableView.insertSubview(cycleThroughView, at: 0)
         tableView.contentInset = UIEdgeInsetsMake(insetsTop, 0, 0, 0)
     }
     
     func setupCycleThroughView() {
+        
+        tableView.insertSubview(cycleThroughView, at: 0)
+        
         cycleThroughView.frame = CGRect(origin: .init(x: 0, y: -insetsTop), size: .init(width: view.bs.width, height: insetsTop))
         
         cycleThroughView.zoomForScrollView = tableView

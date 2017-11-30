@@ -14,9 +14,9 @@ enum FadingType {
 }
 
 enum FadingMode {
-    case order(eachCharacterDuration: CFTimeInterval)
+    case orderly(eachCharacterDuration: CFTimeInterval)
     
-    case random(totalDuration: CFTimeInterval, strategy: FadingMode.RandomStrategy)
+    case randomly(totalDuration: CFTimeInterval, strategy: FadingMode.RandomStrategy)
     enum RandomStrategy {
         /// 每次刷新所有字符, 字符串较长时可能会产生卡顿
         case all
@@ -70,7 +70,7 @@ extension FadingLabel {
         fadingType = type
         fadingMode = mode
         
-        if case let .random(totalDuration, _) = fadingMode! {
+        if case let .randomly(totalDuration, _) = fadingMode! {
             eachCharacterDurations.removeAll()
             (0..<attributedText.length).forEach({ _ in
                 let eachCharacterDuration = randomDoubleDivideBy(double: totalDuration)
@@ -113,9 +113,9 @@ fileprivate extension FadingLabel {
     @objc func handleDisplayLink() {
         
         switch fadingMode! {
-        case let .order(eachCharacterDuration):
+        case let .orderly(eachCharacterDuration):
             handleDisplayLinkFadeModeOrder(eachCharacterDuration: eachCharacterDuration)
-        case let .random(totalDuration, strategy):
+        case let .randomly(totalDuration, strategy):
             switch strategy {
             case .all:
                 handleDisplayLinkFadeModeRandomWithStrategyAll(totalDuration: totalDuration)

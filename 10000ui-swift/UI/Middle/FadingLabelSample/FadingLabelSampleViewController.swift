@@ -38,13 +38,13 @@ class FadingLabelSampleViewController: UIViewController {
         }
         switch touchCount%4 {
         case 0:
-            fadingLabel.fade(mode: .order(eachCharacterDuration: 0.2), type: .in)
+            fadingLabel.fade(mode: .orderly(eachCharacterDuration: 0.2), type: .in)
         case 1:
-            fadingLabel.fade(mode: .order(eachCharacterDuration: 0.2), type: .out)
+            fadingLabel.fade(mode: .orderly(eachCharacterDuration: 0.2), type: .out)
         case 2:
-            fadingLabel.fade(mode: .random(totalDuration: 2.5, strategy: .partly(maxCount: 50)), type: .in)
+            fadingLabel.fade(mode: .randomly(totalDuration: 2.5, strategy: .partly(maxCount: 50)), type: .in)
         case 3:
-            fadingLabel.fade(mode: .random(totalDuration: 2.5, strategy: .partly(maxCount: 50)), type: .out)
+            fadingLabel.fade(mode: .randomly(totalDuration: 2.5, strategy: .partly(maxCount: 50)), type: .out)
         default:
             break
         }

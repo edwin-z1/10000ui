@@ -63,13 +63,15 @@ extension CircularRevealTransitionAnimator: UIViewControllerAnimatedTransitionin
         let containerView = transitionContext.containerView
         let toView = transitionContext.view(forKey: .to)!
         switch operation {
+        case .push:
+            toView.layer.mask = maskLayer
+            containerView.addSubview(toView)
         case .pop:
             let fromView = transitionContext.view(forKey: .from)!
             fromView.layer.mask = maskLayer
             containerView.insertSubview(toView, belowSubview: fromView)
-        default:
-            toView.layer.mask = maskLayer
-            containerView.addSubview(toView)
+        case .none:
+            return
         }
         
         let maskLayerAnimation = CABasicAnimation(keyPath: "path")
