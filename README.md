@@ -1,7 +1,9 @@
 # 10000ui-swift
-一个一个发UI太麻烦了，都集在这里吧，以前的仓库的更新都会在这里
+以前的仓库的更新都会在这里
+用精致的代码制作的一些不常见的，或者常见但是有优化空间的UI
+大部分是swift写的，包含swift的各种技巧和用法
 
-# Light
+# Light 轻量
 ## RectFillLabel
 ![RectFillLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Light/RectFillLabel.gif)
 ## LoadingViewController
@@ -11,7 +13,7 @@
 ## RaceLampView(Objective-C)
 ![RaceLampView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Light/RaceLampView.gif)
 
-# Middle
+# Middle 中等
 ## CircularRevealTransition
 ![CircularRevealTransition](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/CircularRevealTransition.gif)
 ## FadingLabel
@@ -21,7 +23,9 @@
 ## CycleThroughView
 ![CycleThroughView](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Middle/CycleThroughView.gif)
 
-# Heavy
+# Heavy 复杂
+## PetalLayout
+![PetalLayout](https://github.com/blurryssky/10000ui/blob/master/gifs/Heavy/PetalLayout.gif)
 ## CircleSlider
 ![CircleSlider](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Heavy/CircleSlider.gif)
 ## NumbersView(Objective-C)
