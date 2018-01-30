@@ -8,13 +8,13 @@
 
 import UIKit
 
-private let cellName = "NumbersViewSampleCollectionCell"
+fileprivate let cellName = "NumbersViewSampleCollectionCell"
 
 class NumbersViewSampleViewController: UIViewController {
 
     @IBOutlet weak var numbersView: BSNumbersView!
-    var headerTexts = ["Flight Company", "Flight Number", "Type Of Aircraft", "Date", "Place Of Departure", "Place Of Destination", "Departure Time", "Arrive Time", "Price"]
-    var flights: [Flight] = []
+    fileprivate var headerTexts = ["Flight Company", "Flight Number", "Type Of Aircraft", "Date", "Place Of Departure", "Place Of Destination", "Departure Time", "Arrive Time", "Price"]
+    fileprivate var flights: [Flight] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

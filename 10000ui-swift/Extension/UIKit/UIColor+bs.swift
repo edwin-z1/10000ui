@@ -23,10 +23,10 @@ extension NamespaceBox where Source: UIColor {
         }
     }
     
-    static var random: UIColor {
+    static func random(alpha: CGFloat? = 1) -> UIColor {
         let red = CGFloat(arc4random()%255)/255
         let green = CGFloat(arc4random()%255)/255
         let blue = CGFloat(arc4random()%255)/255
-        return UIColor(red: red, green: green, blue: blue, alpha: 1)
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha!)
     }
 }

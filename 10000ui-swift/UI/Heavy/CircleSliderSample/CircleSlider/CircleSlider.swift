@@ -142,6 +142,7 @@ class CircleSlider: UIControl {
         layer.lineWidth = self.lineWidth
         layer.strokeColor = UIColor.black.cgColor
         layer.strokeEnd = 0
+        layer.lineCap = kCALineCapRound
         return layer
     }()
     
@@ -288,7 +289,7 @@ fileprivate extension CircleSlider {
         
         // 设置thumb的位置
         let angle = getAngle(withFraction: fraction)
-        let thumbCenter = centerInBounds.bs.offset(angle: angle, distance: radius)
+        let thumbCenter = centerInBounds.bs.offset(angleFromEastAnticlockwise: angle, distance: radius)
         thumbImgView.center = thumbCenter
 
         CATransaction.begin()
@@ -298,8 +299,8 @@ fileprivate extension CircleSlider {
         
         // 设置渐变色
         let startAngle = startAngleFromNorth - .pi/2 
-        let thumbStartPoint = centerInBounds.bs.offset(angle: startAngle, distance: radius)
-        let symmetryPoint = centerInBounds.bs.offset(angle: (startAngle + .pi).bs.circumPositiveValue, distance: radius)
+        let thumbStartPoint = centerInBounds.bs.offset(angleFromEastAnticlockwise: startAngle, distance: radius)
+        let symmetryPoint = centerInBounds.bs.offset(angleFromEastAnticlockwise: (startAngle + .pi).bs.circumPositiveValue, distance: radius)
         
         let gradientStartPoint = CGPoint(x: thumbStartPoint.x/bounds.width, y: thumbStartPoint.y/bounds.height)
         let gradientEndPoint = CGPoint(x: symmetryPoint.x/bounds.width, y: symmetryPoint.y/bounds.height)

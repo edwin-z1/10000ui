@@ -10,6 +10,10 @@
 		7F735609AFA3A3B9F2D29E8E /* Pods_10000ui_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0A2CDE384FF744D220403E /* Pods_10000ui_swift.framework */; };
 		84257A0E1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */; };
 		84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */; };
+		842EC9C320197DF300C1B69A /* PetalLayoutSampleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EC9BE20197DF200C1B69A /* PetalLayoutSampleCollectionCell.swift */; };
+		842EC9C420197DF300C1B69A /* PetalLayoutSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EC9BF20197DF200C1B69A /* PetalLayoutSampleViewController.swift */; };
+		842EC9C520197DF300C1B69A /* PetalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EC9C120197DF200C1B69A /* PetalLayout.swift */; };
+		842EC9C620197DF300C1B69A /* PetalLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842EC9C220197DF200C1B69A /* PetalLayout.storyboard */; };
 		84329F041F3D4F47008AD0B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F031F3D4F47008AD0B4 /* AppDelegate.swift */; };
 		84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84329F071F3D4F47008AD0B4 /* Main.storyboard */; };
 		84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */; };
@@ -65,6 +69,7 @@
 		8486B19F1F70B5AD002C3FE2 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1971F70B5AD002C3FE2 /* 4.jpg */; };
 		8486B1A71F70B879002C3FE2 /* BSRaceLampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1A31F70B879002C3FE2 /* BSRaceLampView.m */; };
 		8486B1A81F70B879002C3FE2 /* RaceLampView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1A41F70B879002C3FE2 /* RaceLampView.storyboard */; };
+		84B29596201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B29595201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift */; };
 		84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */; };
 		84B4D4C21F7E3FCB00FC85BE /* CycleThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */; };
 		84B7660A1F7E45460042B682 /* RaceLampViewSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B766091F7E45460042B682 /* RaceLampViewSampleViewController.swift */; };
@@ -99,6 +104,10 @@
 		78DEACC071D6AC0C2D52449D /* Pods-10000ui-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10000ui-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLabelSampleViewController.swift; sourceTree = "<group>"; };
 		84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadingLabel.storyboard; sourceTree = "<group>"; };
+		842EC9BE20197DF200C1B69A /* PetalLayoutSampleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetalLayoutSampleCollectionCell.swift; sourceTree = "<group>"; };
+		842EC9BF20197DF200C1B69A /* PetalLayoutSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetalLayoutSampleViewController.swift; sourceTree = "<group>"; };
+		842EC9C120197DF200C1B69A /* PetalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetalLayout.swift; sourceTree = "<group>"; };
+		842EC9C220197DF200C1B69A /* PetalLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PetalLayout.storyboard; sourceTree = "<group>"; };
 		84329F001F3D4F47008AD0B4 /* 10000ui-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10000ui-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84329F031F3D4F47008AD0B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84329F081F3D4F47008AD0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +174,7 @@
 		8486B1A21F70B879002C3FE2 /* BSRaceLampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRaceLampView.h; sourceTree = "<group>"; };
 		8486B1A31F70B879002C3FE2 /* BSRaceLampView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRaceLampView.m; sourceTree = "<group>"; };
 		8486B1A41F70B879002C3FE2 /* RaceLampView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RaceLampView.storyboard; sourceTree = "<group>"; };
+		84B29595201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetalLayoutCircleAttributes.swift; sourceTree = "<group>"; };
 		84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughCollectionCell.swift; sourceTree = "<group>"; };
 		84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughView.swift; sourceTree = "<group>"; };
 		84B766091F7E45460042B682 /* RaceLampViewSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceLampViewSampleViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +236,26 @@
 				846155601FA039BB006F9BE4 /* FadingLabel.swift */,
 			);
 			path = FadingLabel;
+			sourceTree = "<group>";
+		};
+		842EC9BD20197DF200C1B69A /* PetalLayoutSample */ = {
+			isa = PBXGroup;
+			children = (
+				842EC9BE20197DF200C1B69A /* PetalLayoutSampleCollectionCell.swift */,
+				842EC9BF20197DF200C1B69A /* PetalLayoutSampleViewController.swift */,
+				842EC9C020197DF200C1B69A /* PetalLayout */,
+				842EC9C220197DF200C1B69A /* PetalLayout.storyboard */,
+			);
+			path = PetalLayoutSample;
+			sourceTree = "<group>";
+		};
+		842EC9C020197DF200C1B69A /* PetalLayout */ = {
+			isa = PBXGroup;
+			children = (
+				842EC9C120197DF200C1B69A /* PetalLayout.swift */,
+				84B29595201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift */,
+			);
+			path = PetalLayout;
 			sourceTree = "<group>";
 		};
 		84329EF71F3D4F47008AD0B4 = {
@@ -326,6 +356,7 @@
 		8486B0AB1F6FC9E2002C3FE2 /* Heavy */ = {
 			isa = PBXGroup;
 			children = (
+				842EC9BD20197DF200C1B69A /* PetalLayoutSample */,
 				8486B0B31F6FC9E2002C3FE2 /* CircleSliderSample */,
 				8486B14E1F6FCFF1002C3FE2 /* CalendarViewSample */,
 				8486B1091F6FCCDA002C3FE2 /* NumbersViewSample-OC */,
@@ -655,7 +686,7 @@
 				TargetAttributes = {
 					84329EFF1F3D4F47008AD0B4 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = FCG76RJRPL;
+						DevelopmentTeam = J3L3579N4D;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -707,6 +738,7 @@
 				84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */,
 				8486B19F1F70B5AD002C3FE2 /* 4.jpg in Resources */,
 				84C3FD0D1F8CB36D009E24D3 /* DialogViewContentView.xib in Resources */,
+				842EC9C620197DF300C1B69A /* PetalLayout.storyboard in Resources */,
 				8486B1261F6FCCDB002C3FE2 /* flights_info.plist in Resources */,
 				84C3FD0B1F8CB36D009E24D3 /* DialogTextStyleView.xib in Resources */,
 				84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */,
@@ -776,6 +808,7 @@
 				84257A0E1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift in Sources */,
 				84BE367E1FCFA82C005F81D0 /* RectFillLabelSampleViewController.swift in Sources */,
 				8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */,
+				842EC9C420197DF300C1B69A /* PetalLayoutSampleViewController.swift in Sources */,
 				8486B1691F6FCFF1002C3FE2 /* CalendarViewSampleViewController.swift in Sources */,
 				84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */,
 				84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */,
@@ -802,6 +835,7 @@
 				8486B1631F6FCFF1002C3FE2 /* CalendarMonthSelectView.swift in Sources */,
 				8447F2EE1FB1A40200471BB4 /* UINavigationController+bs.swift in Sources */,
 				84C3FCFA1F8CAE25009E24D3 /* UIColor+bs.swift in Sources */,
+				842EC9C520197DF300C1B69A /* PetalLayout.swift in Sources */,
 				8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */,
 				846155611FA039BB006F9BE4 /* FadingLabel.swift in Sources */,
 				84C3FCF81F8C7E41009E24D3 /* PopoverController.swift in Sources */,
@@ -819,9 +853,11 @@
 				8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */,
 				84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */,
 				84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */,
+				842EC9C320197DF300C1B69A /* PetalLayoutSampleCollectionCell.swift in Sources */,
 				8475033F1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift in Sources */,
 				84656E081F8B113D0030D69D /* NumbersViewSampleViewController.swift in Sources */,
 				8486B15D1F6FCFF1002C3FE2 /* CalendarDay.swift in Sources */,
+				84B29596201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift in Sources */,
 				84C3FD0E1F8CB36D009E24D3 /* DialogViewController.swift in Sources */,
 				8486B1271F6FCCDB002C3FE2 /* Flight.m in Sources */,
 				84656E151F8B29FB0030D69D /* NSString+BSNumbersView.m in Sources */,
@@ -968,7 +1004,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = FCG76RJRPL;
+				DEVELOPMENT_TEAM = J3L3579N4D;
 				INFOPLIST_FILE = "10000ui-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -987,7 +1023,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = FCG76RJRPL;
+				DEVELOPMENT_TEAM = J3L3579N4D;
 				INFOPLIST_FILE = "10000ui-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

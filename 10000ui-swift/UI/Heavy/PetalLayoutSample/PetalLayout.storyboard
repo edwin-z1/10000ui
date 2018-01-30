@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dz8-iH-E0H">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Petal Layout Sample View Controller-->
+        <scene sceneID="4FZ-Ba-MC7">
+            <objects>
+                <viewController id="dz8-iH-E0H" customClass="PetalLayoutSampleViewController" customModule="_0000ui_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SLq-mV-sd5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jq5-Sy-mlK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="3gs-bY-tmF" customClass="PetalLayout" customModule="_0000ui_swift" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PetalLayoutSampleCollectionCell" id="X8C-xS-qS8" customClass="PetalLayoutSampleCollectionCell" customModule="_0000ui_swift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dz8-iH-E0H" id="EXm-H7-Gaz"/>
+                                    <outlet property="delegate" destination="dz8-iH-E0H" id="e2a-ao-3tj"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dMK-6L-4Ce" firstAttribute="bottom" secondItem="jq5-Sy-mlK" secondAttribute="bottom" id="1qV-9m-sfM"/>
+                            <constraint firstItem="jq5-Sy-mlK" firstAttribute="leading" secondItem="dMK-6L-4Ce" secondAttribute="leading" id="9iN-ne-m0c"/>
+                            <constraint firstItem="dMK-6L-4Ce" firstAttribute="trailing" secondItem="jq5-Sy-mlK" secondAttribute="trailing" id="ROX-ho-En7"/>
+                            <constraint firstItem="jq5-Sy-mlK" firstAttribute="top" secondItem="dMK-6L-4Ce" secondAttribute="top" id="vSN-7u-yAs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dMK-6L-4Ce"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Kp-de-dt5">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="zVF-VP-Vjb">
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="handleBlackTrashBarButtonItem:" destination="dz8-iH-E0H" id="gWy-QV-DIN"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="C2z-P3-wO6">
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="handleBlackAddBarButtonItem:" destination="dz8-iH-E0H" id="1J3-bQ-lHZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="Qgo-iD-in7">
+                                <color key="tintColor" red="1" green="0.46190188539999999" blue="0.35639309559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="handleRedTrashBarButtonItem:" destination="dz8-iH-E0H" id="arx-ip-Mr7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="RZz-eY-Q9K">
+                                <color key="tintColor" red="1" green="0.46190188541671606" blue="0.35639309556751297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="handleRedAddBarButtonItem:" destination="dz8-iH-E0H" id="5oR-kn-2YE"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="H4i-bb-XPz">
+                                <color key="tintColor" red="0.4645340134" green="0.58498557910000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="handleTrashBarButtonItem:" destination="dz8-iH-E0H" id="wTt-Co-x8V"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="WVy-Et-4C4">
+                                <color key="tintColor" red="0.4645340134" green="0.58498557910000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="handleAddBarButtonItem:" destination="dz8-iH-E0H" id="Z8m-08-sFD"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="blackAddBarButtonItem" destination="C2z-P3-wO6" id="xZo-de-wxt"/>
+                        <outlet property="blackTrashBarButtonItem" destination="zVF-VP-Vjb" id="97D-zC-qOL"/>
+                        <outlet property="collectionView" destination="jq5-Sy-mlK" id="46g-UF-ekh"/>
+                        <outlet property="redTrashBarButtonItem" destination="Qgo-iD-in7" id="GW1-Tb-3if"/>
+                        <outlet property="trashBarButtonItem" destination="H4i-bb-XPz" id="Ttk-vI-DCh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0i3-z6-JyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="196"/>
+        </scene>
+    </scenes>
+</document>

@@ -74,6 +74,6 @@ fileprivate extension CircularRevealTransitionInteractiveController {
         let bounds = navigationController.view.bounds
         let xPercentComplete = fabsf(Float(translation.x/bounds.width))
         let yPercentComplete = fabsf(Float(translation.y/bounds.height))
-        return CGFloat(max(xPercentComplete, yPercentComplete))
+        return CGFloat(max(xPercentComplete, yPercentComplete)) * 1.5
     }
 }

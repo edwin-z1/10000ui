@@ -33,7 +33,7 @@ class LayerPercentDrivenInteractiveTransition: NSObject {
         transitionContext.containerView.layer.timeOffset = pausedTime + timeElapsed
     }
     
-    /* 需要让layer做 reverse动画到起始状态 但是下面的实现方法存在问题 [不能准确的停止在起始状态]
+    /* 需要让layer做 reverse 动画到起始状态 但是下面的实现方法存在问题 [不能准确的停止在起始状态]
      
     func cancel() {
         

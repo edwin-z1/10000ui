@@ -29,7 +29,7 @@ class CircularRevealTransitionSampleViewController: UIViewController, TopBarsApp
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-        gradientLayer.colors = [UIColor.bs.random.cgColor, UIColor.bs.random.cgColor]
+        gradientLayer.colors = [UIColor.bs.random(alpha: 0.5).cgColor, UIColor.bs.random(alpha: 0.5).cgColor]
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     

@@ -18,6 +18,7 @@
 	</array>
 	<key>3.Heavy</key>
 	<array>
+		<string>PetalLayout</string>
 		<string>CircleSlider</string>
 		<string>NumbersView(Objective-C)</string>
 		<string>CalendarView</string>
