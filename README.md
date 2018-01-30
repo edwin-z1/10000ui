@@ -18,15 +18,15 @@
 
 ---
 
-## Light 轻量
+## Simple 轻量
 ### RectFillLabel
-![RectFillLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Light/RectFillLabel.gif)
+![RectFillLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Simple/RectFillLabel.gif)
 ### LoadingViewController
-![LoadingViewController](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Light/LoadingViewController.gif)
+![LoadingViewController](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Simple/LoadingViewController.gif)
 ### SeparatorLabel
-![SeparatorLabel](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Light/SeparatorLabel.png)
+![SeparatorLabel](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Simple/SeparatorLabel.png)
 ### RaceLampView(Objective-C)
-![RaceLampView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Light/RaceLampView.gif)
+![RaceLampView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Simple/RaceLampView.gif)
 
 ---
 
@@ -42,12 +42,12 @@
 
 ---
 
-## Heavy 复杂
+## Complex 复杂
 ### PetalLayout
-![PetalLayout](https://github.com/blurryssky/10000ui/blob/master/gifs/Heavy/PetalLayout.gif)
+![PetalLayout](https://github.com/blurryssky/10000ui/blob/master/gifs/Complex/PetalLayout.gif)
 ### CircleSlider
-![CircleSlider](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Heavy/CircleSlider.gif)
+![CircleSlider](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Complex/CircleSlider.gif)
 ### NumbersView(Objective-C)
-![NumbersView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Heavy/NumbersView.gif)
+![NumbersView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Complex/NumbersView.gif)
 ### CalendarView
-![CalendarView](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Heavy/CalendarView.gif)
+![CalendarView](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Complex/CalendarView.gif)
