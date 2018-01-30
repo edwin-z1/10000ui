@@ -50,6 +50,7 @@ class PetalLayoutSampleViewController: UIViewController {
         items = 0
         layout = collectionView.collectionViewLayout as! PetalLayout
         layout.isAutoFocusEnabled = true
+//        layout.isClockwise = false
     }
 }
 

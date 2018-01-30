@@ -35,14 +35,30 @@ extension NamespaceBox where Source == CGPoint {
         return angle.bs.circumPositiveValue
     }
     
-    func offset(angleFromEastAnticlockwise angle: CGFloat, distance: CGFloat) -> CGPoint {
-        return CGPoint(x: source.x + distance * cos(angle),
-                       y: source.y + distance * sin(angle))
+    func offset(angleFromEast angle: CGFloat, distance: CGFloat, clockwise: Bool = true) -> CGPoint {
+        let offsetX = distance * cos(angle)
+        let offsetY = distance * sin(angle)
+        var y: CGFloat = 0
+        if clockwise {
+            y = source.y + offsetY
+        } else {
+            y = source.y - offsetY
+        }
+        return CGPoint(x: source.x + offsetX,
+                       y: y)
     }
     
-    func offset(angleFromNorth angle: CGFloat, distance: CGFloat) -> CGPoint {
-        return CGPoint(x: source.x + distance * sin(angle),
-                       y: source.y - distance * cos(angle))
+    func offset(angleFromNorth angle: CGFloat, distance: CGFloat, clockwise: Bool = true) -> CGPoint {
+        let offsetX = distance * sin(angle)
+        let offsetY = distance * cos(angle)
+        var x: CGFloat = 0
+        if clockwise {
+            x = source.x + offsetX
+        } else {
+            x = source.x - offsetX
+        }
+        return CGPoint(x: x,
+                       y: source.y - offsetY)
     }
 }
 

@@ -141,7 +141,7 @@ fileprivate extension PetalLayout {
             
             // for every item in a circle
             for itemIndex in 0..<circleAttributes.itemsCount {
-                let center = centerInContentView.bs.offset(angleFromNorth: circleAttributes.angle * CGFloat(itemIndex) + startAngleFromNorth, distance: circleAttributes.radius)
+                let center = centerInContentView.bs.offset(angleFromNorth: circleAttributes.angle * CGFloat(itemIndex) + startAngleFromNorth, distance: circleAttributes.radius, clockwise: isClockwise)
                 
                 let indexPath = IndexPath(item: row, section: 0)
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
