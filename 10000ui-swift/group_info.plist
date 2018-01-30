@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>1.Light</key>
+	<key>1.Simple</key>
 	<array>
 		<string>RectFillLabel</string>
 		<string>LoadingViewController</string>
@@ -16,7 +16,7 @@
 		<string>DialogViewController</string>
 		<string>CycleThroughView</string>
 	</array>
-	<key>3.Heavy</key>
+	<key>3.Complex</key>
 	<array>
 		<string>PetalLayout</string>
 		<string>CircleSlider</string>

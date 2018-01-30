@@ -298,9 +298,9 @@
 		84329F261F3D50D4008AD0B4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8486B0AC1F6FC9E2002C3FE2 /* Light */,
+				8486B0AC1F6FC9E2002C3FE2 /* Simple */,
 				8486B0B21F6FC9E2002C3FE2 /* Middle */,
-				8486B0AB1F6FC9E2002C3FE2 /* Heavy */,
+				8486B0AB1F6FC9E2002C3FE2 /* Complex */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		8486B0AB1F6FC9E2002C3FE2 /* Heavy */ = {
+		8486B0AB1F6FC9E2002C3FE2 /* Complex */ = {
 			isa = PBXGroup;
 			children = (
 				842EC9BD20197DF200C1B69A /* PetalLayoutSample */,
@@ -361,10 +361,10 @@
 				8486B14E1F6FCFF1002C3FE2 /* CalendarViewSample */,
 				8486B1091F6FCCDA002C3FE2 /* NumbersViewSample-OC */,
 			);
-			path = Heavy;
+			path = Complex;
 			sourceTree = "<group>";
 		};
-		8486B0AC1F6FC9E2002C3FE2 /* Light */ = {
+		8486B0AC1F6FC9E2002C3FE2 /* Simple */ = {
 			isa = PBXGroup;
 			children = (
 				84BE36791FCFA3B0005F81D0 /* RectFillLabelSample */,
@@ -372,7 +372,7 @@
 				8486B0AD1F6FC9E2002C3FE2 /* SeparatorLabelSample */,
 				8486B1A01F70B879002C3FE2 /* RaceLampViewSample-OC */,
 			);
-			path = Light;
+			path = Simple;
 			sourceTree = "<group>";
 		};
 		8486B0AD1F6FC9E2002C3FE2 /* SeparatorLabelSample */ = {
