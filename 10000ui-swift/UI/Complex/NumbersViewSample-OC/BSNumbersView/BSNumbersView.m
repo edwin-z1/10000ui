@@ -230,6 +230,7 @@ NSString * const HeaderReuseIdentifer = @"com.blurryssky.numbersview.collectionh
 #pragma mark - Private
 
 - (void)setup {
+
     [self setupVars];
     [self setupViews];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];

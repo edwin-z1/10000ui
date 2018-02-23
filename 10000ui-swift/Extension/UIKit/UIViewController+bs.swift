@@ -14,7 +14,7 @@ fileprivate struct AssociatedObjectKeys {
     static var rightClickHandler = "rightClickHandler"
 }
 
-extension NamespaceBox where Source: UIViewController {
+extension NamespaceBox where T: UIViewController {
     
     func setBackLeftItem(clickHandler:(() -> Void)?) {
         source.leftClickHandler = clickHandler

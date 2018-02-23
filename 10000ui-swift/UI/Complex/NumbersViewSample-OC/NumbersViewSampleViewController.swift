@@ -22,6 +22,8 @@ class NumbersViewSampleViewController: UIViewController {
         let flightsInfo = NSArray.init(contentsOfFile: Bundle.main.path(forResource: "flights_info", ofType: "plist")!) as! [[String:String]]
         flights = flightsInfo.map { Flight(dictionary: $0) }
         
+        
+        
 //        numbersView.columnsToFreeze = 3
         numbersView.itemMaxWidth = 300
         numbersView.itemMinWidth = 100

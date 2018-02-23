@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NamespaceBox where Source: UIColor {
+extension NamespaceBox where T: UIColor {
     
     static func color(hexString: String, alpha: CGFloat = 1.0) -> UIColor? {
         var formatted = hexString.replacingOccurrences(of: "0x", with: "")

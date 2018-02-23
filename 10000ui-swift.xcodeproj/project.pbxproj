@@ -63,10 +63,6 @@
 		8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */; };
 		8486B19A1F70B5AD002C3FE2 /* CycleThroughView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1911F70B5AD002C3FE2 /* CycleThroughView.storyboard */; };
 		8486B19B1F70B5AD002C3FE2 /* CycleThroughSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1921F70B5AD002C3FE2 /* CycleThroughSampleViewController.swift */; };
-		8486B19C1F70B5AD002C3FE2 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1941F70B5AD002C3FE2 /* 1.jpg */; };
-		8486B19D1F70B5AD002C3FE2 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1951F70B5AD002C3FE2 /* 2.jpg */; };
-		8486B19E1F70B5AD002C3FE2 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1961F70B5AD002C3FE2 /* 3.jpg */; };
-		8486B19F1F70B5AD002C3FE2 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1971F70B5AD002C3FE2 /* 4.jpg */; };
 		8486B1A71F70B879002C3FE2 /* BSRaceLampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1A31F70B879002C3FE2 /* BSRaceLampView.m */; };
 		8486B1A81F70B879002C3FE2 /* RaceLampView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1A41F70B879002C3FE2 /* RaceLampView.storyboard */; };
 		84B29596201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B29595201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift */; };
@@ -167,10 +163,6 @@
 		8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+bs.swift"; sourceTree = "<group>"; };
 		8486B1911F70B5AD002C3FE2 /* CycleThroughView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CycleThroughView.storyboard; sourceTree = "<group>"; };
 		8486B1921F70B5AD002C3FE2 /* CycleThroughSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughSampleViewController.swift; sourceTree = "<group>"; };
-		8486B1941F70B5AD002C3FE2 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		8486B1951F70B5AD002C3FE2 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		8486B1961F70B5AD002C3FE2 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		8486B1971F70B5AD002C3FE2 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		8486B1A21F70B879002C3FE2 /* BSRaceLampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRaceLampView.h; sourceTree = "<group>"; };
 		8486B1A31F70B879002C3FE2 /* BSRaceLampView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRaceLampView.m; sourceTree = "<group>"; };
 		8486B1A41F70B879002C3FE2 /* RaceLampView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RaceLampView.storyboard; sourceTree = "<group>"; };
@@ -505,10 +497,6 @@
 		8486B1931F70B5AD002C3FE2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				8486B1941F70B5AD002C3FE2 /* 1.jpg */,
-				8486B1951F70B5AD002C3FE2 /* 2.jpg */,
-				8486B1961F70B5AD002C3FE2 /* 3.jpg */,
-				8486B1971F70B5AD002C3FE2 /* 4.jpg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -720,23 +708,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8486B19C1F70B5AD002C3FE2 /* 1.jpg in Resources */,
 				84B8DF821FAAFABC006D3258 /* CircularRevealTransition.storyboard in Resources */,
 				84BE36821FCFA9D7005F81D0 /* group_info.plist in Resources */,
 				8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */,
 				84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */,
 				84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */,
 				8486B0B91F6FC9E2002C3FE2 /* SeparatorLabel.storyboard in Resources */,
-				8486B19E1F70B5AD002C3FE2 /* 3.jpg in Resources */,
 				84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */,
 				8486B1A81F70B879002C3FE2 /* RaceLampView.storyboard in Resources */,
 				8486B19A1F70B5AD002C3FE2 /* CycleThroughView.storyboard in Resources */,
 				84C3FD091F8CB36D009E24D3 /* DialogImageStyleView.xib in Resources */,
 				84C3FD0F1F8CB36D009E24D3 /* DialogViewController.storyboard in Resources */,
-				8486B19D1F70B5AD002C3FE2 /* 2.jpg in Resources */,
 				84BE36801FCFA841005F81D0 /* RectFillLabel.storyboard in Resources */,
 				84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */,
-				8486B19F1F70B5AD002C3FE2 /* 4.jpg in Resources */,
 				84C3FD0D1F8CB36D009E24D3 /* DialogViewContentView.xib in Resources */,
 				842EC9C620197DF300C1B69A /* PetalLayout.storyboard in Resources */,
 				8486B1261F6FCCDB002C3FE2 /* flights_info.plist in Resources */,
@@ -1012,7 +996,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "10000ui-swift/10000ui-swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1030,7 +1014,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.blurryssky.-0000ui-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "10000ui-swift/10000ui-swift-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

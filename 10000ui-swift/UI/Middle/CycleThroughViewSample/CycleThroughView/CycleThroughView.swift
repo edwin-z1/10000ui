@@ -15,10 +15,14 @@ class CycleThroughView: UIView {
     @objc weak var zoomForScrollView: UIScrollView? {
         didSet {
             if let _ = oldValue {
-                removeObserver(self, forKeyPath: "zoomForScrollView.contentOffset")
+                observation?.invalidate()
             }
-            if let _ = zoomForScrollView {
-                addObserver(self, forKeyPath: "zoomForScrollView.contentOffset", options: .new, context: nil)
+            if let zoomForScrollView = zoomForScrollView {
+                observation = zoomForScrollView.observe(\.contentOffset, options: .new, changeHandler: { [weak self] (_, change) in
+                    if let offset = change.newValue {
+                        self?.handleObserveContentOffset(offset)
+                    }
+                })
             }
         }
     }
@@ -26,7 +30,7 @@ class CycleThroughView: UIView {
     var imageUrlStrings: [String] = [] {
         didSet {
             
-            isUseLocalImage = false
+            isUseImages = false
             
             pageControl.numberOfPages = imageUrlStrings.count
             
@@ -44,7 +48,7 @@ class CycleThroughView: UIView {
             }
             collectionView.reloadData()
             
-            restartTimer()
+            startTimer()
         }
     }
     
@@ -54,7 +58,7 @@ class CycleThroughView: UIView {
     var images: [UIImage] = [] {
         didSet {
             
-            isUseLocalImage = true
+            isUseImages = true
             
             pageControl.numberOfPages = images.count
             
@@ -72,7 +76,7 @@ class CycleThroughView: UIView {
             }
             collectionView.reloadData()
             
-            restartTimer()
+            startTimer()
         }
     }
     
@@ -83,7 +87,8 @@ class CycleThroughView: UIView {
         return UIPageControl()
     }()
     
-    fileprivate var isUseLocalImage = false
+    fileprivate var observation: NSKeyValueObservation?
+    fileprivate var isUseImages = false
     fileprivate var timer: Timer?
     
     fileprivate lazy var flowLayout: UICollectionViewFlowLayout = {
@@ -124,13 +129,25 @@ class CycleThroughView: UIView {
         collectionView.frame = bounds
         pageControl.center = CGPoint(x: bounds.size.width/2, y: bounds.size.height - 12)
     }
+}
+
+extension CycleThroughView {
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        guard keyPath == "zoomForScrollView.contentOffset",
-            let offset = change?[.newKey] as? CGPoint else {
-                return
-        }
-        // avoid cell is covered after zoom
+    func clean() {
+        endTimer()
+        observation?.invalidate()
+    }
+}
+
+fileprivate extension CycleThroughView {
+    
+    func setup() {
+        addSubview(collectionView)
+        addSubview(pageControl)
+    }
+    
+    func handleObserveContentOffset(_ offset: CGPoint) {
+        // avoid central cell is covered by nearby cell after zoom
         let index = Int(collectionView.contentOffset.x/collectionView.bs.width)
         if let cell = collectionView.cellForItem(at: [0, index]) {
             collectionView.bringSubview(toFront: cell)
@@ -146,39 +163,15 @@ class CycleThroughView: UIView {
             bs.origin.y = -insetTop
             bs.height = insetTop
             
-            restartTimer()
+            startTimer()
         }
     }
     
-}
-
-extension CycleThroughView {
-    
-    func clean() {
-        endTimer()
-        if let _ = zoomForScrollView {
-            removeObserver(self, forKeyPath: "zoomForScrollView.contentOffset")
-        }
-    }
-}
-
-fileprivate extension CycleThroughView {
-    
-    func setup() {
-        addSubview(collectionView)
-        addSubview(pageControl)
-    }
-    
-    func restartTimer() {
-
+    func startTimer() {
         let itemsCount = collectionView.numberOfItems(inSection: 0)
-        if itemsCount > 1 {
-            endTimer()
-            
-            if scrollTimeInterval > 0 {
-                timer = Timer.scheduledTimer(timeInterval: scrollTimeInterval, target: self, selector: #selector(handleTimer(timer:)), userInfo: nil, repeats: true)
-            }
-        }
+        guard scrollTimeInterval > 0, itemsCount > 1, timer == nil else { return }
+
+        timer = Timer.scheduledTimer(timeInterval: scrollTimeInterval, target: self, selector: #selector(handleTimer), userInfo: nil, repeats: true)
     }
 
     func endTimer() {
@@ -186,7 +179,7 @@ fileprivate extension CycleThroughView {
         timer = nil
     }
 
-    @objc func handleTimer(timer: Timer) {
+    @objc func handleTimer() {
         let offsetX = collectionView.contentOffset.x
         let width = collectionView.bounds.size.width
         let index = Int(offsetX/width)
@@ -198,7 +191,7 @@ fileprivate extension CycleThroughView {
 extension CycleThroughView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !isUseLocalImage {
+        if !isUseImages {
             return imageUrlStrings.count
         } else {
             return images.count
@@ -207,7 +200,7 @@ extension CycleThroughView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CycleThroughCollectionCell", for: indexPath) as! CycleThroughCollectionCell
-        if !isUseLocalImage {
+        if !isUseImages {
             cell.imageUrlString = imageUrlStrings[indexPath.row]
             cell.placeholderImage = placeholderImage
         } else {
@@ -230,7 +223,7 @@ extension CycleThroughView: UICollectionViewDelegate {
 
 extension CycleThroughView: UIScrollViewDelegate {
     
-    private func adjustImagePosition() {
+    private func adjustCollectionViewContentOffsetX() {
         
         let offsetX = collectionView.contentOffset.x
         let width = collectionView.bounds.size.width
@@ -244,25 +237,7 @@ extension CycleThroughView: UIScrollViewDelegate {
         }
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        endTimer()
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        adjustImagePosition()
-        restartTimer()
-    }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        adjustImagePosition()
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard !pageControl.isHidden else {
-            return
-        }
-        
-        layoutIfNeeded()
+    private func updatePageControl() {
         let offsetX = collectionView.contentOffset.x
         let width = collectionView.bounds.size.width
         let floatIndex = Float(offsetX/width)
@@ -278,6 +253,28 @@ extension CycleThroughView: UIScrollViewDelegate {
         } else if floatIndex <= a {
             pageControl.currentPage = itemsCount - 2
         }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        endTimer()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        adjustCollectionViewContentOffsetX()
+        startTimer()
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        adjustCollectionViewContentOffsetX()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !pageControl.isHidden else {
+            return
+        }
+        
+        layoutIfNeeded()
+        updatePageControl()
     }
 }
 

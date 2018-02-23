@@ -8,11 +8,11 @@
 
 import Foundation
 
-class NamespaceBox<Source> {
+class NamespaceBox<T> {
     
-    var source: Source
+    var source: T
     
-    init(_ source: Source) {
+    init(_ source: T) {
         self.source = source
     }
 }

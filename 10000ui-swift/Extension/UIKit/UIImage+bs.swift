@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NamespaceBox where Source: UIImage {
+extension NamespaceBox where T: UIImage {
     
     static func image(withColor color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage? {
         if size.width <= 0 || size.height <= 0 {

@@ -10,7 +10,7 @@ import CoreGraphics
 
 extension CGFloat: Namespace {}
 
-extension NamespaceBox where Source == CGFloat {
+extension NamespaceBox where T == CGFloat {
     
     var circumPositiveValue: CGFloat {
         var value = source

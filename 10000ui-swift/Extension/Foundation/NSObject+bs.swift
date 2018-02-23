@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NamespaceBox where Source: NSObject {
+extension NamespaceBox where T: NSObject {
     
     var propertyKeys: [String] {
         

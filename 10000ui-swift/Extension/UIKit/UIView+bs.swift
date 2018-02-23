@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension NamespaceBox where Source: UIView {
+extension NamespaceBox where T: UIView {
     
     var origin: CGPoint {
         set {

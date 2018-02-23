@@ -42,13 +42,10 @@ class CycleThroughSampleViewController: UIViewController {
         
         cycleThroughView.scrollTimeInterval = 5
         
-        // set local images
-        var images: [UIImage] = []
-        for i in 1...4 {
-            let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "\(i)", ofType: ".jpg")!)!
-            images.append(image)
-        }
-        cycleThroughView.images = images
+        /* set local images
+        cycleThroughView.images = [#imageLiteral(resourceName: "c_01"), #imageLiteral(resourceName: "c_10"), #imageLiteral(resourceName: "c_13")]
+        cycleThroughView.placeholderImage = nil
+        */
         
         // set image urls
         cycleThroughView.imageUrlStrings = ["http://static.event.mihoyo.com/bh3_homepage/images/pic/picture/15.jpg",
