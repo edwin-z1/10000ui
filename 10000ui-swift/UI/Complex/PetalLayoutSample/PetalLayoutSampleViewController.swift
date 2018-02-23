@@ -13,35 +13,19 @@ fileprivate let reuseIdentifier = "PetalLayoutSampleCollectionCell"
 class PetalLayoutSampleViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var trashBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var redTrashBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var blackTrashBarButtonItem: UIBarButtonItem!
-    @IBOutlet weak var blackAddBarButtonItem: UIBarButtonItem!
+    
+    @IBOutlet var deleteBarButtonItems: [UIBarButtonItem]!
+    @IBOutlet var barButtonItems: [UIBarButtonItem]!
     
     fileprivate var items = 0 {
         didSet {
-            trashBarButtonItem.isEnabled = items != 0
-            redTrashBarButtonItem.isEnabled = items != 0
-            if !isBlackInProgress {
-                blackTrashBarButtonItem.isEnabled = items != 0
-            }
+            let canDelete = isEnable && items != 0
+            deleteBarButtonItems.forEach({ $0.isEnabled = canDelete })
         }
     }
     fileprivate var layout: PetalLayout!
     
-    fileprivate var isBlackInProgress = false {
-        didSet {
-            DispatchQueue.main.async {
-                if self.isBlackInProgress {
-                    self.blackAddBarButtonItem.isEnabled = false
-                    self.blackTrashBarButtonItem.isEnabled = false
-                } else {
-                    self.blackAddBarButtonItem.isEnabled = true
-                    self.blackTrashBarButtonItem.isEnabled = self.items != 0
-                }
-            }
-        }
-    }
+    fileprivate var isEnable = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +39,16 @@ class PetalLayoutSampleViewController: UIViewController {
 }
 
 fileprivate extension PetalLayoutSampleViewController {
+    
+    func enableBarButtonItems() {
+        isEnable = true
+        barButtonItems.forEach({ $0.isEnabled = true })
+    }
+    
+    func disableBarButtonItems() {
+        isEnable = false
+        barButtonItems.forEach({ $0.isEnabled = false })
+    }
     
     @IBAction func handleAddBarButtonItem(_ sender: UIBarButtonItem) {
         
@@ -79,7 +73,7 @@ fileprivate extension PetalLayoutSampleViewController {
     
     @IBAction func handleBlackAddBarButtonItem(_ sender: UIBarButtonItem) {
         
-        isBlackInProgress = true
+        disableBarButtonItems()
         
         let increasement = 6
         
@@ -98,7 +92,9 @@ fileprivate extension PetalLayoutSampleViewController {
                 }
                 semaphore.wait()
             }
-            self.isBlackInProgress = false
+            DispatchQueue.main.async {
+                self.enableBarButtonItems()
+            }
         }
     }
     
@@ -122,8 +118,8 @@ fileprivate extension PetalLayoutSampleViewController {
     }
     
     @IBAction func handleBlackTrashBarButtonItem(_ sender: UIBarButtonItem) {
-        
-        isBlackInProgress = true
+
+        disableBarButtonItems()
         
         let beforeItems = items
         let decreasement = 6
@@ -143,7 +139,10 @@ fileprivate extension PetalLayoutSampleViewController {
                 }
                 semaphore.wait()
             }
-            self.isBlackInProgress = false
+            
+            DispatchQueue.main.async {
+                self.enableBarButtonItems()
+            }
         }
     }
 }

@@ -90,11 +90,16 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="blackAddBarButtonItem" destination="C2z-P3-wO6" id="xZo-de-wxt"/>
-                        <outlet property="blackTrashBarButtonItem" destination="zVF-VP-Vjb" id="97D-zC-qOL"/>
                         <outlet property="collectionView" destination="jq5-Sy-mlK" id="46g-UF-ekh"/>
-                        <outlet property="redTrashBarButtonItem" destination="Qgo-iD-in7" id="GW1-Tb-3if"/>
-                        <outlet property="trashBarButtonItem" destination="H4i-bb-XPz" id="Ttk-vI-DCh"/>
+                        <outletCollection property="barButtonItems" destination="RZz-eY-Q9K" collectionClass="NSMutableArray" id="wXl-gf-ef2"/>
+                        <outletCollection property="barButtonItems" destination="zVF-VP-Vjb" collectionClass="NSMutableArray" id="weD-yS-uG2"/>
+                        <outletCollection property="barButtonItems" destination="C2z-P3-wO6" collectionClass="NSMutableArray" id="8vz-kG-j3v"/>
+                        <outletCollection property="barButtonItems" destination="Qgo-iD-in7" collectionClass="NSMutableArray" id="cl6-F8-HYX"/>
+                        <outletCollection property="barButtonItems" destination="H4i-bb-XPz" collectionClass="NSMutableArray" id="ZLb-qx-QaI"/>
+                        <outletCollection property="barButtonItems" destination="WVy-Et-4C4" collectionClass="NSMutableArray" id="QLd-mX-6HB"/>
+                        <outletCollection property="deleteBarButtonItems" destination="zVF-VP-Vjb" collectionClass="NSMutableArray" id="8Nd-Y5-8gq"/>
+                        <outletCollection property="deleteBarButtonItems" destination="Qgo-iD-in7" collectionClass="NSMutableArray" id="3tJ-rH-gC6"/>
+                        <outletCollection property="deleteBarButtonItems" destination="H4i-bb-XPz" collectionClass="NSMutableArray" id="zTA-Nh-nFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0i3-z6-JyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
