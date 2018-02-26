@@ -41,7 +41,7 @@ extension DynamicGravityTransitionAnimator: UIViewControllerAnimatedTransitionin
         self.dynamicAnimator = dynamicAnimator
         
         let gravity = UIGravityBehavior(items: [toView])
-        gravity.magnitude = 2
+        gravity.magnitude = 3
         dynamicAnimator.addBehavior(gravity)
         
         let collision = UICollisionBehavior(items: [toView])
@@ -51,19 +51,27 @@ extension DynamicGravityTransitionAnimator: UIViewControllerAnimatedTransitionin
     }
     
     func dismissAnimation() {
+        var gravity: UIGravityBehavior?
         var collision: UICollisionBehavior?
         for behavior in dynamicAnimator.behaviors {
+            if behavior is UIGravityBehavior {
+                gravity = behavior as? UIGravityBehavior
+            }
             if behavior is UICollisionBehavior {
                 collision = behavior as? UICollisionBehavior
-                break
             }
         }
-        if let existCollision = collision {
-            existCollision.removeBoundary(withIdentifier: "bottom" as NSCopying)
-            
-            let containerView = transitionContext.containerView
-            existCollision.addBoundary(withIdentifier: "bottom" as NSCopying, from: .init(x: containerView.bs.origin.x, y: containerView.bs.height * 2.5), to: .init(x: containerView.bs.width, y: containerView.bs.height * 2.5))
-        }
+        let existGravity = gravity!
+        let existCollision = collision!
+        
+        existGravity.gravityDirection = .init(dx: 0, dy: -1)
+        existGravity.magnitude = 3
+        existCollision.removeBoundary(withIdentifier: "bottom" as NSCopying)
+        
+        let containerView = transitionContext.containerView
+        existCollision.addBoundary(withIdentifier: "top" as NSCopying, from:
+            .init(x: containerView.bs.origin.x, y: -containerView.bs.height * 1.5), to:
+            .init(x: containerView.bs.width, y: -containerView.bs.height * 1.5))
     }
 }
 
