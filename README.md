@@ -14,7 +14,7 @@
 
 2. 希望能帮助正好需要的同学，或者提供一些灵感
 
-3. 😏炫技，接口尽量简洁，代码尽量优雅，工程里内容丰富；大部分是swift写的，包含swift的各种技巧和用法
+3. 😏炫技，希望可以通过这个工程表达目前的技术。接口简洁，代码优雅，内容丰富；大部分是swift写的，包含swift的各种技巧和用法
 
 ---
 
@@ -31,6 +31,8 @@
 ---
 
 ## Middle 中等
+### PullHeader
+![PullHeader](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/PullHeader.gif)
 ### CircularRevealTransition
 ![CircularRevealTransition](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/CircularRevealTransition.gif)
 ### FadingLabel
