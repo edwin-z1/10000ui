@@ -69,8 +69,12 @@ class PullHeader: NSObject {
 extension PullHeader {
     
     func endRefresh() {
+        let insetTop = scrollViewInsetTop - refreshViewHeight
+        var scrollViewInset = scrollView.contentInset
+        scrollViewInset.top = insetTop
+
         UIView.animate(withDuration: 0.4, delay: 0.25, options: .curveEaseInOut, animations: {
-            self.scrollView.contentInset = .zero
+            self.scrollView.contentInset = scrollViewInset
         })
         state = .resting(fraction: 0)
     }
@@ -82,11 +86,23 @@ extension PullHeader {
 
 fileprivate extension PullHeader {
     
+    var scrollViewInsetTop: CGFloat {
+        return scrollView.contentInset.top
+    }
+    
+    var refreshViewHeight: CGFloat {
+        let refreshView = pullToRefreshView as! UIView
+        return refreshView.bs.height
+    }
+    
     func setup() {
         
         let refreshView = pullToRefreshView as! UIView
         scrollView.addSubview(refreshView)
-        refreshView.frame = .init(origin: .init(x: 0, y: -refreshView.bounds.height), size: .init(width: scrollView.bs.width, height: refreshView.bs.height))
+        
+        let originY = -(refreshViewHeight + scrollViewInsetTop)
+        refreshView.frame = .init(origin: .init(x: 0, y: originY),
+                                  size: .init(width: scrollView.bs.width, height: refreshViewHeight))
         
         observation = scrollView.observe(\.contentOffset, options: .new, changeHandler: { [weak self] (_, change) in
             guard let `self` = self, let offset = change.newValue else {
@@ -106,7 +122,7 @@ fileprivate extension PullHeader {
                 }
             }
             
-            let fraction = -offset.y/refreshView.bs.height
+            let fraction = -(offset.y + self.scrollViewInsetTop)/self.refreshViewHeight
 
             let shouldRefresh = self.pullToRefreshView.shouldRefresh(fraction: fraction)
             if let shouldTransition = self.pullToTransitionViewController?.shouldTransition(fraction: fraction),
@@ -146,14 +162,16 @@ fileprivate extension PullHeader {
     
     func refresh() {
         
-        let refreshView = pullToRefreshView as! UIView
-        let height = refreshView.bs.height
-        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
-            self.scrollView.contentInset = .init(top: height, left: 0, bottom: 0, right: 0)
-            self.scrollView.setContentOffset(.init(x: 0, y: -height), animated: false)
-        })
+        let insetTop = refreshViewHeight + scrollViewInsetTop
+        var scrollViewInset = scrollView.contentInset
+        scrollViewInset.top = insetTop
+        
         state = .refreshing(fraction: 1)
         
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            self.scrollView.contentInset = scrollViewInset
+        })
+
         refreshClosure(self)
     }
     

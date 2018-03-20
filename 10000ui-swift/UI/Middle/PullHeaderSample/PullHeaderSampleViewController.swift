@@ -27,6 +27,8 @@ class PullHeaderSampleViewController: UIViewController {
         
         let pullingTransition = toTransitionViewController as! PullingTransitioning
 
+        scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
+        
         pullHeader = PullHeader(scrollView: scrollView, pullToRefreshView: pullingRefresh, refreshClosure: { header in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 header.endRefresh()

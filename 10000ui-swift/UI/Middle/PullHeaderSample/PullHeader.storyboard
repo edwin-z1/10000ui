@@ -23,12 +23,13 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZt-MQ-cA6">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                        <color key="backgroundColor" red="1" green="0.61159115119999996" blue="0.55804212580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1000" id="XnL-Xt-2If"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wZt-MQ-cA6" secondAttribute="trailing" id="3zW-xA-fl3"/>
                                     <constraint firstItem="wZt-MQ-cA6" firstAttribute="top" secondItem="HfS-pv-NiG" secondAttribute="top" id="B2g-kv-ind"/>
@@ -38,9 +39,8 @@
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pull ↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmJ-BC-zPX">
-                                <rect key="frame" x="164" y="323" width="47" height="21"/>
+                                <rect key="frame" x="164" y="323.5" width="47" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -75,7 +75,7 @@
                             <rect key="frame" x="110" y="25" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>
-                    <color key="backgroundColor" red="0.4645340134" green="0.58498557910000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="OTa-bt-BYv" firstAttribute="centerY" secondItem="PN4-YA-RFd" secondAttribute="centerY" constant="-15" id="TcO-tI-gm7"/>
                         <constraint firstItem="rvc-lL-OZg" firstAttribute="centerY" secondItem="PN4-YA-RFd" secondAttribute="centerY" constant="15" id="dwT-mC-OFj"/>
@@ -99,14 +99,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch screen to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVU-hr-eU6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch screen to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVU-hr-eU6">
                                 <rect key="frame" x="95" y="323" width="184.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.4645340134" green="0.58498557910000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="QVU-hr-eU6" firstAttribute="centerY" secondItem="zVV-Lk-hrd" secondAttribute="centerY" id="1j6-Js-sgJ"/>
                             <constraint firstItem="QVU-hr-eU6" firstAttribute="centerX" secondItem="zVV-Lk-hrd" secondAttribute="centerX" id="2yD-ad-VaH"/>
