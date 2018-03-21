@@ -56,7 +56,7 @@
 ![FadingLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/FadingLabel.gif)
 
 ### DialogViewController
-*模仿微信弹窗*
+*模仿微信弹窗，内容由约束自适应大小*
 
 ![DialogViewController](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Middle/DialogViewController.gif)
 
