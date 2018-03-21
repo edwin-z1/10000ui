@@ -1,5 +1,5 @@
 //
-//  PullHeader.swift
+//  PullingHeader.swift
 //  10000ui-swift
 //
 //  Created by blurryssky on 2018/2/23.
@@ -26,7 +26,7 @@ enum PullingState {
     case transitioning(fraction: CGFloat)
 }
 
-class PullHeader: NSObject {
+class PullingHeader: NSObject {
     
 
     fileprivate(set) var state: PullingState = .resting(fraction: 0) {
@@ -37,17 +37,17 @@ class PullHeader: NSObject {
     
     fileprivate weak var scrollView: UIScrollView!
     fileprivate weak var pullToRefreshView: PullingRefreshing!
-    fileprivate var refreshClosure: ((PullHeader) -> Void)!
+    fileprivate var refreshClosure: ((PullingHeader) -> Void)!
     fileprivate weak var pullToTransitionViewController: PullingTransitioning?
-    fileprivate var transitionClosure: ((PullHeader) -> Void)?
+    fileprivate var transitionClosure: ((PullingHeader) -> Void)?
     
     fileprivate var observation: NSKeyValueObservation!
     
     init(scrollView: UIScrollView!,
          pullToRefreshView toRefresh: PullingRefreshing!,
-         refreshClosure: ((PullHeader) -> Void)!,
+         refreshClosure: ((PullingHeader) -> Void)!,
          pullToTransitionViewController toTransition: PullingTransitioning? = nil,
-         transitionClosure: ((PullHeader) -> Void)? = nil) {
+         transitionClosure: ((PullingHeader) -> Void)? = nil) {
         
         guard toRefresh is UIView else {
             fatalError("pullToRefreshView must be UIView")
@@ -66,7 +66,7 @@ class PullHeader: NSObject {
     }
 }
 
-extension PullHeader {
+extension PullingHeader {
     
     func endRefresh() {
         let insetTop = scrollViewInsetTop - refreshViewHeight
@@ -84,7 +84,7 @@ extension PullHeader {
     }
 }
 
-fileprivate extension PullHeader {
+fileprivate extension PullingHeader {
     
     var scrollViewInsetTop: CGFloat {
         return scrollView.contentInset.top

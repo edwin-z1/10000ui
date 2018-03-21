@@ -40,10 +40,10 @@
 ---
 
 ## Middle 
-### PullHeader
+### PullingHeader
 *可用来实现各种自定义下拉刷新、自定义下拉转场*
 
-![PullHeader](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/PullHeader.gif)
+![PullingHeader](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/PullHeader.gif)
 
 ### CircularRevealTransition
 *关于CoreAnimation和转场*

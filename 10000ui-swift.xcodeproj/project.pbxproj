@@ -10,9 +10,9 @@
 		7F735609AFA3A3B9F2D29E8E /* Pods_10000ui_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0A2CDE384FF744D220403E /* Pods_10000ui_swift.framework */; };
 		84257A0E1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */; };
 		84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */; };
-		8428DD0B204035E9008303C4 /* PullHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428DD0A204035E9008303C4 /* PullHeader.storyboard */; };
-		8428DD0E20403628008303C4 /* PullHeaderSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DD0D20403628008303C4 /* PullHeaderSampleViewController.swift */; };
-		8428DD1020403783008303C4 /* PullHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DD0F20403783008303C4 /* PullHeader.swift */; };
+		8428DD0B204035E9008303C4 /* PullingHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428DD0A204035E9008303C4 /* PullingHeader.storyboard */; };
+		8428DD0E20403628008303C4 /* PullingHeaderSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DD0D20403628008303C4 /* PullingHeaderSampleViewController.swift */; };
+		8428DD1020403783008303C4 /* PullingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DD0F20403783008303C4 /* PullingHeader.swift */; };
 		8428DD1420414FC2008303C4 /* PullToFreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DD1320414FC2008303C4 /* PullToFreshView.swift */; };
 		8428DD1620415097008303C4 /* PullToTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DD1520415097008303C4 /* PullToTransitionViewController.swift */; };
 		8428DD192043B58D008303C4 /* String+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DD182043B58D008303C4 /* String+bs.swift */; };
@@ -107,9 +107,9 @@
 		78DEACC071D6AC0C2D52449D /* Pods-10000ui-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10000ui-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLabelSampleViewController.swift; sourceTree = "<group>"; };
 		84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadingLabel.storyboard; sourceTree = "<group>"; };
-		8428DD0A204035E9008303C4 /* PullHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PullHeader.storyboard; sourceTree = "<group>"; };
-		8428DD0D20403628008303C4 /* PullHeaderSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullHeaderSampleViewController.swift; sourceTree = "<group>"; };
-		8428DD0F20403783008303C4 /* PullHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullHeader.swift; sourceTree = "<group>"; };
+		8428DD0A204035E9008303C4 /* PullingHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PullingHeader.storyboard; sourceTree = "<group>"; };
+		8428DD0D20403628008303C4 /* PullingHeaderSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullingHeaderSampleViewController.swift; sourceTree = "<group>"; };
+		8428DD0F20403783008303C4 /* PullingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullingHeader.swift; sourceTree = "<group>"; };
 		8428DD1320414FC2008303C4 /* PullToFreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToFreshView.swift; sourceTree = "<group>"; };
 		8428DD1520415097008303C4 /* PullToTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToTransitionViewController.swift; sourceTree = "<group>"; };
 		8428DD182043B58D008303C4 /* String+bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+bs.swift"; sourceTree = "<group>"; };
@@ -244,25 +244,25 @@
 			path = FadingLabel;
 			sourceTree = "<group>";
 		};
-		8428DD0920402B5D008303C4 /* PullHeaderSample */ = {
+		8428DD0920402B5D008303C4 /* PullingHeaderSample */ = {
 			isa = PBXGroup;
 			children = (
-				8428DD0C204035EF008303C4 /* PullHeader */,
+				8428DD0C204035EF008303C4 /* PullingHeader */,
 				8428DD1B2043BF37008303C4 /* DynamicGravityTransitionAnimator.swift */,
 				8428DD1320414FC2008303C4 /* PullToFreshView.swift */,
 				8428DD1520415097008303C4 /* PullToTransitionViewController.swift */,
-				8428DD0D20403628008303C4 /* PullHeaderSampleViewController.swift */,
-				8428DD0A204035E9008303C4 /* PullHeader.storyboard */,
+				8428DD0D20403628008303C4 /* PullingHeaderSampleViewController.swift */,
+				8428DD0A204035E9008303C4 /* PullingHeader.storyboard */,
 			);
-			path = PullHeaderSample;
+			path = PullingHeaderSample;
 			sourceTree = "<group>";
 		};
-		8428DD0C204035EF008303C4 /* PullHeader */ = {
+		8428DD0C204035EF008303C4 /* PullingHeader */ = {
 			isa = PBXGroup;
 			children = (
-				8428DD0F20403783008303C4 /* PullHeader.swift */,
+				8428DD0F20403783008303C4 /* PullingHeader.swift */,
 			);
-			path = PullHeader;
+			path = PullingHeader;
 			sourceTree = "<group>";
 		};
 		8428DD172043B554008303C4 /* SwiftFoundation */ = {
@@ -424,7 +424,7 @@
 		8486B0B21F6FC9E2002C3FE2 /* Middle */ = {
 			isa = PBXGroup;
 			children = (
-				8428DD0920402B5D008303C4 /* PullHeaderSample */,
+				8428DD0920402B5D008303C4 /* PullingHeaderSample */,
 				84B8DF801FAAF998006D3258 /* CircularRevealTransitionSample */,
 				84257A071F99986B00B1A7E5 /* FadingLabelSample */,
 				84C3FCFB1F8CB36C009E24D3 /* DialogViewControllerSample */,
@@ -767,7 +767,7 @@
 				84BE36801FCFA841005F81D0 /* RectFillLabel.storyboard in Resources */,
 				84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */,
 				84C3FD0D1F8CB36D009E24D3 /* DialogViewContentView.xib in Resources */,
-				8428DD0B204035E9008303C4 /* PullHeader.storyboard in Resources */,
+				8428DD0B204035E9008303C4 /* PullingHeader.storyboard in Resources */,
 				842EC9C620197DF300C1B69A /* PetalLayout.storyboard in Resources */,
 				8486B1261F6FCCDB002C3FE2 /* flights_info.plist in Resources */,
 				84C3FD0B1F8CB36D009E24D3 /* DialogTextStyleView.xib in Resources */,
@@ -858,7 +858,7 @@
 				8486B1641F6FCFF1002C3FE2 /* CalendarPreference.swift in Sources */,
 				845CA89D1F453298003594C6 /* CGPoint+bs.swift in Sources */,
 				8428DD1620415097008303C4 /* PullToTransitionViewController.swift in Sources */,
-				8428DD0E20403628008303C4 /* PullHeaderSampleViewController.swift in Sources */,
+				8428DD0E20403628008303C4 /* PullingHeaderSampleViewController.swift in Sources */,
 				8475033B1FAC5D6A008CFF86 /* LayerPercentDrivenInteractiveTransition.swift in Sources */,
 				8486B12E1F6FCE6C002C3FE2 /* SeparatorLabel.swift in Sources */,
 				8486B1601F6FCFF1002C3FE2 /* CalendarManager.swift in Sources */,
@@ -889,7 +889,7 @@
 				84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */,
 				84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */,
 				842EC9C320197DF300C1B69A /* PetalLayoutSampleCollectionCell.swift in Sources */,
-				8428DD1020403783008303C4 /* PullHeader.swift in Sources */,
+				8428DD1020403783008303C4 /* PullingHeader.swift in Sources */,
 				8475033F1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift in Sources */,
 				84656E081F8B113D0030D69D /* NumbersViewSampleViewController.swift in Sources */,
 				8486B15D1F6FCFF1002C3FE2 /* CalendarDay.swift in Sources */,

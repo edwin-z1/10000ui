@@ -11,7 +11,7 @@
 	</array>
 	<key>2.Middle</key>
 	<array>
-		<string>PullHeader</string>
+		<string>PullingHeader</string>
 		<string>CircularRevealTransition</string>
 		<string>FadingLabel</string>
 		<string>DialogViewController</string>

@@ -1,5 +1,5 @@
 //
-//  PullHeaderSampleViewController.swift
+//  PullingHeaderSampleViewController.swift
 //  10000ui-swift
 //
 //  Created by blurryssky on 2018/2/23.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PullHeaderSampleViewController: UIViewController {
+class PullingHeaderSampleViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var pullToRefreshView: PullToFreshView!
     
-    private var pullHeader: PullHeader!
+    private var pullingHeader: PullingHeader!
     fileprivate lazy var animator = DynamicGravityTransitionAnimator()
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class PullHeaderSampleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let pullingRefresh = pullToRefreshView as PullingRefreshing
-        let toTransitionViewController = "PullToTransitionViewController".bs.instantiateViewController(fromStoryboardName: "PullHeader")
+        let toTransitionViewController = "PullToTransitionViewController".bs.instantiateViewController(fromStoryboardName: "PullingHeader")
         toTransitionViewController.transitioningDelegate = self
         toTransitionViewController.modalPresentationStyle = .custom
         
@@ -29,7 +29,7 @@ class PullHeaderSampleViewController: UIViewController {
 
         scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
         
-        pullHeader = PullHeader(scrollView: scrollView, pullToRefreshView: pullingRefresh, refreshClosure: { header in
+        pullingHeader = PullingHeader(scrollView: scrollView, pullToRefreshView: pullingRefresh, refreshClosure: { header in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 header.endRefresh()
             })
@@ -41,7 +41,7 @@ class PullHeaderSampleViewController: UIViewController {
     }
 }
 
-extension PullHeaderSampleViewController: UIViewControllerTransitioningDelegate {
+extension PullingHeaderSampleViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animator.isPresent = true
