@@ -23,10 +23,12 @@
 ## Simple 
 ### RectFillLabel
 *歌词填充效果*
+
 ![RectFillLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Simple/RectFillLabel.gif)
 
 ### LoadingViewController
 *动画来源知乎、twitter等*
+
 ![LoadingViewController](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Simple/LoadingViewController.gif)
 
 ### SeparatorLabel
@@ -40,22 +42,27 @@
 ## Middle 
 ### PullHeader
 *可用来实现各种自定义下拉刷新、自定义下拉转场*
+
 ![PullHeader](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/PullHeader.gif)
 
 ### CircularRevealTransition
 *关于CoreAnimation和转场*
+
 ![CircularRevealTransition](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/CircularRevealTransition.gif)
 
 ### FadingLabel
 *模仿开眼app的文字介绍效果*
+
 ![FadingLabel](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/FadingLabel.gif)
 
 ### DialogViewController
 *模仿微信弹窗*
+
 ![DialogViewController](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Middle/DialogViewController.gif)
 
 ### CycleThroughView
 *太常见了，但我相信这是最简洁的版本*
+
 ![CycleThroughView](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Middle/CycleThroughView.gif)
 
 ---
@@ -66,12 +73,15 @@
 
 ### CircleSlider
 *多功能弧形进度条*
+
 ![CircleSlider](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Complex/CircleSlider.gif)
 
 ### NumbersView(Objective-C)
 *像用UICollectionView一样用表格*
+
 ![NumbersView(Objective-C)](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Complex/NumbersView.gif)
 
 ### CalendarView
 *高度可以随每月天数自动改变的日历*
+
 ![CalendarView](https://github.com/blurryssky/10000ui-swift/blob/master/gifs/Complex/CalendarView.gif)
