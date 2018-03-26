@@ -13,9 +13,13 @@ protocol PullingRefreshing: NSObjectProtocol {
     func stateDidUpdate(_ state: PullingState)
 }
 
+typealias PullingRefreshingView = PullingRefreshing & UIView
+
 protocol PullingTransitioning: NSObjectProtocol {
     func shouldTransition(fraction: CGFloat) -> Bool
 }
+
+typealias PullingTransitioningViewController = PullingTransitioning & UIViewController
 
 enum PullingState {
     case resting(fraction: CGFloat)
@@ -36,25 +40,18 @@ class PullingHeader: NSObject {
     }
     
     fileprivate weak var scrollView: UIScrollView!
-    fileprivate weak var pullToRefreshView: PullingRefreshing!
+    fileprivate weak var pullToRefreshView: PullingRefreshingView!
     fileprivate var refreshClosure: ((PullingHeader) -> Void)!
-    fileprivate weak var pullToTransitionViewController: PullingTransitioning?
+    fileprivate weak var pullToTransitionViewController: PullingTransitioningViewController?
     fileprivate var transitionClosure: ((PullingHeader) -> Void)?
     
     fileprivate var observation: NSKeyValueObservation!
     
     init(scrollView: UIScrollView!,
-         pullToRefreshView toRefresh: PullingRefreshing!,
+         pullToRefreshView toRefresh: PullingRefreshingView!,
          refreshClosure: ((PullingHeader) -> Void)!,
-         pullToTransitionViewController toTransition: PullingTransitioning? = nil,
+         pullToTransitionViewController toTransition: PullingTransitioningViewController? = nil,
          transitionClosure: ((PullingHeader) -> Void)? = nil) {
-        
-        guard toRefresh is UIView else {
-            fatalError("pullToRefreshView must be UIView")
-        }
-        if let toTransition = toTransition, !(toTransition is UIViewController) {
-            fatalError("transitionToViewController must be UIViewController")
-        }
         
         self.scrollView = scrollView
         self.pullToRefreshView = toRefresh
@@ -91,17 +88,15 @@ fileprivate extension PullingHeader {
     }
     
     var refreshViewHeight: CGFloat {
-        let refreshView = pullToRefreshView as! UIView
-        return refreshView.bs.height
+        return pullToRefreshView.bounds.height
     }
     
     func setup() {
         
-        let refreshView = pullToRefreshView as! UIView
-        scrollView.addSubview(refreshView)
+        scrollView.addSubview(pullToRefreshView)
         
         let originY = -(refreshViewHeight + scrollViewInsetTop)
-        refreshView.frame = .init(origin: .init(x: 0, y: originY),
+        pullToRefreshView.frame = .init(origin: .init(x: 0, y: originY),
                                   size: .init(width: scrollView.bs.width, height: refreshViewHeight))
         
         observation = scrollView.observe(\.contentOffset, options: .new, changeHandler: { [weak self] (_, change) in

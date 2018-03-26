@@ -20,20 +20,20 @@ class PullingHeaderSampleViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let pullingRefresh = pullToRefreshView as PullingRefreshing
+        let pullingRefreshView = pullToRefreshView as PullingRefreshingView
         let toTransitionViewController = "PullToTransitionViewController".bs.instantiateViewController(fromStoryboardName: "PullingHeader")
         toTransitionViewController.transitioningDelegate = self
         toTransitionViewController.modalPresentationStyle = .custom
         
-        let pullingTransition = toTransitionViewController as! PullingTransitioning
+        let pullingTransitionViewController = toTransitionViewController as! PullingTransitioningViewController
 
         scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
         
-        pullingHeader = PullingHeader(scrollView: scrollView, pullToRefreshView: pullingRefresh, refreshClosure: { header in
+        pullingHeader = PullingHeader(scrollView: scrollView, pullToRefreshView: pullingRefreshView, refreshClosure: { header in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 header.endRefresh()
             })
-        }, pullToTransitionViewController: pullingTransition, transitionClosure: { [weak self] header in
+        }, pullToTransitionViewController: pullingTransitionViewController, transitionClosure: { [weak self] header in
             self?.present(toTransitionViewController, animated: true, completion: {
                 header.endTransition()
             })
