@@ -1,18 +1,25 @@
 PODS:
   - DateToolsSwift (2.0.3)
   - Kingfisher (3.11.0)
+  - RxCocoa (4.1.1):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.1)
   - SnapKit (3.2.0)
 
 DEPENDENCIES:
   - DateToolsSwift (= 2.0.3)
   - Kingfisher (~> 3.11.0)
+  - RxCocoa (= 4.1.1)
+  - RxSwift (= 4.1.1)
   - SnapKit (~> 3.2.0)
 
 SPEC CHECKSUMS:
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
+  RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
+  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 90c961f0f5f76a7792404380fe73b5be3faaa06a
+PODFILE CHECKSUM: 5597e6eeae0ce85d48e502665b4ff2d50188b14c
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0

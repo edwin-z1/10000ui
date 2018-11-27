@@ -75,3 +75,10 @@ fileprivate extension UIViewController {
         rightClickHandler?()
     }
 }
+
+extension NamespaceBox where T: UIViewController {
+    
+    static func instantiateFromStoryboard(name: String, bundle: Bundle? = nil, identifier: String = T.bs.string) -> T {
+        return UIStoryboard(name: name, bundle: bundle).instantiateViewController(withIdentifier: identifier) as! T
+    }
+}

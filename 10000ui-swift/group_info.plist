@@ -11,6 +11,7 @@
 	</array>
 	<key>2.Middle</key>
 	<array>
+		<string>SlideMenu</string>
 		<string>AnimationSlider</string>
 		<string>PullingHeader</string>
 		<string>CircularRevealTransition</string>

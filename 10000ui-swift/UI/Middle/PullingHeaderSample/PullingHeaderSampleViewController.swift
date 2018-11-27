@@ -21,7 +21,8 @@ class PullingHeaderSampleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let pullingRefreshView = pullToRefreshView as PullingRefreshingView
-        let toTransitionViewController = "PullToTransitionViewController".bs.instantiateViewController(fromStoryboardName: "PullingHeader")
+        
+        let toTransitionViewController = PullToTransitionViewController.bs.instantiateFromStoryboard(name: "PullingHeader")
         toTransitionViewController.transitioningDelegate = self
         toTransitionViewController.modalPresentationStyle = .custom
         

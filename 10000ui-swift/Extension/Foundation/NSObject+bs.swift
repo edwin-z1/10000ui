@@ -15,7 +15,7 @@ extension NamespaceBox where T: NSObject {
         var outCount: UInt32 = 0
         let properties = class_copyPropertyList(type(of: source), &outCount)!
         
-        return (0...(outCount-1)).flatMap {
+        return (0...(outCount-1)).compactMap {
             let p = properties[Int($0)]
             let key = String(cString: property_getName(p))
             return key
@@ -27,11 +27,16 @@ extension NamespaceBox where T: NSObject {
         var outCount: UInt32 = 0
         let properties = class_copyPropertyList(type(of: source), &outCount)!
         
-        return (0...(outCount-1)).flatMap {
+        return (0...(outCount-1)).compactMap {
             let p = properties[Int($0)]
             let key = String(cString: property_getName(p))
             let value = source.value(forKey: key) as? String
             return value
         }
     }
+    
+    static var string: String {
+        return String(describing: T.self)
+    }
+    
 }

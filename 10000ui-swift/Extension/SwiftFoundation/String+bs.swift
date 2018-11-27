@@ -11,7 +11,5 @@ import Foundation
 extension String: Namespace {}
 
 extension NamespaceBox where T == String {
-    func instantiateViewController(fromStoryboardName name: String? = "Main", bundle: Bundle? = nil) -> UIViewController {
-        return UIStoryboard(name: name!, bundle: bundle).instantiateViewController(withIdentifier: source)
-    }
+
 }

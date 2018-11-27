@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		7F735609AFA3A3B9F2D29E8E /* Pods_10000ui_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0A2CDE384FF744D220403E /* Pods_10000ui_swift.framework */; };
 		8410091421ACE8A700BAA7DF /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091321ACE8A700BAA7DF /* PopoverViewController.swift */; };
+		8410091721ACF62D00BAA7DF /* SlideMenuSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091621ACF62D00BAA7DF /* SlideMenuSampleViewController.swift */; };
+		8410091921ACF65500BAA7DF /* SlideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8410091821ACF65500BAA7DF /* SlideMenu.storyboard */; };
+		8410091F21ACF91200BAA7DF /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091B21ACF91200BAA7DF /* SlideMenuViewController.swift */; };
+		8410092021ACF91200BAA7DF /* SlideCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091C21ACF91200BAA7DF /* SlideCollectionCell.swift */; };
+		8410092121ACF91200BAA7DF /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091D21ACF91200BAA7DF /* MenuCollectionCell.swift */; };
+		8410092221ACF91200BAA7DF /* SlideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8410091E21ACF91200BAA7DF /* SlideMenuViewController.storyboard */; };
 		84257A0E1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */; };
 		84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */; };
 		8428DD0B204035E9008303C4 /* PullingHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428DD0A204035E9008303C4 /* PullingHeader.storyboard */; };
@@ -109,6 +115,12 @@
 /* Begin PBXFileReference section */
 		78DEACC071D6AC0C2D52449D /* Pods-10000ui-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10000ui-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		8410091321ACE8A700BAA7DF /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		8410091621ACF62D00BAA7DF /* SlideMenuSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuSampleViewController.swift; sourceTree = "<group>"; };
+		8410091821ACF65500BAA7DF /* SlideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlideMenu.storyboard; sourceTree = "<group>"; };
+		8410091B21ACF91200BAA7DF /* SlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
+		8410091C21ACF91200BAA7DF /* SlideCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCollectionCell.swift; sourceTree = "<group>"; };
+		8410091D21ACF91200BAA7DF /* MenuCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
+		8410091E21ACF91200BAA7DF /* SlideMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenuViewController.storyboard; sourceTree = "<group>"; };
 		84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLabelSampleViewController.swift; sourceTree = "<group>"; };
 		84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadingLabel.storyboard; sourceTree = "<group>"; };
 		8428DD0A204035E9008303C4 /* PullingHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PullingHeader.storyboard; sourceTree = "<group>"; };
@@ -232,6 +244,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8410091521ACF5F700BAA7DF /* SlideMenuViewControllerSample */ = {
+			isa = PBXGroup;
+			children = (
+				8410091A21ACF91200BAA7DF /* SlideMenuViewController */,
+				8410091621ACF62D00BAA7DF /* SlideMenuSampleViewController.swift */,
+				8410091821ACF65500BAA7DF /* SlideMenu.storyboard */,
+			);
+			path = SlideMenuViewControllerSample;
+			sourceTree = "<group>";
+		};
+		8410091A21ACF91200BAA7DF /* SlideMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8410091B21ACF91200BAA7DF /* SlideMenuViewController.swift */,
+				8410091C21ACF91200BAA7DF /* SlideCollectionCell.swift */,
+				8410091D21ACF91200BAA7DF /* MenuCollectionCell.swift */,
+				8410091E21ACF91200BAA7DF /* SlideMenuViewController.storyboard */,
+			);
+			path = SlideMenuViewController;
+			sourceTree = "<group>";
+		};
 		84257A071F99986B00B1A7E5 /* FadingLabelSample */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +481,7 @@
 		8486B0B21F6FC9E2002C3FE2 /* Middle */ = {
 			isa = PBXGroup;
 			children = (
+				8410091521ACF5F700BAA7DF /* SlideMenuViewControllerSample */,
 				84450242209875510072DD5E /* AnimationSliderSample */,
 				8428DD0920402B5D008303C4 /* PullingHeaderSample */,
 				84B8DF801FAAF998006D3258 /* CircularRevealTransitionSample */,
@@ -783,6 +817,7 @@
 				8486B0BC1F6FC9E2002C3FE2 /* CircleSlider.storyboard in Resources */,
 				84C387A81F8DCF80009F3076 /* LoadingViewController.storyboard in Resources */,
 				84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */,
+				8410092221ACF91200BAA7DF /* SlideMenuViewController.storyboard in Resources */,
 				8486B0B91F6FC9E2002C3FE2 /* SeparatorLabel.storyboard in Resources */,
 				84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */,
 				8486B1A81F70B879002C3FE2 /* RaceLampView.storyboard in Resources */,
@@ -800,6 +835,7 @@
 				84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */,
 				8486B1281F6FCCDB002C3FE2 /* NumbersView.storyboard in Resources */,
 				8486B12B1F6FCCDB002C3FE2 /* NumbersViewSampleCollectionCell.xib in Resources */,
+				8410091921ACF65500BAA7DF /* SlideMenu.storyboard in Resources */,
 				8486B1681F6FCFF1002C3FE2 /* CalendarView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -828,9 +864,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -843,13 +890,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-10000ui-swift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -869,12 +919,14 @@
 				8410091421ACE8A700BAA7DF /* PopoverViewController.swift in Sources */,
 				8486B1691F6FCFF1002C3FE2 /* CalendarViewSampleViewController.swift in Sources */,
 				8428DD1C2043BF37008303C4 /* DynamicGravityTransitionAnimator.swift in Sources */,
+				8410091F21ACF91200BAA7DF /* SlideMenuViewController.swift in Sources */,
 				84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */,
 				84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */,
 				8486B15F1F6FCFF1002C3FE2 /* CalendarDayCollectionReusableHeaderView.swift in Sources */,
 				84656E0A1F8B13C20030D69D /* NumbersViewSampleCollectionCell.swift in Sources */,
 				84C3FD0C1F8CB36D009E24D3 /* DialogViewContentView.swift in Sources */,
 				84C3FD071F8CB36D009E24D3 /* DialogAction.swift in Sources */,
+				8410092021ACF91200BAA7DF /* SlideCollectionCell.swift in Sources */,
 				8486B1311F6FCE73002C3FE2 /* CircleSlider.swift in Sources */,
 				84B8DF841FAAFAD4006D3258 /* CircularRevealTransitionSampleViewController.swift in Sources */,
 				84C3FD0A1F8CB36D009E24D3 /* DialogTextStyleView.swift in Sources */,
@@ -922,6 +974,7 @@
 				8486B15D1F6FCFF1002C3FE2 /* CalendarDay.swift in Sources */,
 				84B29596201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift in Sources */,
 				84C3FD0E1F8CB36D009E24D3 /* DialogViewController.swift in Sources */,
+				8410091721ACF62D00BAA7DF /* SlideMenuSampleViewController.swift in Sources */,
 				84450249209875940072DD5E /* AnimationSlider.swift in Sources */,
 				8486B1271F6FCCDB002C3FE2 /* Flight.m in Sources */,
 				84656E151F8B29FB0030D69D /* NSString+BSNumbersView.m in Sources */,
@@ -930,6 +983,7 @@
 				8486B1651F6FCFF1002C3FE2 /* CalendarView.swift in Sources */,
 				8486B1211F6FCCDB002C3FE2 /* BSNumbersCollectionCell.m in Sources */,
 				8486B1661F6FCFF1002C3FE2 /* Date+CalendarView.swift in Sources */,
+				8410092121ACF91200BAA7DF /* MenuCollectionCell.swift in Sources */,
 				8486B1221F6FCCDB002C3FE2 /* BSNumbersCollectionHeaderView.m in Sources */,
 				84B4D4C21F7E3FCB00FC85BE /* CycleThroughView.swift in Sources */,
 			);

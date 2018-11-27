@@ -2,7 +2,7 @@
 
 * 自己工程里用到的
 
-* 突发奇想，心血来潮，比较有意思的
+* 突发奇想, 心血来潮, 比较有意思的
 
 * 常见但我觉得有优化空间的
 
@@ -10,9 +10,9 @@
 
 ## 做这个库的目的很简单：
 
-1. 对自己过去的知识总结，并且不断刷新认知
+1. 对自己过去的知识总结, 并且不断刷新认知
 
-2. 希望能帮助正好需要的同学，或者提供一些灵感
+2. 希望能帮助正好需要的同学, 或者提供一些灵感
 
 3. 😑希望可以通过简洁的接口设计、合理的代码组织以及丰富的内容，用这个工程表达我目前的技术
 
@@ -40,6 +40,14 @@
 ---
 
 ## Middle 
+### SlideMenuViewController
+*常见的菜单选择，不一样的设计思路，更加简洁，有部分用到RxSwift*
+
+![SlideMenuViewController](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/SlideMenuViewController.gif)
+### AnimationSlider
+*比UISlider更加的平滑，适用于value需要不断改变的情况*
+
+![AnimationSlider](https://github.com/blurryssky/10000ui/blob/master/gifs/Middle/AnimationSlider.gif)
 ### PullingHeader
 *可用来实现各种自定义下拉刷新、自定义下拉转场*
 
