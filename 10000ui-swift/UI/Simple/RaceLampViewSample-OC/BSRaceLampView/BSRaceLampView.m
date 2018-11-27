@@ -67,6 +67,7 @@ static const CGFloat FontSize = 17;
     _labelSpacing = LabelSpacing;
     _velocity = Velocity;
     _stayTimeInterval = StayTimeInterval;
+    // setter
     self.font = [UIFont systemFontOfSize:FontSize];
 }
 
@@ -94,13 +95,13 @@ static const CGFloat FontSize = 17;
                                   @(1 - _gradientWidth/self.bounds.size.width),
                                   @(1)];
     _animationView.frame = CGRectMake(_gradientWidth, 0, self.bounds.size.width - _gradientWidth * 2, self.bounds.size.height);
-    self.positionXAnimation.beginTime = _stayTimeInterval;
+    self.positionXAnimation.beginTime = _beginTime;
     [_animationView.layer removeAllAnimations];
     
     //
     CGFloat textWidth = [self getCorrectTextWidth];
     CGFloat firstLabelWidth = 0;
-    if (textWidth + 5 > _animationView.bounds.size.width) {
+    if (_velocity != 0) {
         firstLabelWidth = textWidth + _labelSpacing;
         
         _firstLabel.textAlignment = NSTextAlignmentLeft;
@@ -114,7 +115,7 @@ static const CGFloat FontSize = 17;
         
     } else {
         
-        firstLabelWidth = _animationView.bounds.size.width;
+        firstLabelWidth = textWidth;
         
         _firstLabel.textAlignment = NSTextAlignmentCenter;
         _secondLabel.hidden = YES;
@@ -145,9 +146,9 @@ static const CGFloat FontSize = 17;
     if (!_gradientLayer) {
         _gradientLayer = [CAGradientLayer layer];
         _gradientLayer.colors = @[(__bridge id)[UIColor clearColor].CGColor,
-                              (__bridge id)[UIColor blackColor].CGColor,
-                              (__bridge id)[UIColor blackColor].CGColor,
-                              (__bridge id)[UIColor clearColor].CGColor];
+                                  (__bridge id)[UIColor blackColor].CGColor,
+                                  (__bridge id)[UIColor blackColor].CGColor,
+                                  (__bridge id)[UIColor clearColor].CGColor];
         _gradientLayer.startPoint = CGPointMake(0, 0);
         _gradientLayer.endPoint   = CGPointMake(1, 0);
     }
@@ -223,6 +224,9 @@ static const CGFloat FontSize = 17;
         
         _firstLabel.text = text;
         _secondLabel.text = text;
+        
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
     }
 }
 
@@ -232,6 +236,18 @@ static const CGFloat FontSize = 17;
         
         _firstLabel.attributedText = attributedText;
         _secondLabel.attributedText = attributedText;
+        
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
+    }
+}
+
+- (void)setVelocity:(CGFloat)velocity {
+    if (_velocity != velocity) {
+        _velocity = velocity;
+        
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
     }
 }
 

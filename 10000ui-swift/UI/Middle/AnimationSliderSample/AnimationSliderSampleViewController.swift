@@ -10,26 +10,33 @@ import UIKit
 
 class AnimationSliderSampleViewController: UIViewController {
 
+    @IBOutlet weak var animationSlider: AnimationSlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        animationSlider.thumbImage = #imageLiteral(resourceName: "circleslider_thumb")
+        animationSlider.thumbExtendRespondsRadius = 20
+        animationSlider.addTarget(self, action: #selector(handleSliderValueChanged(sender:)), for: .valueChanged)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func handleSliderValueChanged(sender: AnimationSlider) {
+        
+        print(sender.value)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func handleButton(_ sender: UIButton) {
+        
+        if sender.isSelected {
+            animationSlider.stopIncrese()
+            sender.setTitle("开始", for: .normal)
+        } else {
+            animationSlider.increaseValueToMaximum(duration: TimeInterval(10 * (1 - animationSlider.value)))
+            sender.setTitle("停止", for: .normal)
+        }
+        
+        sender.isSelected = !sender.isSelected
     }
-    */
-
 }

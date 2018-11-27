@@ -28,4 +28,9 @@ class RaceLampViewSampleViewController: UIViewController {
         raceLampView.velocity = 100
     }
 
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesBegan(touches, with: event)
+//        let isRunning = raceLampView.velocity == 100
+//        raceLampView.velocity = isRunning ? 0 : 100
+//    }
 }

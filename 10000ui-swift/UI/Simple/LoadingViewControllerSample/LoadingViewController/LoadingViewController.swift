@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoadingViewController: PopoverController {
+class LoadingViewController: PopoverViewController {
 
     static let shared = LoadingViewController()
     

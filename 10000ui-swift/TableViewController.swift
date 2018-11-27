@@ -18,7 +18,7 @@ class TableViewController: UITableViewController, TopBarsAppearanceChangable {
         let plistPath = Bundle.main.path(forAuxiliaryExecutable: "group_info.plist")!
         let dict = NSDictionary(contentsOfFile: plistPath) as! [String:[String]]
         groupInfo = dict
-        keys = dict.keys.map{ $0 }
+        keys = dict.keys.map{ $0 }.sorted()
     }
     
     override func viewWillAppear(_ animated: Bool) {

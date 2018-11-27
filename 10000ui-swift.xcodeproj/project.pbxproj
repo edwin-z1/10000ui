@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F735609AFA3A3B9F2D29E8E /* Pods_10000ui_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0A2CDE384FF744D220403E /* Pods_10000ui_swift.framework */; };
+		8410091421ACE8A700BAA7DF /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091321ACE8A700BAA7DF /* PopoverViewController.swift */; };
 		84257A0E1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */; };
 		84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */; };
 		8428DD0B204035E9008303C4 /* PullingHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428DD0A204035E9008303C4 /* PullingHeader.storyboard */; };
@@ -26,6 +27,9 @@
 		84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0A1F3D4F47008AD0B4 /* Assets.xcassets */; };
 		84329F0E1F3D4F47008AD0B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84329F0C1F3D4F47008AD0B4 /* LaunchScreen.storyboard */; };
 		84329F3E1F3D54A7008AD0B4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */; };
+		844502442098756C0072DD5E /* AnimationSlider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844502432098756C0072DD5E /* AnimationSlider.storyboard */; };
+		84450246209875800072DD5E /* AnimationSliderSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84450245209875800072DD5E /* AnimationSliderSampleViewController.swift */; };
+		84450249209875940072DD5E /* AnimationSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84450248209875940072DD5E /* AnimationSlider.swift */; };
 		8447F2EE1FB1A40200471BB4 /* UINavigationController+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447F2ED1FB1A40200471BB4 /* UINavigationController+bs.swift */; };
 		8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6231F3D5D9C00781302 /* Adaptable.swift */; };
 		8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6241F3D5D9C00781302 /* Namespace.swift */; };
@@ -89,7 +93,6 @@
 		84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AC1F8DF1B4009F3076 /* LoadingViewController.swift */; };
 		84C387AF1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C387AE1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift */; };
 		84C3FCC21F8B7DA9009E24D3 /* BSIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCC11F8B7DA9009E24D3 /* BSIndexPath.m */; };
-		84C3FCF81F8C7E41009E24D3 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCF71F8C7E41009E24D3 /* PopoverController.swift */; };
 		84C3FCFA1F8CAE25009E24D3 /* UIColor+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCF91F8CAE25009E24D3 /* UIColor+bs.swift */; };
 		84C3FD071F8CB36D009E24D3 /* DialogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCFD1F8CB36C009E24D3 /* DialogAction.swift */; };
 		84C3FD081F8CB36D009E24D3 /* DialogImageStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3FCFE1F8CB36C009E24D3 /* DialogImageStyleView.swift */; };
@@ -105,6 +108,7 @@
 
 /* Begin PBXFileReference section */
 		78DEACC071D6AC0C2D52449D /* Pods-10000ui-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-10000ui-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-10000ui-swift/Pods-10000ui-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		8410091321ACE8A700BAA7DF /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLabelSampleViewController.swift; sourceTree = "<group>"; };
 		84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadingLabel.storyboard; sourceTree = "<group>"; };
 		8428DD0A204035E9008303C4 /* PullingHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PullingHeader.storyboard; sourceTree = "<group>"; };
@@ -125,6 +129,9 @@
 		84329F0D1F3D4F47008AD0B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84329F0F1F3D4F47008AD0B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		844502432098756C0072DD5E /* AnimationSlider.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimationSlider.storyboard; sourceTree = "<group>"; };
+		84450245209875800072DD5E /* AnimationSliderSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSliderSampleViewController.swift; sourceTree = "<group>"; };
+		84450248209875940072DD5E /* AnimationSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSlider.swift; sourceTree = "<group>"; };
 		8447F2ED1FB1A40200471BB4 /* UINavigationController+bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+bs.swift"; sourceTree = "<group>"; };
 		8457E6231F3D5D9C00781302 /* Adaptable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adaptable.swift; sourceTree = "<group>"; };
 		8457E6241F3D5D9C00781302 /* Namespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
@@ -198,7 +205,6 @@
 		84C387AE1F8DF30F009F3076 /* LoadingViewControllerSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewControllerSampleViewController.swift; sourceTree = "<group>"; };
 		84C3FCC01F8B7DA9009E24D3 /* BSIndexPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSIndexPath.h; sourceTree = "<group>"; };
 		84C3FCC11F8B7DA9009E24D3 /* BSIndexPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSIndexPath.m; sourceTree = "<group>"; };
-		84C3FCF71F8C7E41009E24D3 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		84C3FCF91F8CAE25009E24D3 /* UIColor+bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+bs.swift"; sourceTree = "<group>"; };
 		84C3FCFD1F8CB36C009E24D3 /* DialogAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogAction.swift; sourceTree = "<group>"; };
 		84C3FCFE1F8CB36C009E24D3 /* DialogImageStyleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogImageStyleView.swift; sourceTree = "<group>"; };
@@ -340,6 +346,24 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		84450242209875510072DD5E /* AnimationSliderSample */ = {
+			isa = PBXGroup;
+			children = (
+				84450247209875830072DD5E /* AnimationSlider */,
+				844502432098756C0072DD5E /* AnimationSlider.storyboard */,
+				84450245209875800072DD5E /* AnimationSliderSampleViewController.swift */,
+			);
+			path = AnimationSliderSample;
+			sourceTree = "<group>";
+		};
+		84450247209875830072DD5E /* AnimationSlider */ = {
+			isa = PBXGroup;
+			children = (
+				84450248209875940072DD5E /* AnimationSlider.swift */,
+			);
+			path = AnimationSlider;
+			sourceTree = "<group>";
+		};
 		8457E6221F3D5D9C00781302 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +448,7 @@
 		8486B0B21F6FC9E2002C3FE2 /* Middle */ = {
 			isa = PBXGroup;
 			children = (
+				84450242209875510072DD5E /* AnimationSliderSample */,
 				8428DD0920402B5D008303C4 /* PullingHeaderSample */,
 				84B8DF801FAAF998006D3258 /* CircularRevealTransitionSample */,
 				84257A071F99986B00B1A7E5 /* FadingLabelSample */,
@@ -637,7 +662,7 @@
 		84C3FCF61F8C7E41009E24D3 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				84C3FCF71F8C7E41009E24D3 /* PopoverController.swift */,
+				8410091321ACE8A700BAA7DF /* PopoverViewController.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -770,6 +795,7 @@
 				8428DD0B204035E9008303C4 /* PullingHeader.storyboard in Resources */,
 				842EC9C620197DF300C1B69A /* PetalLayout.storyboard in Resources */,
 				8486B1261F6FCCDB002C3FE2 /* flights_info.plist in Resources */,
+				844502442098756C0072DD5E /* AnimationSlider.storyboard in Resources */,
 				84C3FD0B1F8CB36D009E24D3 /* DialogTextStyleView.xib in Resources */,
 				84329F091F3D4F47008AD0B4 /* Main.storyboard in Resources */,
 				8486B1281F6FCCDB002C3FE2 /* NumbersView.storyboard in Resources */,
@@ -840,6 +866,7 @@
 				84BE367E1FCFA82C005F81D0 /* RectFillLabelSampleViewController.swift in Sources */,
 				8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */,
 				842EC9C420197DF300C1B69A /* PetalLayoutSampleViewController.swift in Sources */,
+				8410091421ACE8A700BAA7DF /* PopoverViewController.swift in Sources */,
 				8486B1691F6FCFF1002C3FE2 /* CalendarViewSampleViewController.swift in Sources */,
 				8428DD1C2043BF37008303C4 /* DynamicGravityTransitionAnimator.swift in Sources */,
 				84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */,
@@ -872,7 +899,7 @@
 				842EC9C520197DF300C1B69A /* PetalLayout.swift in Sources */,
 				8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */,
 				846155611FA039BB006F9BE4 /* FadingLabel.swift in Sources */,
-				84C3FCF81F8C7E41009E24D3 /* PopoverController.swift in Sources */,
+				84450246209875800072DD5E /* AnimationSliderSampleViewController.swift in Sources */,
 				84C3FD101F8CB36D009E24D3 /* DialogViewControllerSampleViewController.swift in Sources */,
 				8486B1231F6FCCDB002C3FE2 /* BSNumbersView.m in Sources */,
 				84B8DF871FAAFC40006D3258 /* CircularRevealTransition.swift in Sources */,
@@ -895,6 +922,7 @@
 				8486B15D1F6FCFF1002C3FE2 /* CalendarDay.swift in Sources */,
 				84B29596201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift in Sources */,
 				84C3FD0E1F8CB36D009E24D3 /* DialogViewController.swift in Sources */,
+				84450249209875940072DD5E /* AnimationSlider.swift in Sources */,
 				8486B1271F6FCCDB002C3FE2 /* Flight.m in Sources */,
 				84656E151F8B29FB0030D69D /* NSString+BSNumbersView.m in Sources */,
 				8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */,

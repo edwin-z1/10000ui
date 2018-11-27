@@ -1,7 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R4v-6C-K4U">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Animation Slider Sample View Controller-->
+        <scene sceneID="eXu-HE-LrI">
+            <objects>
+                <viewController storyboardIdentifier="AnimationSliderSampleViewController" id="R4v-6C-K4U" customClass="AnimationSliderSampleViewController" customModule="_0000ui_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1jl-BF-4zL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3m-IF-v91" customClass="AnimationSlider" customModule="_0000ui_swift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="124" width="335" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kAY-cG-nMd"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-WW-41T">
+                                <rect key="frame" x="157.5" y="248" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="DLD-xW-EXQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="YoP-h4-Lsr"/>
+                                </constraints>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="handleButton:" destination="R4v-6C-K4U" eventType="touchUpInside" id="Z9U-Xv-E8T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B3m-IF-v91" firstAttribute="leading" secondItem="cP3-VD-Xcz" secondAttribute="leading" constant="20" id="5xO-0X-iLU"/>
+                            <constraint firstItem="cP3-VD-Xcz" firstAttribute="trailing" secondItem="B3m-IF-v91" secondAttribute="trailing" constant="20" id="6g2-E3-O4n"/>
+                            <constraint firstItem="B3m-IF-v91" firstAttribute="top" secondItem="cP3-VD-Xcz" secondAttribute="top" constant="60" id="End-D2-V2f"/>
+                            <constraint firstItem="yNj-WW-41T" firstAttribute="top" secondItem="B3m-IF-v91" secondAttribute="bottom" constant="80" id="K7a-AX-GVI"/>
+                            <constraint firstItem="yNj-WW-41T" firstAttribute="centerX" secondItem="1jl-BF-4zL" secondAttribute="centerX" id="uX8-sZ-bgq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cP3-VD-Xcz"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="animationSlider" destination="B3m-IF-v91" id="WMZ-qT-VTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FC-qq-GjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-182" y="220"/>
+        </scene>
+    </scenes>
 </document>

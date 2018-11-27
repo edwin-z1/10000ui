@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopoverController: UIViewController {
+class PopoverViewController: UIViewController {
 
     typealias Animations = () -> Void
     typealias Completion = (Bool) -> Void
@@ -34,7 +34,6 @@ class PopoverController: UIViewController {
 
     fileprivate(set) var animating: Bool = false
     fileprivate(set) static var isAnyPresented = false
-    fileprivate(set) var isPresented = false
     
     //UI
     fileprivate lazy var maskView: UIView = {
@@ -45,11 +44,11 @@ class PopoverController: UIViewController {
     }()
 
     fileprivate var lastWindow: UIWindow?
-    fileprivate var targetWindow: UIWindow?
+    fileprivate var currentWindow: UIWindow?
     
     //Gesture
     fileprivate lazy var tap: UITapGestureRecognizer = {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PopoverController.handleTap(_:)))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PopoverViewController.handleTap(_:)))
         return tap
     }()
     
@@ -61,6 +60,10 @@ class PopoverController: UIViewController {
         return isStatusBarHidden
     }
     
+    deinit {
+        print("\(description) deinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insertSubview(maskView, at: 0)
@@ -68,22 +71,26 @@ class PopoverController: UIViewController {
     
 }
 
-fileprivate extension PopoverController {
+fileprivate extension PopoverViewController {
     
     func prepareForShow() {
         
+        PopoverViewController.isAnyPresented = true
+        
         lastWindow = UIApplication.shared.keyWindow
         
-        targetWindow = newAlertWindow()
-        targetWindow?.makeKeyAndVisible()
+        currentWindow = newAlertWindow()
+        currentWindow?.makeKeyAndVisible()
         
         maskView.alpha = 0
     }
     
     func finishForDismiss() {
-        targetWindow?.isHidden = true
-        targetWindow?.rootViewController = nil
-        targetWindow = nil
+        PopoverViewController.isAnyPresented = false
+        
+        currentWindow?.isHidden = true
+        currentWindow?.rootViewController = nil
+        currentWindow = nil
         
         lastWindow?.makeKeyAndVisible()
     }
@@ -99,31 +106,29 @@ fileprivate extension PopoverController {
     @objc func handleTap(_ tap: UITapGestureRecognizer) {
         dismiss()
     }
+    
 }
 
-//  MARK:Public
-extension PopoverController {
+// MARK: - Public
+extension PopoverViewController {
     
     @discardableResult
     func present() -> Bool {
         
         guard !animating,
-            !PopoverController.isAnyPresented,
-            !isPresented else {
+            !PopoverViewController.isAnyPresented else {
                 return false
         }
         animating = true
-        isPresented = true
-        PopoverController.isAnyPresented = true
         
         prepareForShow()
         
-        UIView.animate(withDuration: animationDuration, animations: { [unowned self] in
+        UIView.animate(withDuration: animationDuration, animations: {
             
             self.maskView.alpha = 1
             self.presentAnimations?()
             
-            }, completion: { [unowned self] (finished: Bool) in
+            }, completion: { (finished: Bool) in
                 
                 self.animating = false
                 self.presentCompletion?(finished)
@@ -137,20 +142,19 @@ extension PopoverController {
         }
         animating = true
         
-        UIView.animate(withDuration: animationDuration, animations: { [unowned self] in
+        UIView.animate(withDuration: animationDuration, animations: {
             
             self.maskView.alpha = 0
             self.dismissAnimations?()
             
-            }, completion: { [unowned self] (finished: Bool) in
-                
-                self.finishForDismiss()
+            }, completion: { (finished: Bool) in
                 
                 self.animating = false
-                self.isPresented = false
-                PopoverController.isAnyPresented = false
+                
                 self.dismissCompletion?(finished)
+                self.finishForDismiss()
         })
+        
     }
 }
 

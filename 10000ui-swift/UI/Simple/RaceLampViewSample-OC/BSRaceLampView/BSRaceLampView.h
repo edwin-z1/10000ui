@@ -22,6 +22,9 @@
 /// default is 4
 @property (nonatomic) IBInspectable NSTimeInterval stayTimeInterval;
 
+/// default is 0
+@property (nonatomic) IBInspectable NSTimeInterval beginTime;
+
 /// default is system font ,size 17
 @property (nullable, nonatomic, strong) UIFont *font;
 

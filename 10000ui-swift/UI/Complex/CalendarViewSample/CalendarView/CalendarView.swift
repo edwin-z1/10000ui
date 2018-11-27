@@ -327,6 +327,7 @@ extension CalendarView: UICollectionViewDelegate {
         } else {
             scrollDirection = .left
         }
+        print("scrollDirection = \(scrollDirection)")
     }
     
 }

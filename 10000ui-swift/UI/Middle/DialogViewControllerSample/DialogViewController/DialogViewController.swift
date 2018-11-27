@@ -14,7 +14,7 @@ enum DialogViewControllerStyle {
     case text(title: String, message: String)
 }
 
-class DialogViewController: PopoverController {
+class DialogViewController: PopoverViewController {
     
     var dialogViewCornerRadius: CGFloat = 10 {
         didSet {
