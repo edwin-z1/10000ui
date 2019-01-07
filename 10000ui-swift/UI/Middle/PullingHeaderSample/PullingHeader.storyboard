@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hvI-hD-3Qa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hvI-hD-3Qa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,17 +25,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1000" id="XnL-Xt-2If"/>
+                                            <constraint firstAttribute="height" constant="1000" id="uJ4-OU-co4"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wZt-MQ-cA6" secondAttribute="trailing" id="3zW-xA-fl3"/>
+                                    <constraint firstAttribute="bottom" secondItem="wZt-MQ-cA6" secondAttribute="bottom" id="Afz-eU-lNC"/>
                                     <constraint firstItem="wZt-MQ-cA6" firstAttribute="top" secondItem="HfS-pv-NiG" secondAttribute="top" id="B2g-kv-ind"/>
                                     <constraint firstItem="wZt-MQ-cA6" firstAttribute="leading" secondItem="HfS-pv-NiG" secondAttribute="leading" id="C3Y-1l-w54"/>
-                                    <constraint firstAttribute="bottom" secondItem="wZt-MQ-cA6" secondAttribute="bottom" id="jfG-fQ-HcD"/>
-                                    <constraint firstItem="wZt-MQ-cA6" firstAttribute="width" secondItem="HfS-pv-NiG" secondAttribute="width" id="ohK-f1-Kmo"/>
+                                    <constraint firstItem="wZt-MQ-cA6" firstAttribute="width" secondItem="HfS-pv-NiG" secondAttribute="width" id="R8Y-5f-CbV"/>
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pull ↓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmJ-BC-zPX">
@@ -63,17 +63,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU5-Z6-d3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="PN4-YA-RFd" customClass="PullToFreshView" customModule="_0000ui_swift" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="140" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvc-lL-OZg">
-                            <rect key="frame" x="120" y="65" width="0.0" height="0.0"/>
+                            <rect key="frame" x="70" y="65" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="OTa-bt-BYv">
-                            <rect key="frame" x="110" y="25" width="20" height="20"/>
+                            <rect key="frame" x="60" y="25" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.6840999271" blue="0.61560886270000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -101,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch screen to dismiss" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVU-hr-eU6">
-                                <rect key="frame" x="95.5" y="323" width="184.5" height="21"/>
+                                <rect key="frame" x="95.5" y="323.5" width="184.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

@@ -26,7 +26,7 @@ class PullingHeaderSampleViewController: UIViewController {
         toTransitionViewController.transitioningDelegate = self
         toTransitionViewController.modalPresentationStyle = .custom
         
-        let pullingTransitionViewController = toTransitionViewController as! PullingTransitioningViewController
+        let pullingTransitionViewController = toTransitionViewController as PullingTransitioningViewController
 
         scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
         
@@ -39,6 +39,7 @@ class PullingHeaderSampleViewController: UIViewController {
                 header.endTransition()
             })
         })
+//        pullingHeader.direction = .left
     }
 }
 

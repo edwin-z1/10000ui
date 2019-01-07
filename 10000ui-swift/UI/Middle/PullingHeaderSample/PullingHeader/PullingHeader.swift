@@ -30,9 +30,20 @@ enum PullingState {
     case transitioning(fraction: CGFloat)
 }
 
+enum PullingDirection {
+    case down
+    case left
+}
+
 class PullingHeader: NSObject {
     
-
+    var direction: PullingDirection = .down {
+        didSet {
+            invalidateObservation()
+            setup()
+        }
+    }
+    
     fileprivate(set) var state: PullingState = .resting(fraction: 0) {
         didSet {
             pullToRefreshView.stateDidUpdate(state)
@@ -45,20 +56,25 @@ class PullingHeader: NSObject {
     fileprivate weak var pullToTransitionViewController: PullingTransitioningViewController?
     fileprivate var transitionClosure: ((PullingHeader) -> Void)?
     
-    fileprivate var observation: NSKeyValueObservation!
+    fileprivate var contentSizeObservation: NSKeyValueObservation!
+    fileprivate var offsetObservation: NSKeyValueObservation!
     
-    init(scrollView: UIScrollView!,
+    deinit {
+        invalidateObservation()
+    }
+    
+    convenience init(scrollView: UIScrollView!,
          pullToRefreshView toRefresh: PullingRefreshingView!,
          refreshClosure: ((PullingHeader) -> Void)!,
          pullToTransitionViewController toTransition: PullingTransitioningViewController? = nil,
          transitionClosure: ((PullingHeader) -> Void)? = nil) {
         
+        self.init()
         self.scrollView = scrollView
-        self.pullToRefreshView = toRefresh
+        pullToRefreshView = toRefresh
         self.refreshClosure = refreshClosure
-        self.pullToTransitionViewController = toTransition
+        pullToTransitionViewController = toTransition
         self.transitionClosure = transitionClosure
-        super.init()
         setup()
     }
 }
@@ -66,40 +82,38 @@ class PullingHeader: NSObject {
 extension PullingHeader {
     
     func endRefresh() {
-        let insetTop = scrollViewInsetTop - refreshViewHeight
-        var scrollViewInset = scrollView.contentInset
-        scrollViewInset.top = insetTop
-
-        UIView.animate(withDuration: 0.4, delay: 0.25, options: .curveEaseInOut, animations: {
-            self.scrollView.contentInset = scrollViewInset
-        })
+        
+        let inset = scrollViewDirectionInset - refreshViewDirectionLength
+        animateScrollViewDirectionInset(inset)
         state = .resting(fraction: 0)
     }
     
     func endTransition() {
         state = .resting(fraction: 0)
     }
+    
+    func invalidateObservation() {
+        contentSizeObservation.invalidate()
+        offsetObservation.invalidate()
+    }
 }
 
 fileprivate extension PullingHeader {
     
-    var scrollViewInsetTop: CGFloat {
-        return scrollView.contentInset.top
-    }
-    
-    var refreshViewHeight: CGFloat {
-        return pullToRefreshView.bounds.height
-    }
-    
     func setup() {
         
-        scrollView.addSubview(pullToRefreshView)
+        if pullToRefreshView!.superview == nil {
+            scrollView.addSubview(pullToRefreshView)
+        }
+
+        contentSizeObservation = scrollView.observe(\.contentSize, changeHandler: { [weak self] (_, change) in
+            guard let `self` = self else {
+                return
+            }
+            self.updateHeaderFrame()
+        })
         
-        let originY = -(refreshViewHeight + scrollViewInsetTop)
-        pullToRefreshView.frame = .init(origin: .init(x: 0, y: originY),
-                                  size: .init(width: scrollView.bs.width, height: refreshViewHeight))
-        
-        observation = scrollView.observe(\.contentOffset, options: .new, changeHandler: { [weak self] (_, change) in
+        offsetObservation = scrollView.observe(\.contentOffset, options: .new, changeHandler: { [weak self] (_, change) in
             guard let `self` = self, let offset = change.newValue else {
                 return
             }
@@ -117,7 +131,7 @@ fileprivate extension PullingHeader {
                 }
             }
             
-            let fraction = -(offset.y + self.scrollViewInsetTop)/self.refreshViewHeight
+            let fraction = self.fraction(newOffset: offset)
 
             let shouldRefresh = self.pullToRefreshView.shouldRefresh(fraction: fraction)
             if let shouldTransition = self.pullToTransitionViewController?.shouldTransition(fraction: fraction),
@@ -157,24 +171,77 @@ fileprivate extension PullingHeader {
     
     func refresh() {
         
-        let insetTop = refreshViewHeight + scrollViewInsetTop
-        var scrollViewInset = scrollView.contentInset
-        scrollViewInset.top = insetTop
-        
         state = .refreshing(fraction: 1)
         
-        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
-            self.scrollView.contentInset = scrollViewInset
-        })
-
+        let inset = scrollViewDirectionInset + refreshViewDirectionLength
+        animateScrollViewDirectionInset(inset)
         refreshClosure(self)
     }
     
     func transition() {
         
         state = .transitioning(fraction: 1)
-        
         transitionClosure?(self)
+    }
+}
+
+fileprivate extension PullingHeader {
+    
+    var scrollViewDirectionInset: CGFloat {
+        switch direction {
+        case .down:
+            return scrollView.contentInset.top
+        case .left:
+            return scrollView.contentInset.right
+        }
+    }
+    
+    var refreshViewDirectionLength: CGFloat {
+        switch direction {
+        case .down:
+            return pullToRefreshView.bounds.height
+        case .left:
+            return pullToRefreshView.bounds.width
+        }
+    }
+    
+    func fraction(newOffset: CGPoint) -> CGFloat {
+        var offset: CGFloat = 0
+        switch direction {
+        case .down:
+            offset = -(newOffset.y + scrollViewDirectionInset)
+        case .left:
+            offset = newOffset.x + scrollView.bounds.width - pullToRefreshView.frame.origin.x
+        }
+        return offset/refreshViewDirectionLength
+    }
+    
+    func updateHeaderFrame() {
+        switch direction {
+        case .down:
+            let originY = -(refreshViewDirectionLength + scrollViewDirectionInset)
+            pullToRefreshView.frame = .init(origin: .init(x: 0, y: originY),
+                                            size: .init(width: scrollView.bs.width, height: refreshViewDirectionLength))
+        case .left:
+            let originX = scrollView.contentSize.width + scrollViewDirectionInset
+            pullToRefreshView.frame = .init(origin: .init(x: originX, y: 0),
+                                            size: .init(width: refreshViewDirectionLength, height: scrollView.bs.height))
+        }
+    }
+    
+    func animateScrollViewDirectionInset(_ directionInset: CGFloat) {
+        
+        var scrollViewInset = scrollView.contentInset
+        switch direction {
+        case .down:
+            scrollViewInset.top = directionInset
+        case .left:
+            scrollViewInset.right = directionInset
+        }
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut, animations: {
+            self.scrollView.contentInset = scrollViewInset
+        })
     }
 }
 
