@@ -28,8 +28,6 @@ class PullingHeaderSampleViewController: UIViewController {
         
         let pullingTransitionViewController = toTransitionViewController as PullingTransitioningViewController
 
-        scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
-        
         pullingHeader = PullingHeader(scrollView: scrollView, pullToRefreshView: pullingRefreshView, refreshClosure: { header in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 header.endRefresh()
@@ -39,7 +37,9 @@ class PullingHeaderSampleViewController: UIViewController {
                 header.endTransition()
             })
         })
-//        pullingHeader.direction = .left
+//        scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
+        scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 42)
+        pullingHeader.direction = .left
     }
 }
 

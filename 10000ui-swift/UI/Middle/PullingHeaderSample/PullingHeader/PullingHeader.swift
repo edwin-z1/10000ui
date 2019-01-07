@@ -119,7 +119,45 @@ fileprivate extension PullingHeader {
             }
             
             // 先判断松手后
-            if !self.scrollView.isTracking {
+            if self.scrollView.isTracking {
+                
+                let fraction = self.fraction(newOffset: offset)
+                
+                let shouldRefresh = self.pullToRefreshView.shouldRefresh(fraction: fraction)
+                if let shouldTransition = self.pullToTransitionViewController?.shouldTransition(fraction: fraction),
+                    shouldTransition {
+                    
+                    switch self.state {
+                    case .pulling: fallthrough
+                    case .willRefresh: fallthrough
+                    case .willTransition:
+                        self.state = .willTransition(fraction: fraction)
+                    default:break
+                    }
+                    
+                } else if shouldRefresh {
+                    
+                    switch self.state {
+                    case .pulling: fallthrough
+                    case .willRefresh: fallthrough
+                    case .willTransition:
+                        self.state = .willRefresh(fraction: fraction)
+                    default:break
+                    }
+                    
+                } else {
+                    
+                    switch self.state {
+                    case .resting: fallthrough
+                    case .pulling: fallthrough
+                    case .willRefresh: fallthrough
+                    case .willTransition:
+                        self.state = .pulling(fraction: fraction)
+                    default:break
+                    }
+                }
+            } else {
+                
                 switch self.state {
                 case .willRefresh:
                     self.refresh()
@@ -127,42 +165,6 @@ fileprivate extension PullingHeader {
                     self.transition()
                 case .refreshing: fallthrough
                 case .transitioning: return
-                default:break
-                }
-            }
-            
-            let fraction = self.fraction(newOffset: offset)
-
-            let shouldRefresh = self.pullToRefreshView.shouldRefresh(fraction: fraction)
-            if let shouldTransition = self.pullToTransitionViewController?.shouldTransition(fraction: fraction),
-                shouldTransition {
-                
-                switch self.state {
-                case .pulling: fallthrough
-                case .willRefresh: fallthrough
-                case .willTransition:
-                    self.state = .willTransition(fraction: fraction)
-                default:break
-                }
-
-            } else if shouldRefresh {
-                
-                switch self.state {
-                case .pulling: fallthrough
-                case .willRefresh: fallthrough
-                case .willTransition:
-                    self.state = .willRefresh(fraction: fraction)
-                default:break
-                }
-
-            } else {
-                
-                switch self.state {
-                case .resting: fallthrough
-                case .pulling: fallthrough
-                case .willRefresh: fallthrough
-                case .willTransition:
-                    self.state = .pulling(fraction: fraction)
                 default:break
                 }
             }
