@@ -26,7 +26,7 @@ private extension SlideMenuSampleViewController {
         addChildViewController(slideMenuViewController)
         slideMenuViewController.didMove(toParentViewController: self)
         
-        slideMenuViewController.setMenuTitles(["推荐", "喜欢", "收藏", "苹果", "沙拉"])
+        slideMenuViewController.setMenuTitles(["草莓🍓", "葡萄🍇", "苹果🍎", "菠萝🍍", "猕猴桃🥝", "香蕉🍌"])
         slideMenuViewController.dataSource = self
         slideMenuViewController.delegate = self
     }
@@ -36,7 +36,7 @@ extension SlideMenuSampleViewController: SlideMenuViewControllerDataSource {
     
     func slideMenuViewController(_ slideMenuViewController: UIViewController, viewControllerForItemAt index: Int) -> UIViewController {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.bs.random(alpha: 0.6)
+        viewController.view.backgroundColor = UIColor.bs.random(alpha: 0.3)
         return viewController
     }
 }

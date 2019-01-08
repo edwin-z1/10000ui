@@ -39,7 +39,7 @@ class PullingHeaderSampleViewController: UIViewController {
         })
 //        scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
         scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 42)
-        pullingHeader.direction = .left
+        pullingHeader.dragDirection = .left
     }
 }
 

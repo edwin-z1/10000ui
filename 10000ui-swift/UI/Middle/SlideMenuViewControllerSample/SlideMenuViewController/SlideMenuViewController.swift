@@ -48,7 +48,6 @@ class SlideMenuViewController: UIViewController {
     fileprivate lazy var menuSlideView: UIView = {
         let view = UIView()
         view.bs.size = CGSize(width: 15, height: 2)
-
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
@@ -215,7 +214,7 @@ private extension SlideMenuViewController {
             })
             .disposed(by: disposeBag)
         
-        // update slideFromIndex, and set toCell ratio 0, avoid continuous slide display bug
+        // update slideFromIndex, and set toCell ratio 0. avoid continuous slide display bug
         slideCollectionView.rx.willBeginDragging
             .subscribe(onNext: { [weak self] (_) in
                 guard let `self` = self else { return }

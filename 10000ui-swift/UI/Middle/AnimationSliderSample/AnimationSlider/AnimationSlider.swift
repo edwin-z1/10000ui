@@ -8,19 +8,17 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class AnimationSlider: UIControl {
     
     // MARK: - Public
     
-    var thumbImage: UIImage! {
+    var thumbImage: UIImage? {
         didSet {
-            guard thumbImage != nil else {
-                return
-            }
             thumbImgView.image = thumbImage
-            thumbImgView.bounds.size = thumbImage.size
-            
-            setNeedsLayout()
+            thumbImgView.bounds.size = thumbImage?.size ?? .zero
         }
     }
     /// if the thumb image is too small, you can set this to extend the responds area
@@ -74,6 +72,12 @@ class AnimationSlider: UIControl {
         }
     }
     
+    var coverColor = UIColor.clear {
+        didSet {
+            coverView.backgroundColor = coverColor
+        }
+    }
+    
     //MARK: Private
     
     fileprivate var lastValue: CGFloat = 0
@@ -100,7 +104,7 @@ class AnimationSlider: UIControl {
         return strokeEnd
     }()
     
-    fileprivate lazy var thumbImgView: UIImageView = {
+    lazy var thumbImgView: UIImageView = {
         return UIImageView()
     }()
     
@@ -118,6 +122,8 @@ class AnimationSlider: UIControl {
         let layer: CAGradientLayer = CAGradientLayer()
         layer.colors = self.minimunTrackTintColors.map({ $0.cgColor })
         layer.mask = self.minimumTrackLayer
+        layer.startPoint = CGPoint(x: 0, y: 0.5)
+        layer.endPoint = CGPoint(x: 1, y: 0.5)
         return layer
     }()
     
@@ -133,7 +139,16 @@ class AnimationSlider: UIControl {
         let layer: CAGradientLayer = CAGradientLayer()
         layer.colors = self.maximunTrackTintColors.map({ $0.cgColor })
         layer.mask = self.maximumTrackLayer
+        layer.startPoint = CGPoint(x: 0, y: 0.5)
+        layer.endPoint = CGPoint(x: 1, y: 0.5)
         return layer
+    }()
+    
+    fileprivate lazy var coverView: UIView = {
+        let v = UIView()
+        v.backgroundColor = coverColor
+        v.isUserInteractionEnabled = false
+        return v
     }()
     
     override init(frame: CGRect) {
@@ -154,14 +169,17 @@ class AnimationSlider: UIControl {
         update()
     }
     
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        return isInRespondsArea(withPoint: point)
+    }
+    
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
-        return isInRespondsArea(withTouchLocation: touch.location(in: self))
+        return isInRespondsArea(withPoint: touch.location(in: self))
     }
     
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
         let touchLocation = touch.location(in: self)
-        
         value = touchLocation.x/bounds.width * maximumValue
         return true
     }
@@ -206,9 +224,9 @@ extension AnimationSlider {
 fileprivate extension AnimationSlider {
 
     func setup(){
-
         layer.addSublayer(maximumGradientLayer)
         layer.addSublayer(minimumGradientLayer)
+        addSubview(coverView)
         addSubview(thumbImgView)
     }
     
@@ -222,29 +240,21 @@ fileprivate extension AnimationSlider {
         
         maximumGradientLayer.frame = bounds
         minimumGradientLayer.frame = bounds
-        
-        // 设置渐变色
-        let gradientStartPoint = CGPoint(x: 0, y: bounds.height/2)
-        let gradientEndPoint = CGPoint(x: bounds.width, y: bounds.height/2)
-        maximumGradientLayer.startPoint = gradientStartPoint
-        maximumGradientLayer.endPoint = gradientEndPoint
-        
-        minimumGradientLayer.startPoint = gradientStartPoint
-        minimumGradientLayer.endPoint = gradientEndPoint
-        
     }
     
     func update() {
         guard maximumValue > minimumValue else {
             return
         }
-        if value != lastValue {
+        if value != lastValue && isTracking {
             sendActions(for: UIControlEvents.valueChanged)
         }
         lastValue = value
         
         // 设置thumb的位置
-        thumbImgView.center.x = bounds.width * value
+        let minimunPoint = bounds.width * value
+        thumbImgView.center.x = minimunPoint
+        coverView.frame = CGRect(origin: .zero, size: CGSize(width: minimunPoint, height: bounds.height))
 
         CATransaction.begin()
         CATransaction.setDisableActions(true)
@@ -255,10 +265,10 @@ fileprivate extension AnimationSlider {
         CATransaction.commit()
     }
     
-    func isInRespondsArea(withTouchLocation touchLocation: CGPoint) -> Bool {
+    func isInRespondsArea(withPoint point: CGPoint) -> Bool {
         
-        let dx = fabs(touchLocation.x - thumbImgView.center.x)
-        let dy = fabs(touchLocation.y - thumbImgView.center.y)
+        let dx = fabs(point.x - thumbImgView.center.x)
+        let dy = fabs(point.y - thumbImgView.center.y)
         let dis = hypot(dx, dy)
         var respondsRadius = thumbExtendRespondsRadius
         if let thumbImage = thumbImage {
@@ -278,5 +288,22 @@ extension AnimationSlider: CAAnimationDelegate {
         minimumTrackLayer.removeAllAnimations()
         thumbImgView.layer.removeAllAnimations()
         isAnimating = false
+    }
+}
+
+extension Reactive where Base: AnimationSlider {
+    
+    var value: ControlProperty<CGFloat> {
+        return base.rx.controlProperty(editingEvents: [.allEditingEvents, .valueChanged] ,getter: { slider in
+            slider.value
+        }, setter: { slider, value in
+            slider.value = value
+        })
+    }
+    
+    var thumbImage: Binder<UIImage?> {
+        return Binder(base) { (slider, image) -> () in
+            slider.thumbImage = image
+        }
     }
 }

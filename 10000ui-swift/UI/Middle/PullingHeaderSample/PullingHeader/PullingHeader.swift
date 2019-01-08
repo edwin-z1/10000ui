@@ -30,14 +30,14 @@ enum PullingState {
     case transitioning(fraction: CGFloat)
 }
 
-enum PullingDirection {
+enum DragDirection {
     case down
     case left
 }
 
 class PullingHeader: NSObject {
     
-    var direction: PullingDirection = .down {
+    var dragDirection: DragDirection = .down {
         didSet {
             invalidateObservation()
             setup()
@@ -190,7 +190,7 @@ fileprivate extension PullingHeader {
 fileprivate extension PullingHeader {
     
     var scrollViewDirectionInset: CGFloat {
-        switch direction {
+        switch dragDirection {
         case .down:
             return scrollView.contentInset.top
         case .left:
@@ -199,7 +199,7 @@ fileprivate extension PullingHeader {
     }
     
     var refreshViewDirectionLength: CGFloat {
-        switch direction {
+        switch dragDirection {
         case .down:
             return pullToRefreshView.bounds.height
         case .left:
@@ -209,7 +209,7 @@ fileprivate extension PullingHeader {
     
     func fraction(newOffset: CGPoint) -> CGFloat {
         var offset: CGFloat = 0
-        switch direction {
+        switch dragDirection {
         case .down:
             offset = -(newOffset.y + scrollViewDirectionInset)
         case .left:
@@ -219,7 +219,7 @@ fileprivate extension PullingHeader {
     }
     
     func updateHeaderFrame() {
-        switch direction {
+        switch dragDirection {
         case .down:
             let originY = -(refreshViewDirectionLength + scrollViewDirectionInset)
             pullToRefreshView.frame = .init(origin: .init(x: 0, y: originY),
@@ -234,7 +234,7 @@ fileprivate extension PullingHeader {
     func animateScrollViewDirectionInset(_ directionInset: CGFloat) {
         
         var scrollViewInset = scrollView.contentInset
-        switch direction {
+        switch dragDirection {
         case .down:
             scrollViewInset.top = directionInset
         case .left:
