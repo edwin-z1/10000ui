@@ -80,7 +80,7 @@ extension FadingLabel {
         
         startTime = CACurrentMediaTime()
         displayLink = CADisplayLink(target: self, selector: #selector(handleDisplayLink))
-        displayLink.add(to: .current, forMode: .commonModes)
+        displayLink.add(to: .current, forMode: RunLoop.Mode.common)
     }
 }
 
@@ -92,7 +92,7 @@ fileprivate extension FadingLabel {
         let mutableAttributedText = attributedText.mutableCopy() as! NSMutableAttributedString
         
         mutableAttributedText.enumerateAttribute(.foregroundColor, in: .init(location: 0, length: mutableAttributedText.length), options: .longestEffectiveRangeNotRequired) { (value, range, stop) in
-            var attributes: [NSAttributedStringKey: UIColor] = [.foregroundColor: textColor.withAlphaComponent(0)]
+            var attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: textColor.withAlphaComponent(0)]
             if let color = value as? UIColor {
                 attributes = [.foregroundColor : color.withAlphaComponent(0)]
             }
@@ -238,7 +238,7 @@ fileprivate extension FadingLabel {
         
         let color = attributedString.attributes(at: index, effectiveRange: nil)[.foregroundColor] as! UIColor
         let range = NSRange(location: index, length: 1)
-        let attributes: [NSAttributedStringKey: UIColor] = [.foregroundColor: color.withAlphaComponent(percentage)]
+        let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: color.withAlphaComponent(percentage)]
         attributedString.setAttributes(attributes, range: range)
     }
 }

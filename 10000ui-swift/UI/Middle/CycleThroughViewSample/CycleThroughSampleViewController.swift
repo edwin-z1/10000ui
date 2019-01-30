@@ -29,7 +29,7 @@ class CycleThroughSampleViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableView.contentInset = UIEdgeInsetsMake(insetsTop, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsets.init(top: insetsTop, left: 0, bottom: 0, right: 0)
     }
     
     func setupCycleThroughView() {

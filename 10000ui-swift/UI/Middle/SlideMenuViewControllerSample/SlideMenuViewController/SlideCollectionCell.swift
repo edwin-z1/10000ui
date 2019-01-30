@@ -34,9 +34,9 @@ class SlideCollectionCell: UICollectionViewCell {
     }
     
     func remove() {
-        viewController?.willMove(toParentViewController: nil)
+        viewController?.willMove(toParent: nil)
         viewController?.view.removeFromSuperview()
-        viewController?.removeFromParentViewController()
+        viewController?.removeFromParent()
     }
 }
 

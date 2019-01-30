@@ -17,10 +17,10 @@ class RaceLampViewSampleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        let attrString = NSMutableAttributedString(string: "Design is not just what it looks like and feels like. Design is how it works.", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: UIColor.black])
+        let attrString = NSMutableAttributedString(string: "Design is not just what it looks like and feels like. Design is how it works.", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.black])
         let range = (attrString.string as NSString).range(of: "Design")
         if (range.location != NSNotFound) {
-            attrString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: range)
+            attrString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
         }
         raceLampView.attributedText = attrString
         

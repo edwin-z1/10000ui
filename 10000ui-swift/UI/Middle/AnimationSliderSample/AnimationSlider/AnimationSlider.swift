@@ -92,7 +92,7 @@ class AnimationSlider: UIControl {
     
     fileprivate lazy var positionAnimation: CABasicAnimation = {
         let position: CABasicAnimation = CABasicAnimation(keyPath: "position")
-        position.fillMode = kCAFillModeForwards
+        position.fillMode = CAMediaTimingFillMode.forwards
         position.isRemovedOnCompletion = false
         return position
     }()
@@ -100,7 +100,7 @@ class AnimationSlider: UIControl {
     fileprivate lazy var strokeEndAnimation: CABasicAnimation = {
         
         let strokeEnd: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        strokeEnd.fillMode = kCAFillModeForwards
+        strokeEnd.fillMode = CAMediaTimingFillMode.forwards
         strokeEnd.isRemovedOnCompletion = false
         strokeEnd.delegate = self
         return strokeEnd
@@ -116,7 +116,7 @@ class AnimationSlider: UIControl {
         layer.lineWidth = self.lineWidth
         layer.strokeColor = UIColor.black.cgColor
         layer.strokeEnd = 0
-        layer.lineCap = kCALineCapRound
+        layer.lineCap = CAShapeLayerLineCap.round
         return layer
     }()
     
@@ -218,7 +218,7 @@ fileprivate extension AnimationSlider {
             return
         }
         if value != lastValue && isTracking {
-            sendActions(for: UIControlEvents.valueChanged)
+            sendActions(for: UIControl.Event.valueChanged)
         }
         lastValue = value
         

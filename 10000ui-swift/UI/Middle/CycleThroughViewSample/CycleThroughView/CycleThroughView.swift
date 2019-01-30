@@ -150,7 +150,7 @@ fileprivate extension CycleThroughView {
         // avoid central cell is covered by nearby cell after zoom
         let index = Int(collectionView.contentOffset.x/collectionView.bs.width)
         if let cell = collectionView.cellForItem(at: [0, index]) {
-            collectionView.bringSubview(toFront: cell)
+            collectionView.bringSubviewToFront(cell)
         }
         
         let insetTop = zoomForScrollView!.contentInset.top

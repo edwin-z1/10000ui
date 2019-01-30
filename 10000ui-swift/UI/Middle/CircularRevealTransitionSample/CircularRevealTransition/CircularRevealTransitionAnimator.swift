@@ -11,7 +11,7 @@ import UIKit
 class CircularRevealTransitionAnimator: NSObject {
 
     var fromCenter: CGPoint = .zero
-    var operation: UINavigationControllerOperation = .push {
+    var operation: UINavigationController.Operation = .push {
         didSet {
             let smallCirclePath = UIBezierPath(arcCenter: fromCenter, radius: 1, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true).cgPath
             let bigCirclePath = UIBezierPath(arcCenter: fromCenter, radius: radius, startAngle: 0, endAngle: CGFloat.pi * 2, clockwise: true).cgPath
@@ -79,9 +79,9 @@ extension CircularRevealTransitionAnimator: UIViewControllerAnimatedTransitionin
         maskLayerAnimation.toValue = toPath
         maskLayerAnimation.duration = transitionDuration(using: transitionContext)
         maskLayerAnimation.delegate = self
-        maskLayerAnimation.fillMode = kCAFillModeBoth;
+        maskLayerAnimation.fillMode = CAMediaTimingFillMode.both;
         maskLayerAnimation.isRemovedOnCompletion = false
-        maskLayerAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        maskLayerAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         maskLayerAnimation.setValue(transitionContext, forKey: "transitionContext")
         maskLayer.add(maskLayerAnimation, forKey: "path")
     }

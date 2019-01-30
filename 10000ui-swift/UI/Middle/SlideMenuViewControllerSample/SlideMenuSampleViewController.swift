@@ -23,8 +23,8 @@ private extension SlideMenuSampleViewController {
     func setup() {
         let slideMenuViewController = SlideMenuViewController.bs.instantiateFromStoryboard(name: "SlideMenuViewController")
         view.addSubview(slideMenuViewController.view)
-        addChildViewController(slideMenuViewController)
-        slideMenuViewController.didMove(toParentViewController: self)
+        addChild(slideMenuViewController)
+        slideMenuViewController.didMove(toParent: self)
         
         slideMenuViewController.setMenuTitles(["草莓🍓", "葡萄🍇", "苹果🍎", "菠萝🍍", "猕猴桃🥝", "香蕉🍌"])
         slideMenuViewController.dataSource = self

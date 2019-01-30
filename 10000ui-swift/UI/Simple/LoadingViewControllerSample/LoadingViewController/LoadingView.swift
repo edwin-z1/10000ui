@@ -25,24 +25,24 @@ class LoadingView: UIView {
 
     fileprivate lazy var strokeEndAnimation : CABasicAnimation = {
         let end = CABasicAnimation(keyPath: "strokeEnd")
-        end.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        end.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         end.duration = 1
         end.fromValue = 0
         end.toValue = 0.95
         end.isRemovedOnCompletion = false
-        end.fillMode = kCAFillModeForwards
+        end.fillMode = CAMediaTimingFillMode.forwards
         return end
     }()
     
     fileprivate lazy var strokeStartAnimation : CABasicAnimation = {
         let start = CABasicAnimation(keyPath: "strokeStart")
-        start.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        start.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         start.duration = 1
         start.fromValue = 0
         start.toValue = 0.95
         start.beginTime = 1
         start.isRemovedOnCompletion = false
-        start.fillMode = kCAFillModeForwards
+        start.fillMode = CAMediaTimingFillMode.forwards
         
         return start
     }()
@@ -57,7 +57,7 @@ class LoadingView: UIView {
     
     fileprivate lazy var rotateZAnimation : CABasicAnimation = {
         let rotateZ = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotateZ.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        rotateZ.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         rotateZ.duration = 2
         rotateZ.fromValue = 0
         rotateZ.toValue = 2 * CGFloat.pi

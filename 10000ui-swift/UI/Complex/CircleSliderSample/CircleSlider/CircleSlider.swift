@@ -114,10 +114,10 @@ class CircleSlider: UIControl {
     fileprivate lazy var pathAnimation: CAKeyframeAnimation = {
         let path: CAKeyframeAnimation = CAKeyframeAnimation(keyPath: "position")
         path.duration = 0.25
-        path.fillMode = kCAFillModeForwards
+        path.fillMode = CAMediaTimingFillMode.forwards
         path.isRemovedOnCompletion = false
-        path.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        path.calculationMode = kCAAnimationPaced
+        path.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        path.calculationMode = CAAnimationCalculationMode.paced
         return path
     }()
     
@@ -125,9 +125,9 @@ class CircleSlider: UIControl {
         
         let strokeEnd: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         strokeEnd.duration = 0.25
-        strokeEnd.fillMode = kCAFillModeForwards
+        strokeEnd.fillMode = CAMediaTimingFillMode.forwards
         strokeEnd.isRemovedOnCompletion = false
-        strokeEnd.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        strokeEnd.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         strokeEnd.delegate = self
         return strokeEnd
     }()
@@ -142,7 +142,7 @@ class CircleSlider: UIControl {
         layer.lineWidth = self.lineWidth
         layer.strokeColor = UIColor.black.cgColor
         layer.strokeEnd = 0
-        layer.lineCap = kCALineCapRound
+        layer.lineCap = CAShapeLayerLineCap.round
         return layer
     }()
     
@@ -281,7 +281,7 @@ fileprivate extension CircleSlider {
             return
         }
         if value != lastValue {
-            sendActions(for: UIControlEvents.valueChanged)
+            sendActions(for: UIControl.Event.valueChanged)
         }
         lastValue = value
         

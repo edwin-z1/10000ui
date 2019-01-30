@@ -97,7 +97,7 @@ fileprivate extension PopoverViewController {
     
     func newAlertWindow() -> UIWindow {
         let window = UIWindow(frame: self.view.bounds)
-        window.windowLevel = UIWindowLevelAlert
+        window.windowLevel = UIWindow.Level.alert
         window.rootViewController = self
         
         return window

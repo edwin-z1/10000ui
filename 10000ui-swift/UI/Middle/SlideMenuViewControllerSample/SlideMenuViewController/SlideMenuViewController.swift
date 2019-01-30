@@ -182,9 +182,9 @@ private extension SlideMenuViewController {
                 } else {
                     return
                 }
-                self.addChildViewController(targetVC)
+                self.addChild(targetVC)
                 cell.viewController = targetVC
-                targetVC.didMove(toParentViewController: self)
+                targetVC.didMove(toParent: self)
             }
             .disposed(by: disposeBag)
         

@@ -61,7 +61,7 @@ extension NumbersViewSampleViewController: BSNumbersViewDataSource {
             string = flights[indexPath.row - 1].bs.propertyStringValues[indexPath.column]
         }
         
-        return NSAttributedString(string: string, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)])
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)])
     }
     
     func numbersView(_ numbersView: BSNumbersView, cellForItemAt indexPath: BSIndexPath) -> UICollectionViewCell? {

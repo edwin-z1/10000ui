@@ -35,7 +35,7 @@ class CalendarMonthCollectionCell: UICollectionViewCell {
                                                     collectionViewLayout: flowLayout)
         c.register(CalendarDayCollectionCell.self,
                         forCellWithReuseIdentifier: "CalendarDayCollectionCell")
-        c.register(CalendarDayCollectionReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "CalendarDayCollectionReusableHeaderView")
+        c.register(CalendarDayCollectionReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CalendarDayCollectionReusableHeaderView")
         c.dataSource = self
         c.delegate = self
         c.backgroundColor = UIColor.clear
@@ -86,8 +86,8 @@ extension CalendarMonthCollectionCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var view = UICollectionReusableView()
-        if kind == UICollectionElementKindSectionHeader {
-            view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "CalendarDayCollectionReusableHeaderView", for: indexPath)
+        if kind == UICollectionView.elementKindSectionHeader {
+            view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CalendarDayCollectionReusableHeaderView", for: indexPath)
             let headerView = view as! CalendarDayCollectionReusableHeaderView
             headerView.separatorStyle = preference.separatorStyle
             headerView.lineLayer.strokeColor = preference.separatorColor.cgColor
