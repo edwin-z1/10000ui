@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3m-IF-v91" customClass="AnimationSlider" customModule="_0000ui_swift" customModuleProvider="target">
-                                <rect key="frame" x="20" y="124" width="335" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="25" y="124" width="325" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.64361495670000002" blue="0.62165912749999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="kAY-cG-nMd"/>
                                 </constraints>
@@ -39,8 +39,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="B3m-IF-v91" firstAttribute="leading" secondItem="cP3-VD-Xcz" secondAttribute="leading" constant="20" id="5xO-0X-iLU"/>
-                            <constraint firstItem="cP3-VD-Xcz" firstAttribute="trailing" secondItem="B3m-IF-v91" secondAttribute="trailing" constant="20" id="6g2-E3-O4n"/>
+                            <constraint firstItem="B3m-IF-v91" firstAttribute="leading" secondItem="cP3-VD-Xcz" secondAttribute="leading" constant="25" id="5xO-0X-iLU"/>
+                            <constraint firstItem="cP3-VD-Xcz" firstAttribute="trailing" secondItem="B3m-IF-v91" secondAttribute="trailing" constant="25" id="6g2-E3-O4n"/>
                             <constraint firstItem="B3m-IF-v91" firstAttribute="top" secondItem="cP3-VD-Xcz" secondAttribute="top" constant="60" id="End-D2-V2f"/>
                             <constraint firstItem="yNj-WW-41T" firstAttribute="top" secondItem="B3m-IF-v91" secondAttribute="bottom" constant="80" id="K7a-AX-GVI"/>
                             <constraint firstItem="yNj-WW-41T" firstAttribute="centerX" secondItem="1jl-BF-4zL" secondAttribute="centerX" id="uX8-sZ-bgq"/>

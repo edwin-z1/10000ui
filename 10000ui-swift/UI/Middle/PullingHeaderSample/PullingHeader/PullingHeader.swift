@@ -51,9 +51,9 @@ class PullingHeader: NSObject {
     }
     
     fileprivate weak var scrollView: UIScrollView!
-    fileprivate weak var pullToRefreshView: PullingRefreshingView!
+    fileprivate var pullToRefreshView: PullingRefreshingView!
     fileprivate var refreshClosure: ((PullingHeader) -> Void)!
-    fileprivate weak var pullToTransitionViewController: PullingTransitioningViewController?
+    fileprivate var pullToTransitionViewController: PullingTransitioningViewController?
     fileprivate var transitionClosure: ((PullingHeader) -> Void)?
     
     fileprivate var contentSizeObservation: NSKeyValueObservation!

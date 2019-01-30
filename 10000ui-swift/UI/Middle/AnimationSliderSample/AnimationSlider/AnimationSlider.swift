@@ -19,6 +19,8 @@ class AnimationSlider: UIControl {
         didSet {
             thumbImgView.image = thumbImage
             thumbImgView.bounds.size = thumbImage?.size ?? .zero
+            setupLayers()
+            update()
         }
     }
     /// if the thumb image is too small, you can set this to extend the responds area
@@ -169,10 +171,6 @@ class AnimationSlider: UIControl {
         update()
     }
     
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        return isInRespondsArea(withPoint: point)
-    }
-    
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         return isInRespondsArea(withPoint: touch.location(in: self))
     }
@@ -180,49 +178,22 @@ class AnimationSlider: UIControl {
     override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         
         let touchLocation = touch.location(in: self)
-        value = touchLocation.x/bounds.width * maximumValue
+        value = (touchLocation.x - thumbImgWidth/2)/layerWidth * maximumValue
         return true
     }
-}
-
-extension AnimationSlider {
     
-    func setValue(value: CGFloat, duration: TimeInterval) {
-        
-        guard isAnimating == false else {
-            return
-        }
-        isAnimating = true
-        
-        let targetValue = min(maximumValue, max(minimumValue, value))
-        
-        positionAnimation.fromValue = thumbImgView.center
-        positionAnimation.toValue = CGPoint(x: targetValue * bounds.width, y: bounds.height/2)
-        positionAnimation.duration = duration
-        thumbImgView.layer.add(positionAnimation, forKey: "position")
-        
-        strokeEndAnimation.fromValue = minimumTrackLayer.strokeEnd
-        strokeEndAnimation.toValue = value
-        strokeEndAnimation.duration = duration
-        minimumTrackLayer.add(strokeEndAnimation, forKey: "stroke_end")
-    }
-    
-    func increaseValueToMaximum(duration: TimeInterval) {
-        setValue(value: 1, duration: duration)
-    }
-    
-    func stopIncrese() {
-        
-        if let presentation = thumbImgView.layer.presentation() {
-            value = presentation.position.x/bounds.width * maximumValue
-        }
-        thumbImgView.layer.removeAllAnimations()
-        minimumTrackLayer.removeAllAnimations()
-    }
 }
 
 fileprivate extension AnimationSlider {
-
+    
+    var thumbImgWidth: CGFloat {
+        return thumbImage?.size.width ?? 0
+    }
+    
+    var layerWidth: CGFloat {
+        return bounds.width - thumbImgWidth
+    }
+    
     func setup(){
         layer.addSublayer(maximumGradientLayer)
         layer.addSublayer(minimumGradientLayer)
@@ -233,8 +204,8 @@ fileprivate extension AnimationSlider {
     func setupLayers() {
         
         let path = UIBezierPath()
-        path.move(to: .init(x: 0, y: bounds.height/2))
-        path.addLine(to: .init(x: bounds.width, y: bounds.height/2))
+        path.move(to: .init(x: thumbImgWidth/2, y: bounds.height/2))
+        path.addLine(to: .init(x: bounds.width - thumbImgWidth/2, y: bounds.height/2))
         minimumTrackLayer.path = path.cgPath
         maximumTrackLayer.path = path.cgPath
         
@@ -252,10 +223,10 @@ fileprivate extension AnimationSlider {
         lastValue = value
         
         // 设置thumb的位置
-        let minimunPoint = bounds.width * value
+        let minimunPoint = thumbImgWidth/2 + layerWidth * value
         thumbImgView.center.x = minimunPoint
         coverView.frame = CGRect(origin: .zero, size: CGSize(width: minimunPoint, height: bounds.height))
-
+        
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
@@ -267,8 +238,8 @@ fileprivate extension AnimationSlider {
     
     func isInRespondsArea(withPoint point: CGPoint) -> Bool {
         
-        let dx = fabs(point.x - thumbImgView.center.x)
-        let dy = fabs(point.y - thumbImgView.center.y)
+        let dx = abs(point.x - thumbImgView.center.x)
+        let dy = abs(point.y - thumbImgView.center.y)
         let dis = hypot(dx, dy)
         var respondsRadius = thumbExtendRespondsRadius
         if let thumbImage = thumbImage {
@@ -281,13 +252,42 @@ fileprivate extension AnimationSlider {
 extension AnimationSlider: CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if let presentation = thumbImgView.layer.presentation() {
-            value = presentation.position.x/bounds.width * maximumValue
+        if isAnimating {
+            freeze()
         }
+    }
+}
+
+extension AnimationSlider {
+    
+    func setValue(value: CGFloat, duration: TimeInterval) {
         
-        minimumTrackLayer.removeAllAnimations()
-        thumbImgView.layer.removeAllAnimations()
+        guard isAnimating == false else {
+            return
+        }
+        isAnimating = true
+        
+        let targetValue = min(maximumValue, max(minimumValue, value))
+        
+        positionAnimation.fromValue = thumbImgView.center
+        positionAnimation.toValue = CGPoint(x: thumbImgWidth/2 + layerWidth * targetValue, y: bounds.height/2)
+        positionAnimation.duration = duration
+        thumbImgView.layer.add(positionAnimation, forKey: "position")
+        
+        strokeEndAnimation.fromValue = minimumTrackLayer.strokeEnd
+        strokeEndAnimation.toValue = value
+        strokeEndAnimation.duration = duration
+        minimumTrackLayer.add(strokeEndAnimation, forKey: "stroke_end")
+    }
+    
+    func freeze() {
+        
         isAnimating = false
+        if let presentation = thumbImgView.layer.presentation() {
+            value = (presentation.position.x - thumbImgWidth/2)/layerWidth * maximumValue
+        }
+        thumbImgView.layer.removeAllAnimations()
+        minimumTrackLayer.removeAllAnimations()
     }
 }
 

@@ -30,10 +30,10 @@ class AnimationSliderSampleViewController: UIViewController {
     @IBAction func handleButton(_ sender: UIButton) {
         
         if sender.isSelected {
-            animationSlider.stopIncrese()
+            animationSlider.freeze()
             sender.setTitle("开始", for: .normal)
         } else {
-            animationSlider.increaseValueToMaximum(duration: TimeInterval(10 * (1 - animationSlider.value)))
+            animationSlider.setValue(value: 1, duration: TimeInterval(10 * (1 - animationSlider.value)))
             sender.setTitle("停止", for: .normal)
         }
         
