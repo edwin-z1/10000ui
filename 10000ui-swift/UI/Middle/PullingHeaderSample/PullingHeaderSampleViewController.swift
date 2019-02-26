@@ -12,6 +12,7 @@ class PullingHeaderSampleViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var pullToRefreshView: PullToFreshView!
+    @IBOutlet weak var label: UILabel!
     
     private var pullingHeader: PullingHeader!
     fileprivate lazy var animator = DynamicGravityTransitionAnimator()
@@ -37,9 +38,11 @@ class PullingHeaderSampleViewController: UIViewController {
                 header.endTransition()
             })
         })
-//        scrollView.contentInset = UIEdgeInsetsMake(42, 0, 0, 0)
-        scrollView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 42)
-        pullingHeader.dragDirection = .left
+        scrollView.contentInset = UIEdgeInsets(top: 42, left: 0, bottom: 0, right: 0)
+        
+//        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 42)
+//        pullingHeader.dragDirection = .left
+//        label.text = "pull👈"
     }
 }
 
