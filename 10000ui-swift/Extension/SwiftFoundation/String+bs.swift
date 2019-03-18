@@ -12,4 +12,5 @@ extension String: Namespace {}
 
 extension NamespaceBox where T == String {
 
+
 }

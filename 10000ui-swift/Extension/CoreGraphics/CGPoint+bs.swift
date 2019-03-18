@@ -13,7 +13,7 @@ extension CGPoint: Namespace {}
 extension NamespaceBox where T == CGPoint {
     
     func angleFromEast(withRelativePoint relativePoint: CGPoint, clockwise: Bool = false) -> CGFloat {
-        var v = CGPoint(x: relativePoint.x - source.x, y: relativePoint.y - source.y)
+        var v = CGPoint(x: relativePoint.x - base.x, y: relativePoint.y - base.y)
         
         let vmag = hypot(v.x, v.y)
         
@@ -40,11 +40,11 @@ extension NamespaceBox where T == CGPoint {
         let offsetY = distance * sin(angle)
         var y: CGFloat = 0
         if clockwise {
-            y = source.y + offsetY
+            y = base.y + offsetY
         } else {
-            y = source.y - offsetY
+            y = base.y - offsetY
         }
-        return CGPoint(x: source.x + offsetX,
+        return CGPoint(x: base.x + offsetX,
                        y: y)
     }
     
@@ -53,12 +53,12 @@ extension NamespaceBox where T == CGPoint {
         let offsetY = distance * cos(angle)
         var x: CGFloat = 0
         if clockwise {
-            x = source.x + offsetX
+            x = base.x + offsetX
         } else {
-            x = source.x - offsetX
+            x = base.x - offsetX
         }
         return CGPoint(x: x,
-                       y: source.y - offsetY)
+                       y: base.y - offsetY)
     }
 }
 

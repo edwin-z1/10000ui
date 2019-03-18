@@ -14,7 +14,7 @@ fileprivate struct AssociatedObjectKeys {
 extension NamespaceBox where T: UINavigationController {
     
     var circularRevealTransition: CircularRevealTransition {
-        return source.circularRevealTransition
+        return base.circularRevealTransition
     }
 }
 

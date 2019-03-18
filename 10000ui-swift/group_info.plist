@@ -21,6 +21,7 @@
 	</array>
 	<key>3.Complex</key>
 	<array>
+		<string>PhotosSelect</string>
 		<string>PetalLayout</string>
 		<string>CircleSlider</string>
 		<string>NumbersView(Objective-C)</string>

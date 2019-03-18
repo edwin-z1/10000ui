@@ -7,3 +7,5 @@
 #import "Flight.h"
 
 #import "BSRaceLampView.h"
+
+#import "UIImage+BSCategory.h"

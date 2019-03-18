@@ -10,10 +10,10 @@ import Foundation
 
 class NamespaceBox<T> {
     
-    var source: T
+    var base: T
     
-    init(_ source: T) {
-        self.source = source
+    init(_ base: T) {
+        self.base = base
     }
 }
 

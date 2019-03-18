@@ -13,7 +13,7 @@ extension CGFloat: Namespace {}
 extension NamespaceBox where T == CGFloat {
     
     var circumPositiveValue: CGFloat {
-        var value = source
+        var value = base
         if value < 0 {
             value += .pi * 2
             return value.bs.circumPositiveValue

@@ -12,73 +12,73 @@ extension NamespaceBox where T: UIView {
     
     var origin: CGPoint {
         set {
-            source.frame = CGRect(origin: newValue, size: source.frame.size)
+            base.frame = CGRect(origin: newValue, size: base.frame.size)
         }
         get {
-            return source.frame.origin
+            return base.frame.origin
         }
     }
     
     var size: CGSize {
         set {
-            source.frame = CGRect(origin: source.frame.origin, size: newValue)
+            base.frame = CGRect(origin: base.frame.origin, size: newValue)
         }
         get {
-            return source.frame.size
+            return base.frame.size
         }
     }
     
     var x: CGFloat {
         set {
-            source.frame = CGRect(origin: CGPoint(x: newValue, y: source.frame.origin.y), size: source.frame.size)
+            base.frame = CGRect(origin: CGPoint(x: newValue, y: base.frame.origin.y), size: base.frame.size)
         }
         get {
-            return source.frame.origin.x
+            return base.frame.origin.x
         }
     }
     
     var y: CGFloat {
         set {
-            source.frame = CGRect(origin: CGPoint(x: source.frame.origin.x, y: newValue), size: source.frame.size)
+            base.frame = CGRect(origin: CGPoint(x: base.frame.origin.x, y: newValue), size: base.frame.size)
         }
         get {
-            return source.frame.origin.y
+            return base.frame.origin.y
         }
     }
     
     var centerX: CGFloat {
         set {
-            source.center = CGPoint(x: newValue, y: centerY)
+            base.center = CGPoint(x: newValue, y: centerY)
         }
         get {
-            return source.center.x
+            return base.center.x
         }
     }
     
     var centerY: CGFloat {
         set {
-            source.center = CGPoint(x: centerX, y: newValue)
+            base.center = CGPoint(x: centerX, y: newValue)
         }
         get {
-            return source.center.y
+            return base.center.y
         }
     }
     
     var width: CGFloat {
         set {
-            source.frame = CGRect(origin: source.frame.origin, size: CGSize(width: newValue, height: source.frame.size.height))
+            base.frame = CGRect(origin: base.frame.origin, size: CGSize(width: newValue, height: base.frame.size.height))
         }
         get {
-            return source.frame.size.width
+            return base.frame.size.width
         }
     }
     
     var height: CGFloat {
         set {
-            source.frame = CGRect(origin: source.frame.origin, size: CGSize(width: source.frame.size.width, height: newValue))
+            base.frame = CGRect(origin: base.frame.origin, size: CGSize(width: base.frame.size.width, height: newValue))
         }
         get {
-            return source.frame.size.height
+            return base.frame.size.height
         }
     }
     

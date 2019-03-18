@@ -17,20 +17,20 @@ fileprivate struct AssociatedObjectKeys {
 extension NamespaceBox where T: UIViewController {
     
     func setBackLeftItem(clickHandler:(() -> Void)?) {
-        source.leftClickHandler = clickHandler
-        source.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrow_left"), style: .plain, target: source, action: #selector(UIViewController.handleBackLeftItem(sender:)))
+        base.leftClickHandler = clickHandler
+        base.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrow_left"), style: .plain, target: base, action: #selector(UIViewController.handleBackLeftItem(sender:)))
     }
     
     func setDismissLeftItem(dismissCompletion: (() -> Void)? )  {
         
-        source.dismissCompletion = dismissCompletion
-        source.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .stop, target: source, action: #selector(UIViewController.handleDismissLeftItem(sender:)))
+        base.dismissCompletion = dismissCompletion
+        base.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .stop, target: base, action: #selector(UIViewController.handleDismissLeftItem(sender:)))
     }
     
     func setRightItem(title: String, clickHandler: (() -> Void)? )  {
         
-        source.rightClickHandler = clickHandler
-        source.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: title, style: .plain, target: source, action: #selector(UIViewController.handleRightItem(sender:)))
+        base.rightClickHandler = clickHandler
+        base.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: title, style: .plain, target: base, action: #selector(UIViewController.handleRightItem(sender:)))
     }
 }
 
@@ -80,5 +80,49 @@ extension NamespaceBox where T: UIViewController {
     
     static func instantiateFromStoryboard(name: String, bundle: Bundle? = nil, identifier: String = T.bs.string) -> T {
         return UIStoryboard(name: name, bundle: bundle).instantiateViewController(withIdentifier: identifier) as! T
+    }
+}
+
+extension NamespaceBox where T: UIViewController {
+    
+    var topPresentedVC: UIViewController {
+        if let presentedVC = base.presentedViewController {
+            return presentedVC.bs.topPresentedVC
+        } else {
+            return base
+        }
+    }
+    
+    var rootParentVC: UIViewController {
+        if let parentVC = base.parent, !parentVC.isKind(of: UINavigationController.self) {
+            return parentVC.bs.rootParentVC
+        } else {
+            return base
+        }
+    }
+    
+    var visibleViewController: UIViewController? {
+        
+        if let presented = base.presentedViewController {
+            return presented.bs.visibleViewController
+        } else if let tabBar = base as? UITabBarController {
+            return tabBar.selectedViewController?.bs.visibleViewController
+        } else if let navi = base as? UINavigationController {
+            return navi.visibleViewController?.bs.visibleViewController
+        } else {
+            return base
+        }
+    }
+    
+    var parentViewController: UIViewController? {
+        
+        if let parent = base.parent,
+            parent != base.presentingViewController,
+            !parent.isKind(of: UITabBarController.self),
+            !parent.isKind(of: UINavigationController.self) {
+            return parent.bs.parentViewController
+        } else {
+            return base
+        }
     }
 }

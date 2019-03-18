@@ -337,8 +337,8 @@ fileprivate extension CircleSlider {
     
     func isInRespondsArea(withTouchLocation touchLocation: CGPoint) -> Bool {
         
-        let dx = fabs(touchLocation.x - thumbImgView.center.x)
-        let dy = fabs(touchLocation.y - thumbImgView.center.y)
+        let dx = abs(touchLocation.x - thumbImgView.center.x)
+        let dy = abs(touchLocation.y - thumbImgView.center.y)
         let dis = hypot(dx, dy)
         var respondsRadius = thumbExtendRespondsRadius
         if let thumbImage = thumbImage {

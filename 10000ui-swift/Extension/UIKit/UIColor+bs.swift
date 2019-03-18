@@ -36,7 +36,7 @@ extension NamespaceBox where T: UIColor {
     func convert(to color: UIColor, multiplier: CGFloat) -> UIColor? {
         let multiplier = min(max(multiplier, 0), 1)
         
-        let components = source.cgColor.components ?? []
+        let components = base.cgColor.components ?? []
         let toComponents = color.cgColor.components ?? []
         
         if components.isEmpty || components.count < 3 || toComponents.isEmpty || toComponents.count < 3 {

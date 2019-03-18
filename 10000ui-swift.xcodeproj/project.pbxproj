@@ -82,6 +82,20 @@
 		8486B19B1F70B5AD002C3FE2 /* CycleThroughSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1921F70B5AD002C3FE2 /* CycleThroughSampleViewController.swift */; };
 		8486B1A71F70B879002C3FE2 /* BSRaceLampView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8486B1A31F70B879002C3FE2 /* BSRaceLampView.m */; };
 		8486B1A81F70B879002C3FE2 /* RaceLampView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486B1A41F70B879002C3FE2 /* RaceLampView.storyboard */; };
+		84A4894B223A42BF00A8D124 /* UICollectionViewFlowLayout+NameBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4894A223A42BF00A8D124 /* UICollectionViewFlowLayout+NameBox.swift */; };
+		84A48952223A5AAA00A8D124 /* TimeInterval+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A48951223A5AAA00A8D124 /* TimeInterval+bs.swift */; };
+		84A48957223A5D8000A8D124 /* UIImage+BSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A48956223A5D8000A8D124 /* UIImage+BSCategory.m */; };
+		84A48965223A60E800A8D124 /* PhotosSelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4895A223A60E800A8D124 /* PhotosSelectItem.swift */; };
+		84A48966223A60E800A8D124 /* AlbumsSelectTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4895B223A60E800A8D124 /* AlbumsSelectTableCell.swift */; };
+		84A48967223A60E800A8D124 /* PhotosManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4895D223A60E800A8D124 /* PhotosManager.swift */; };
+		84A48968223A60E800A8D124 /* PhotosImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4895E223A60E800A8D124 /* PhotosImageRequester.swift */; };
+		84A48969223A60E800A8D124 /* PhotosSelectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4895F223A60E800A8D124 /* PhotosSelectCollectionCell.swift */; };
+		84A4896A223A60E800A8D124 /* PhotosSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A48960223A60E800A8D124 /* PhotosSelectViewController.swift */; };
+		84A4896B223A60E800A8D124 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A48962223A60E800A8D124 /* AuthorizationManager.swift */; };
+		84A4896C223A60E800A8D124 /* PhotosSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A48963223A60E800A8D124 /* PhotosSelectViewController.storyboard */; };
+		84A4896D223A60E800A8D124 /* AlbumsSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A48964223A60E800A8D124 /* AlbumsSelectViewController.swift */; };
+		84A4896F223A60F700A8D124 /* PhotosSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A4896E223A60F700A8D124 /* PhotosSelect.storyboard */; };
+		84A48971223A611700A8D124 /* PhotosSelectSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A48970223A611700A8D124 /* PhotosSelectSampleViewController.swift */; };
 		84B29596201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B29595201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift */; };
 		84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */; };
 		84B4D4C21F7E3FCB00FC85BE /* CycleThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */; };
@@ -199,6 +213,21 @@
 		8486B1A21F70B879002C3FE2 /* BSRaceLampView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRaceLampView.h; sourceTree = "<group>"; };
 		8486B1A31F70B879002C3FE2 /* BSRaceLampView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRaceLampView.m; sourceTree = "<group>"; };
 		8486B1A41F70B879002C3FE2 /* RaceLampView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RaceLampView.storyboard; sourceTree = "<group>"; };
+		84A4894A223A42BF00A8D124 /* UICollectionViewFlowLayout+NameBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+NameBox.swift"; sourceTree = "<group>"; };
+		84A48951223A5AAA00A8D124 /* TimeInterval+bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+bs.swift"; sourceTree = "<group>"; };
+		84A48955223A5D8000A8D124 /* UIImage+BSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BSCategory.h"; sourceTree = "<group>"; };
+		84A48956223A5D8000A8D124 /* UIImage+BSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BSCategory.m"; sourceTree = "<group>"; };
+		84A4895A223A60E800A8D124 /* PhotosSelectItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosSelectItem.swift; sourceTree = "<group>"; };
+		84A4895B223A60E800A8D124 /* AlbumsSelectTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsSelectTableCell.swift; sourceTree = "<group>"; };
+		84A4895D223A60E800A8D124 /* PhotosManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosManager.swift; sourceTree = "<group>"; };
+		84A4895E223A60E800A8D124 /* PhotosImageRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosImageRequester.swift; sourceTree = "<group>"; };
+		84A4895F223A60E800A8D124 /* PhotosSelectCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosSelectCollectionCell.swift; sourceTree = "<group>"; };
+		84A48960223A60E800A8D124 /* PhotosSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosSelectViewController.swift; sourceTree = "<group>"; };
+		84A48962223A60E800A8D124 /* AuthorizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		84A48963223A60E800A8D124 /* PhotosSelectViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotosSelectViewController.storyboard; sourceTree = "<group>"; };
+		84A48964223A60E800A8D124 /* AlbumsSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsSelectViewController.swift; sourceTree = "<group>"; };
+		84A4896E223A60F700A8D124 /* PhotosSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotosSelect.storyboard; sourceTree = "<group>"; };
+		84A48970223A611700A8D124 /* PhotosSelectSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSelectSampleViewController.swift; sourceTree = "<group>"; };
 		84B29595201B34ED0040FB56 /* PetalLayoutCircleAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetalLayoutCircleAttributes.swift; sourceTree = "<group>"; };
 		84B4D4BF1F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughCollectionCell.swift; sourceTree = "<group>"; };
 		84B4D4C01F7E3FCB00FC85BE /* CycleThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleThroughView.swift; sourceTree = "<group>"; };
@@ -308,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				8428DD182043B58D008303C4 /* String+bs.swift */,
+				84A48951223A5AAA00A8D124 /* TimeInterval+bs.swift */,
 			);
 			path = SwiftFoundation;
 			sourceTree = "<group>";
@@ -356,6 +386,7 @@
 				84329F031F3D4F47008AD0B4 /* AppDelegate.swift */,
 				84329F3D1F3D54A7008AD0B4 /* TableViewController.swift */,
 				84329F071F3D4F47008AD0B4 /* Main.storyboard */,
+				84A48953223A5D6E00A8D124 /* Vendor */,
 				84C3FCF61F8C7E41009E24D3 /* Abstract */,
 				8457E6291F3D5F1000781302 /* Extension */,
 				8457E6221F3D5D9C00781302 /* Protocol */,
@@ -438,6 +469,7 @@
 		845CA8991F453298003594C6 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				84A4894A223A42BF00A8D124 /* UICollectionViewFlowLayout+NameBox.swift */,
 				8486B18B1F6FD115002C3FE2 /* UIView+bs.swift */,
 				84C3FCF91F8CAE25009E24D3 /* UIColor+bs.swift */,
 				845CA89A1F453298003594C6 /* UIImage+bs.swift */,
@@ -449,6 +481,7 @@
 		8486B0AB1F6FC9E2002C3FE2 /* Complex */ = {
 			isa = PBXGroup;
 			children = (
+				84A48958223A60E800A8D124 /* PhotosSelectViewControllerSample */,
 				842EC9BD20197DF200C1B69A /* PetalLayoutSample */,
 				8486B0B31F6FC9E2002C3FE2 /* CircleSliderSample */,
 				8486B14E1F6FCFF1002C3FE2 /* CalendarViewSample */,
@@ -622,6 +655,65 @@
 				8486B1A31F70B879002C3FE2 /* BSRaceLampView.m */,
 			);
 			path = BSRaceLampView;
+			sourceTree = "<group>";
+		};
+		84A48953223A5D6E00A8D124 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				84A48954223A5D8000A8D124 /* UIImage+BSCategory */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		84A48954223A5D8000A8D124 /* UIImage+BSCategory */ = {
+			isa = PBXGroup;
+			children = (
+				84A48955223A5D8000A8D124 /* UIImage+BSCategory.h */,
+				84A48956223A5D8000A8D124 /* UIImage+BSCategory.m */,
+			);
+			path = "UIImage+BSCategory";
+			sourceTree = "<group>";
+		};
+		84A48958223A60E800A8D124 /* PhotosSelectViewControllerSample */ = {
+			isa = PBXGroup;
+			children = (
+				84A4896E223A60F700A8D124 /* PhotosSelect.storyboard */,
+				84A48970223A611700A8D124 /* PhotosSelectSampleViewController.swift */,
+				84A48959223A60E800A8D124 /* PhotosSelectViewController */,
+			);
+			path = PhotosSelectViewControllerSample;
+			sourceTree = "<group>";
+		};
+		84A48959223A60E800A8D124 /* PhotosSelectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84A4895A223A60E800A8D124 /* PhotosSelectItem.swift */,
+				84A48963223A60E800A8D124 /* PhotosSelectViewController.storyboard */,
+				84A48960223A60E800A8D124 /* PhotosSelectViewController.swift */,
+				84A4895F223A60E800A8D124 /* PhotosSelectCollectionCell.swift */,
+				84A48964223A60E800A8D124 /* AlbumsSelectViewController.swift */,
+				84A4895B223A60E800A8D124 /* AlbumsSelectTableCell.swift */,
+				84A4895C223A60E800A8D124 /* PhotosManager */,
+				84A48961223A60E800A8D124 /* AuthorizationManager */,
+			);
+			path = PhotosSelectViewController;
+			sourceTree = "<group>";
+		};
+		84A4895C223A60E800A8D124 /* PhotosManager */ = {
+			isa = PBXGroup;
+			children = (
+				84A4895D223A60E800A8D124 /* PhotosManager.swift */,
+				84A4895E223A60E800A8D124 /* PhotosImageRequester.swift */,
+			);
+			path = PhotosManager;
+			sourceTree = "<group>";
+		};
+		84A48961223A60E800A8D124 /* AuthorizationManager */ = {
+			isa = PBXGroup;
+			children = (
+				84A48962223A60E800A8D124 /* AuthorizationManager.swift */,
+			);
+			path = AuthorizationManager;
 			sourceTree = "<group>";
 		};
 		84B4D4BE1F7E3FCB00FC85BE /* CycleThroughView */ = {
@@ -822,6 +914,8 @@
 				84329F0B1F3D4F47008AD0B4 /* Assets.xcassets in Resources */,
 				8486B1A81F70B879002C3FE2 /* RaceLampView.storyboard in Resources */,
 				8486B19A1F70B5AD002C3FE2 /* CycleThroughView.storyboard in Resources */,
+				84A4896F223A60F700A8D124 /* PhotosSelect.storyboard in Resources */,
+				84A4896C223A60E800A8D124 /* PhotosSelectViewController.storyboard in Resources */,
 				84C3FD091F8CB36D009E24D3 /* DialogImageStyleView.xib in Resources */,
 				84C3FD0F1F8CB36D009E24D3 /* DialogViewController.storyboard in Resources */,
 				84BE36801FCFA841005F81D0 /* RectFillLabel.storyboard in Resources */,
@@ -917,10 +1011,14 @@
 				8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */,
 				842EC9C420197DF300C1B69A /* PetalLayoutSampleViewController.swift in Sources */,
 				8410091421ACE8A700BAA7DF /* PopoverViewController.swift in Sources */,
+				84A48971223A611700A8D124 /* PhotosSelectSampleViewController.swift in Sources */,
 				8486B1691F6FCFF1002C3FE2 /* CalendarViewSampleViewController.swift in Sources */,
 				8428DD1C2043BF37008303C4 /* DynamicGravityTransitionAnimator.swift in Sources */,
 				8410091F21ACF91200BAA7DF /* SlideMenuViewController.swift in Sources */,
 				84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */,
+				84A4896D223A60E800A8D124 /* AlbumsSelectViewController.swift in Sources */,
+				84A48969223A60E800A8D124 /* PhotosSelectCollectionCell.swift in Sources */,
+				84A4894B223A42BF00A8D124 /* UICollectionViewFlowLayout+NameBox.swift in Sources */,
 				84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */,
 				8486B15F1F6FCFF1002C3FE2 /* CalendarDayCollectionReusableHeaderView.swift in Sources */,
 				84656E0A1F8B13C20030D69D /* NumbersViewSampleCollectionCell.swift in Sources */,
@@ -935,11 +1033,14 @@
 				84C3FCC21F8B7DA9009E24D3 /* BSIndexPath.m in Sources */,
 				84329F3E1F3D54A7008AD0B4 /* TableViewController.swift in Sources */,
 				8486B1641F6FCFF1002C3FE2 /* CalendarPreference.swift in Sources */,
+				84A4896A223A60E800A8D124 /* PhotosSelectViewController.swift in Sources */,
 				845CA89D1F453298003594C6 /* CGPoint+bs.swift in Sources */,
 				8428DD1620415097008303C4 /* PullToTransitionViewController.swift in Sources */,
 				8428DD0E20403628008303C4 /* PullingHeaderSampleViewController.swift in Sources */,
 				8475033B1FAC5D6A008CFF86 /* LayerPercentDrivenInteractiveTransition.swift in Sources */,
 				8486B12E1F6FCE6C002C3FE2 /* SeparatorLabel.swift in Sources */,
+				84A48957223A5D8000A8D124 /* UIImage+BSCategory.m in Sources */,
+				84A48967223A60E800A8D124 /* PhotosManager.swift in Sources */,
 				8486B1601F6FCFF1002C3FE2 /* CalendarManager.swift in Sources */,
 				8486B19B1F70B5AD002C3FE2 /* CycleThroughSampleViewController.swift in Sources */,
 				84B8DF8B1FAAFE41006D3258 /* CircularRevealTransitionSampleViewController2.swift in Sources */,
@@ -951,9 +1052,11 @@
 				842EC9C520197DF300C1B69A /* PetalLayout.swift in Sources */,
 				8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */,
 				846155611FA039BB006F9BE4 /* FadingLabel.swift in Sources */,
+				84A4896B223A60E800A8D124 /* AuthorizationManager.swift in Sources */,
 				84450246209875800072DD5E /* AnimationSliderSampleViewController.swift in Sources */,
 				84C3FD101F8CB36D009E24D3 /* DialogViewControllerSampleViewController.swift in Sources */,
 				8486B1231F6FCCDB002C3FE2 /* BSNumbersView.m in Sources */,
+				84A48952223A5AAA00A8D124 /* TimeInterval+bs.swift in Sources */,
 				84B8DF871FAAFC40006D3258 /* CircularRevealTransition.swift in Sources */,
 				84B7660A1F7E45460042B682 /* RaceLampViewSampleViewController.swift in Sources */,
 				845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */,
@@ -966,8 +1069,10 @@
 				8486B1A71F70B879002C3FE2 /* BSRaceLampView.m in Sources */,
 				8486B18C1F6FD115002C3FE2 /* UIView+bs.swift in Sources */,
 				84C387AD1F8DF1B4009F3076 /* LoadingViewController.swift in Sources */,
+				84A48966223A60E800A8D124 /* AlbumsSelectTableCell.swift in Sources */,
 				84B4D4C11F7E3FCB00FC85BE /* CycleThroughCollectionCell.swift in Sources */,
 				842EC9C320197DF300C1B69A /* PetalLayoutSampleCollectionCell.swift in Sources */,
+				84A48965223A60E800A8D124 /* PhotosSelectItem.swift in Sources */,
 				8428DD1020403783008303C4 /* PullingHeader.swift in Sources */,
 				8475033F1FB00247008CFF86 /* CircularRevealTransitionInteractiveController.swift in Sources */,
 				84656E081F8B113D0030D69D /* NumbersViewSampleViewController.swift in Sources */,
@@ -980,6 +1085,7 @@
 				84656E151F8B29FB0030D69D /* NSString+BSNumbersView.m in Sources */,
 				8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */,
 				8486B0BA1F6FC9E2002C3FE2 /* SeparatorLabelSampleViewController.swift in Sources */,
+				84A48968223A60E800A8D124 /* PhotosImageRequester.swift in Sources */,
 				8486B1651F6FCFF1002C3FE2 /* CalendarView.swift in Sources */,
 				8486B1211F6FCCDB002C3FE2 /* BSNumbersCollectionCell.m in Sources */,
 				8486B1661F6FCFF1002C3FE2 /* Date+CalendarView.swift in Sources */,
