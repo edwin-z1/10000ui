@@ -15,15 +15,15 @@ import RxCocoa
 
 enum PhotosMultiSelectionType {
     case image
-    case all
+    case mix
 }
 
 class PhotosSelectViewController: UIViewController {
     
     var photosDidSelectClosure: (([PHAsset]) -> Void)?
     var fetchType: PhotosFetchType = .all
-    var limitCount = 9
-    var mutliSelectionType: PhotosMultiSelectionType = .image
+    var limitImageCount = 9
+    var mutliSelectionType: PhotosMultiSelectionType = .mix
 
     @IBOutlet weak var closeBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var titleButton: UIButton!
@@ -43,9 +43,6 @@ class PhotosSelectViewController: UIViewController {
         setup()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 }
 
 private extension PhotosSelectViewController {
@@ -141,7 +138,7 @@ private extension PhotosSelectViewController {
                         default:
                             break
                         }
-                    case .all:
+                    case .mix:
                         self.handleSelectedItem(photoSelectItem)
                     }
                 }
@@ -281,7 +278,7 @@ private extension PhotosSelectViewController {
         if let idx = selectedItemsVariable.value.index(of: item) {
             
             // 如果删除前已选到最大数量, 取消图片遮罩
-            if selectedItemsVariable.value.count == limitCount {
+            if selectedItemsVariable.value.count == limitImageCount {
                 
                 itemsVariable.value.forEach {
                     switch self.mutliSelectionType {
@@ -291,7 +288,7 @@ private extension PhotosSelectViewController {
                         } else {
                             $0.isShowMaskVariable.value = false
                         }
-                    case .all:
+                    case .mix:
                         $0.isShowMaskVariable.value = false
                     }
                 }
@@ -316,7 +313,7 @@ private extension PhotosSelectViewController {
             }
             
             // 选中添加
-        } else if selectedItemsVariable.value.count < limitCount {
+        } else if selectedItemsVariable.value.count < limitImageCount {
             
             selectedItemsVariable.value.append(item)
             item.selectIndexVariable.value = selectedItemsVariable.value.count
@@ -331,7 +328,7 @@ private extension PhotosSelectViewController {
             }
             
             // 如果到最大限制, 给除了选中外的其他item加遮罩
-            if selectedItemsVariable.value.count == limitCount {
+            if selectedItemsVariable.value.count == limitImageCount {
                 itemsVariable.value.forEach {
                     if !self.selectedItemsVariable.value.contains($0) {
                         $0.isShowMaskVariable.value = true

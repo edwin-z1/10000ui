@@ -79,7 +79,7 @@ extension PhotosSelectCollectionCell {
                 videoDurationLabel.text = asset.duration.bs.formattedColonString
                 videoDurationLabel.isHidden = false
                 
-                if photoSelectItem.mutliSelectionType == .all {
+                if photoSelectItem.mutliSelectionType == .mix {
                     selectImgView.isHidden = false
                 }
                 
