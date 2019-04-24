@@ -19,10 +19,8 @@ class PhotosSelectSampleViewController: UIViewController {
     @IBAction func handlePhotosSelectButton(_ sender: UIButton) {
         
         _ = AuthorizationManager.requestPhotoLibraryAuthorization()
+            .filter { $0 }
             .subscribe(onNext: { [unowned self] (isGranted) in
-                guard isGranted else {
-                    return
-                }
                 let photosSelectVC = PhotosSelectViewController.bs.instantiateFromStoryboard(name: "PhotosSelectViewController")
                 let navi = UINavigationController(rootViewController: photosSelectVC)
                 photosSelectVC.photosDidSelectClosure = { [unowned navi] assets in
