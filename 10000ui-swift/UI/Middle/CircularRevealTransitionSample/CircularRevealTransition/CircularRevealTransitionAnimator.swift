@@ -70,7 +70,7 @@ extension CircularRevealTransitionAnimator: UIViewControllerAnimatedTransitionin
             let fromView = transitionContext.view(forKey: .from)!
             fromView.layer.mask = maskLayer
             containerView.insertSubview(toView, belowSubview: fromView)
-        case .none:
+        default:
             return
         }
         

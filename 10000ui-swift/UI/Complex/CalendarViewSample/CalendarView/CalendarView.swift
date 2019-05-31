@@ -33,7 +33,7 @@ class CalendarView: UIView {
         didSet {
             if oldValue != nil,
             currentDisplayingMonth.date != oldValue.date {
-                currentMonthDidChangeClosure?(currentDisplayingMonth.date.month)
+                currentMonthDidChangeClosure?(currentDisplayingMonth.date.componentFor(.month))
             }
         }
     }
@@ -172,8 +172,8 @@ fileprivate extension CalendarView {
     
     func scrollToCurrentDisplayingMonth() {
         
-        let optionalIndex = calendarManager.calendarMonths.index {
-            $0.date.month == currentDisplayingMonth.date.month
+        let optionalIndex = calendarManager.calendarMonths.firstIndex {
+            $0.date.componentFor(.month) == currentDisplayingMonth.date.componentFor(.month)
         }
         guard let index = optionalIndex else {
            return
@@ -259,7 +259,7 @@ fileprivate extension CalendarView {
     func handlePreviousMonthButton() {
         isUserInteracted = true
         
-        let displayingMonth = currentDisplayingMonth.date.month
+        let displayingMonth = currentDisplayingMonth.date.componentFor(.month)
         let previousMonth = displayingMonth - 1
         let index = previousMonth - preference.monthSelectRange.lowerBound
         collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: true)
@@ -268,7 +268,7 @@ fileprivate extension CalendarView {
     func handleNextMonthButton() {
         isUserInteracted = true
         
-        let displayingMonth = currentDisplayingMonth.date.month
+        let displayingMonth = currentDisplayingMonth.date.componentFor(.month)
         let nextMonth = displayingMonth + 1
         let index = nextMonth - preference.monthSelectRange.lowerBound
         collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: true)
@@ -316,8 +316,8 @@ extension CalendarView: UICollectionViewDelegate {
         
         willDisplayingMonth = calendarManager.calendarMonths[indexPath.row]
         
-        let optionalIndex = calendarManager.calendarMonths.index {
-            $0.date.month == currentDisplayingMonth.date.month
+        let optionalIndex = calendarManager.calendarMonths.firstIndex {
+            $0.date.componentFor(.month) == currentDisplayingMonth.date.componentFor(.month)
         }
         guard let index = optionalIndex else {
             return
@@ -327,7 +327,6 @@ extension CalendarView: UICollectionViewDelegate {
         } else {
             scrollDirection = .left
         }
-        print("scrollDirection = \(scrollDirection)")
     }
     
 }

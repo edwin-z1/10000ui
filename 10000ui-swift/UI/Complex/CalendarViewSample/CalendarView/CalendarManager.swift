@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DateToolsSwift
 
 class CalendarManager: NSObject {
     
@@ -20,7 +19,9 @@ class CalendarManager: NSObject {
     fileprivate(set) var nowCalendarMonth: CalendarMonth?
     fileprivate(set) var calendarMonths: [CalendarMonth]!
     
-    fileprivate let now = Date()
+    private let now = Date()
+    private lazy var year = now.componentFor(.year)
+    private lazy var month = now.componentFor(.month)
     
     override init() {
         super.init()
@@ -36,11 +37,11 @@ fileprivate extension CalendarManager {
         let endMonth = monthRange.upperBound
         
         calendarMonths = (startMonth...endMonth).map {
-            CalendarMonth(date: Date(year: now.year, month: $0, day: 1), days: getDays(withMonth: $0))
+            CalendarMonth(date: Date(year: year, month: $0, day: 1), days: getDays(withMonth: $0))
         }
         
-        if monthRange.contains(now.month) {
-            nowCalendarMonth = calendarMonths[now.month - startMonth]
+        if monthRange.contains(month) {
+            nowCalendarMonth = calendarMonths[month - startMonth]
         } else {
             nowCalendarMonth = nil
         }
@@ -60,13 +61,11 @@ fileprivate extension CalendarManager {
     
     func getPreviousMonthDays(withMonth month:Int) -> [CalendarDay] {
         
-        let firstDayDate = Date(year: now.year, month: month, day: 1)
-        let firstDayWeekDay = firstDayDate.weekday
+        let firstDayDate = Date(year: year, month: month, day: 1)
+        let firstDayWeekDay = firstDayDate.componentFor(.weekday)
         
-        return (1..<firstDayWeekDay).map {
-            var tc = TimeChunk()
-            tc.days = firstDayWeekDay - $0
-            let dayDate = firstDayDate.subtract(tc)
+        return (1..<firstDayWeekDay).reversed().map {
+            let dayDate = Calendar.autoupdatingCurrent.date(byAdding: .day, value: -$0, to: firstDayDate) ?? Date()
             let calendarDay = CalendarDay(date: dayDate)
             calendarDay.isPreviousMonthDate = true
             return calendarDay
@@ -75,11 +74,13 @@ fileprivate extension CalendarManager {
     
     func getCurrentMonthDays(withMonth month:Int) -> [CalendarDay] {
         
-        let firstDayDate = Date(year: now.year, month: month, day: 1)
-        let daysInMonth = firstDayDate.daysInMonth
+        let firstDayDate = Date(year: year, month: month, day: 1)
+        let calendar = Calendar.autoupdatingCurrent
+        let days = calendar.range(of: .day, in: .month, for: firstDayDate)
+        let daysInMonth = days?.count ?? 0
         
         return (1...daysInMonth).map({
-            let calendarDay = CalendarDay(date: Date(year: now.year, month: month, day: $0))
+            let calendarDay = CalendarDay(date: Date(year: year, month: month, day: $0))
             calendarDay.isCurrentMonthDate = true
             return calendarDay
         })
@@ -87,14 +88,16 @@ fileprivate extension CalendarManager {
     
     func getNextMonthDays(withMonth month:Int) -> [CalendarDay] {
         
-        let nextMonthFirstDayDate = Date(year: now.year, month: month + 1, day: 1)
-        var tc = TimeChunk()
-        tc.days = 1
-        let lastDayDate = nextMonthFirstDayDate.subtract(tc)
-        let lastDayWeekDay = lastDayDate.weekday
+        let firstDayDate = Date(year: year, month: month, day: 1)
+        let calendar = Calendar.autoupdatingCurrent
+        let days = calendar.range(of: .day, in: .month, for: firstDayDate)
+        let daysInMonth = days?.count ?? 0
+        let lastDayDate = Date(year: year, month: month, day: daysInMonth)
+        let lastDayWeekDay = lastDayDate.componentFor(.weekday)
         
         return (0..<(7 - lastDayWeekDay)).map({
-            let calendarDay = CalendarDay(date: Date(year: now.year, month: month + 1, day: $0 + 1))
+            let dayDate = Calendar.autoupdatingCurrent.date(byAdding: .day, value: $0 + 1, to: lastDayDate) ?? Date()
+            let calendarDay = CalendarDay(date: dayDate)
             calendarDay.isNextMonthDate = true
             return calendarDay
         })

@@ -106,33 +106,33 @@ extension CalendarMonthCollectionCell: UICollectionViewDelegateFlowLayout {
 extension CalendarMonthCollectionCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarDayCollectionCell else {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarDayCollectionCell,
+            let calendarDay = cell.calendarDay else {
             return
         }
-
-        if cell.calendarDay.isCurrentMonthDate {
+        
+        if calendarDay.isCurrentMonthDate {
             guard preference.isCurrentMonthDaySelectable else {
                 return
             }
-        } else if cell.calendarDay.isPreviousMonthDate {
+        } else if calendarDay.isPreviousMonthDate {
             guard preference.isPreviousMonthDaySelectable else {
                 return
             }
-        } else if cell.calendarDay.isNextMonthDate {
+        } else if calendarDay.isNextMonthDate {
             guard preference.isNextMonthDaySelectable else {
                 return
             }
-        } else if cell.calendarDay.date.isWeekend {
+        } else if Calendar.autoupdatingCurrent.isDateInWeekend(calendarDay.date) {
             guard preference.isWeekendDaySelectable else {
                 return
             }
         }
         
-        let calendarDay = cell.calendarDay
-        calendarDay?.isSelected = true
+        calendarDay.isSelected = true
         cell.calendarDay = calendarDay
         
-        dayDidSelectedClosure?(cell.calendarDay)
+        dayDidSelectedClosure?(calendarDay)
         
         if let lastSelectedIndexPath = selectedIndexPath,
             lastSelectedIndexPath != indexPath,

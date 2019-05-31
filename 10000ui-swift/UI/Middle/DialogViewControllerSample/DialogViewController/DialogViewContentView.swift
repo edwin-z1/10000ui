@@ -181,7 +181,7 @@ private extension DialogViewContentView {
     }
     
     @objc func handleActionButton(_ button: UIButton) {
-        guard let index = actionButtons.index(of: button) else {
+        guard let index = actionButtons.firstIndex(of: button) else {
             return
         }
         let action = actions[index]

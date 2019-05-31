@@ -63,6 +63,8 @@ class AuthorizationManager {
                 case .notDetermined: fallthrough
                 case .restricted:
                     observer.onNext(false)
+                @unknown default:
+                    print("default")
                 }
             })
             return Disposables.create()
@@ -86,6 +88,8 @@ class AuthorizationManager {
                 case .notDetermined: fallthrough
                 case .restricted:
                     observer.onNext(false)
+                @unknown default:
+                    print("default")
                 }
             }
             return Disposables.create()
@@ -111,6 +115,8 @@ class AuthorizationManager {
             case .denied: fallthrough
             case .restricted:
                 observer.onNext(false)
+            @unknown default:
+                print("default")
             }
             return Disposables.create()
             }

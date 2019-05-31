@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DateToolsSwift
 
 private struct UIConstants {
     static let buttonWidth: CGFloat = 90
@@ -17,7 +16,7 @@ class CalendarMonthSelectView: UIView {
     
     lazy var monthLabel: UILabel = {
         let label: UILabel = UILabel()
-        label.text = "\(Date().month)" + "月"
+        label.text = "\(Date().componentFor(.month))" + "月"
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .center
         
@@ -74,7 +73,7 @@ class CalendarMonthSelectView: UIView {
 extension CalendarMonthSelectView {
     
     func update(month: CalendarMonth) {
-        let displayingMonth = month.date.month
+        let displayingMonth = month.date.componentFor(.month)
         monthLabel.text = "\(displayingMonth)月"
         
         previousMonthButton.isHidden = displayingMonth == preference.monthSelectRange.lowerBound

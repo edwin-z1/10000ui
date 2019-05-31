@@ -60,10 +60,6 @@ class PopoverViewController: UIViewController {
         return isStatusBarHidden
     }
     
-    deinit {
-        print("\(description) deinit")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insertSubview(maskView, at: 0)

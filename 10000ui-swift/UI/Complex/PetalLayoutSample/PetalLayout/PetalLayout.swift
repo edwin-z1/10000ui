@@ -100,8 +100,7 @@ class PetalLayout: UICollectionViewLayout {
                 if let after = updateItem.indexPathAfterUpdate {
                     indexPathToUpdate.append(after)
                 }
-            case .reload: fallthrough
-            case .none: break
+            default: break
             }
         }
     }

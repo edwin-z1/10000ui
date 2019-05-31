@@ -32,7 +32,7 @@ class CalendarDayCollectionCell: UICollectionViewCell {
     var calendarDay: CalendarDay! {
         didSet {
             
-            dayLabel.text = "\(calendarDay.date.day)"
+            dayLabel.text = "\(calendarDay.date.componentFor(.day))"
             dayLabel.textColor = preference.currentMonthDayTextColor
             
             if calendarDay.isSelected == true {
@@ -44,7 +44,8 @@ class CalendarDayCollectionCell: UICollectionViewCell {
             } else {
                 selectedDayView.isHidden = true
                 
-                if calendarDay.date.isToday {
+                let calendar = Calendar.autoupdatingCurrent
+                if calendar.isDateInToday(calendarDay.date) {
                     if preference.isMarkToday {
                         CATransaction.begin()
                         CATransaction.setDisableActions(true)
@@ -55,7 +56,7 @@ class CalendarDayCollectionCell: UICollectionViewCell {
                     todayLineLayer.isHidden = true
                 }
                 
-                if calendarDay.date.isWeekend {
+                if calendar.isDateInWeekend(calendarDay.date) {
                     dayLabel.textColor = preference.weekendDayTextColor
                 }
                 

@@ -275,7 +275,7 @@ private extension PhotosSelectViewController {
     
     func handleSelectedItem(_ item: PhotosSelectItem) {
         // 选中删除
-        if let idx = selectedItemsVariable.value.index(of: item) {
+        if let idx = selectedItemsVariable.value.firstIndex(of: item) {
             
             // 如果删除前已选到最大数量, 取消图片遮罩
             if selectedItemsVariable.value.count == limitImageCount {
@@ -300,7 +300,7 @@ private extension PhotosSelectViewController {
             
             // 修改删除后其他选中照片index
             selectedItemsVariable.value.forEach {
-                if let idx = self.selectedItemsVariable.value.index(of: $0) {
+                if let idx = self.selectedItemsVariable.value.firstIndex(of: $0) {
                     $0.selectIndexVariable.value = idx + 1
                 }
             }
