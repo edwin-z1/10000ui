@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircularRevealTransitionSampleViewController: UIViewController, TopBarsAppearanceChangable {
+class CircularRevealTransitionSampleViewController: UIViewController, NavigationBarChangable {
     
     fileprivate var circularTransition: CircularRevealTransition {
         return navigationController!.bs.circularRevealTransition
@@ -16,7 +16,7 @@ class CircularRevealTransitionSampleViewController: UIViewController, TopBarsApp
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTopBarsAppearanceStyle(.clearBackground, animated: animated)
+        setNavigationBarStyle(.clear)
     }
     
     override func viewDidAppear(_ animated: Bool) {

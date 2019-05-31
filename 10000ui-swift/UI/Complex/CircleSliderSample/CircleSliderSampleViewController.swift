@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircleSliderSampleViewController: UIViewController, TopBarsAppearanceChangable {
+class CircleSliderSampleViewController: UIViewController, NavigationBarChangable {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var circleSlider: CircleSlider!
@@ -41,7 +41,11 @@ class CircleSliderSampleViewController: UIViewController, TopBarsAppearanceChang
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTopBarsAppearanceStyle(.custom(color: view.backgroundColor!), animated: animated)
+        setNavigationBarStyle(.clear)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewDidLoad() {

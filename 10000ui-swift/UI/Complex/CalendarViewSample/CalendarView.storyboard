@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bh1-px-L90">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bh1-px-L90">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,10 +14,6 @@
         <scene sceneID="9jY-Zd-nW9">
             <objects>
                 <viewController id="bh1-px-L90" customClass="CalendarViewSampleViewController" customModule="_0000ui_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vtK-Gh-uQn"/>
-                        <viewControllerLayoutGuide type="bottom" id="hzf-6J-LYI"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dbf-1R-k1g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,11 +25,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hzf-6J-LYI" firstAttribute="top" secondItem="X5B-OL-9SU" secondAttribute="bottom" id="KYy-eV-P4a"/>
-                            <constraint firstItem="X5B-OL-9SU" firstAttribute="leading" secondItem="Dbf-1R-k1g" secondAttribute="leading" id="VhF-rE-LG6"/>
-                            <constraint firstItem="X5B-OL-9SU" firstAttribute="top" secondItem="vtK-Gh-uQn" secondAttribute="bottom" id="d93-Xi-K6x"/>
-                            <constraint firstAttribute="trailing" secondItem="X5B-OL-9SU" secondAttribute="trailing" id="x3g-T1-5dK"/>
+                            <constraint firstItem="S2u-eT-WTf" firstAttribute="bottom" secondItem="X5B-OL-9SU" secondAttribute="bottom" id="KYy-eV-P4a"/>
+                            <constraint firstItem="X5B-OL-9SU" firstAttribute="leading" secondItem="S2u-eT-WTf" secondAttribute="leading" id="VhF-rE-LG6"/>
+                            <constraint firstItem="X5B-OL-9SU" firstAttribute="top" secondItem="S2u-eT-WTf" secondAttribute="top" id="d93-Xi-K6x"/>
+                            <constraint firstItem="S2u-eT-WTf" firstAttribute="trailing" secondItem="X5B-OL-9SU" secondAttribute="trailing" id="x3g-T1-5dK"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="S2u-eT-WTf"/>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="X5B-OL-9SU" id="Pou-Z9-LTW"/>

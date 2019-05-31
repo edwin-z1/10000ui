@@ -15,6 +15,7 @@
 		8410092021ACF91200BAA7DF /* SlideCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091C21ACF91200BAA7DF /* SlideCollectionCell.swift */; };
 		8410092121ACF91200BAA7DF /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410091D21ACF91200BAA7DF /* MenuCollectionCell.swift */; };
 		8410092221ACF91200BAA7DF /* SlideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8410091E21ACF91200BAA7DF /* SlideMenuViewController.storyboard */; };
+		8417091422A0E4E600BFE2AC /* NavigationBarChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417091322A0E4E600BFE2AC /* NavigationBarChangable.swift */; };
 		84257A0E1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */; };
 		84257A101F999FB100B1A7E5 /* FadingLabel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */; };
 		8428DD0B204035E9008303C4 /* PullingHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8428DD0A204035E9008303C4 /* PullingHeader.storyboard */; };
@@ -39,7 +40,6 @@
 		8447F2EE1FB1A40200471BB4 /* UINavigationController+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447F2ED1FB1A40200471BB4 /* UINavigationController+bs.swift */; };
 		8457E6261F3D5D9C00781302 /* Adaptable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6231F3D5D9C00781302 /* Adaptable.swift */; };
 		8457E6271F3D5D9C00781302 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6241F3D5D9C00781302 /* Namespace.swift */; };
-		8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457E6251F3D5D9C00781302 /* TopBarsAppearanceChangable.swift */; };
 		845CA89C1F453298003594C6 /* CGFloat+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA8961F453298003594C6 /* CGFloat+bs.swift */; };
 		845CA89D1F453298003594C6 /* CGPoint+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA8971F453298003594C6 /* CGPoint+bs.swift */; };
 		845CA89E1F453298003594C6 /* UIImage+bs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CA89A1F453298003594C6 /* UIImage+bs.swift */; };
@@ -135,6 +135,7 @@
 		8410091C21ACF91200BAA7DF /* SlideCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideCollectionCell.swift; sourceTree = "<group>"; };
 		8410091D21ACF91200BAA7DF /* MenuCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionCell.swift; sourceTree = "<group>"; };
 		8410091E21ACF91200BAA7DF /* SlideMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideMenuViewController.storyboard; sourceTree = "<group>"; };
+		8417091322A0E4E600BFE2AC /* NavigationBarChangable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarChangable.swift; sourceTree = "<group>"; };
 		84257A0D1F999F2F00B1A7E5 /* FadingLabelSampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadingLabelSampleViewController.swift; sourceTree = "<group>"; };
 		84257A0F1F999FB100B1A7E5 /* FadingLabel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FadingLabel.storyboard; sourceTree = "<group>"; };
 		8428DD0A204035E9008303C4 /* PullingHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PullingHeader.storyboard; sourceTree = "<group>"; };
@@ -161,7 +162,6 @@
 		8447F2ED1FB1A40200471BB4 /* UINavigationController+bs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+bs.swift"; sourceTree = "<group>"; };
 		8457E6231F3D5D9C00781302 /* Adaptable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adaptable.swift; sourceTree = "<group>"; };
 		8457E6241F3D5D9C00781302 /* Namespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
-		8457E6251F3D5D9C00781302 /* TopBarsAppearanceChangable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarsAppearanceChangable.swift; sourceTree = "<group>"; };
 		845CA8961F453298003594C6 /* CGFloat+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+bs.swift"; sourceTree = "<group>"; };
 		845CA8971F453298003594C6 /* CGPoint+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+bs.swift"; sourceTree = "<group>"; };
 		845CA89A1F453298003594C6 /* UIImage+bs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+bs.swift"; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 			children = (
 				8457E6231F3D5D9C00781302 /* Adaptable.swift */,
 				8457E6241F3D5D9C00781302 /* Namespace.swift */,
-				8457E6251F3D5D9C00781302 /* TopBarsAppearanceChangable.swift */,
+				8417091322A0E4E600BFE2AC /* NavigationBarChangable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -886,6 +886,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1018,6 +1019,7 @@
 				84656E0C1F8B1C0D0030D69D /* NSObject+bs.swift in Sources */,
 				84A4896D223A60E800A8D124 /* AlbumsSelectViewController.swift in Sources */,
 				84A48969223A60E800A8D124 /* PhotosSelectCollectionCell.swift in Sources */,
+				8417091422A0E4E600BFE2AC /* NavigationBarChangable.swift in Sources */,
 				84A4894B223A42BF00A8D124 /* UICollectionViewFlowLayout+NameBox.swift in Sources */,
 				84C387AB1F8DCFE3009F3076 /* LoadingView.swift in Sources */,
 				8486B15F1F6FCFF1002C3FE2 /* CalendarDayCollectionReusableHeaderView.swift in Sources */,
@@ -1050,7 +1052,6 @@
 				8447F2EE1FB1A40200471BB4 /* UINavigationController+bs.swift in Sources */,
 				84C3FCFA1F8CAE25009E24D3 /* UIColor+bs.swift in Sources */,
 				842EC9C520197DF300C1B69A /* PetalLayout.swift in Sources */,
-				8457E6281F3D5D9C00781302 /* TopBarsAppearanceChangable.swift in Sources */,
 				846155611FA039BB006F9BE4 /* FadingLabel.swift in Sources */,
 				84A4896B223A60E800A8D124 /* AuthorizationManager.swift in Sources */,
 				84450246209875800072DD5E /* AnimationSliderSampleViewController.swift in Sources */,

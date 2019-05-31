@@ -21,11 +21,12 @@ class FadingLabelSampleViewController: UIViewController {
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.lineSpacing = 6
         let attributedString = NSMutableAttributedString(string: "律者诞生是崩坏的一种表现形式, 因此一次崩坏只会产生一名「律者」, 但是在某种特殊情况下, 会产生崩坏能接近「律者」的个体, 他们的力量远远高于「崩坏兽」和「死士」, 接近律者但是又不具备律者核心, 其名为「拟似律者」与高浓度崩坏能量接触的人也有可能变为「拟似律者」（更大的可能是变为死士）拟似律者往往具备强大的意志或者无法放弃的羁绊, 这使得他们没有成为死士反而变成更加强大的存在。", attributes: [.font: UIFont.boldSystemFont(ofSize: 16), .paragraphStyle: paraStyle])
-        let colors = [#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)]
-        let interval = 18
-        for index in (0..<attributedString.length/interval) {
-            attributedString.addAttribute(.foregroundColor, value: colors[index%7], range: .init(location: index * interval, length: interval))
-        }
+        attributedString.addAttribute(.foregroundColor, value: #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), range: .init(location: 0, length: attributedString.length))
+//        let colors = [#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1), #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)]
+//        let interval = 18
+//        for index in (0..<attributedString.length/interval) {
+//            attributedString.addAttribute(.foregroundColor, value: colors[index%colors.count], range: .init(location: index * interval, length: interval))
+//        }
 
         fadingLabel.attributedText = attributedString
     }

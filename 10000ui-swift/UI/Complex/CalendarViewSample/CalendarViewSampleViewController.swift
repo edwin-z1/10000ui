@@ -8,15 +8,10 @@
 
 import UIKit
 
-class CalendarViewSampleViewController: UIViewController, TopBarsAppearanceChangable {
+class CalendarViewSampleViewController: UIViewController, NavigationBarChangable {
     
     @IBOutlet weak var calendarView: CalendarView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setTopBarsAppearanceStyle(.custom(color: view.backgroundColor!), animated: true)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

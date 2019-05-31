@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, TopBarsAppearanceChangable {
+class TableViewController: UITableViewController, NavigationBarChangable {
     
     var groupInfo: [String:[String]]!
     var keys: [String]!
@@ -23,7 +23,7 @@ class TableViewController: UITableViewController, TopBarsAppearanceChangable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTopBarsAppearanceStyle(.default, animated: true)
+        setNavigationBarStyle(.default)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,7 +48,9 @@ class TableViewController: UITableViewController, TopBarsAppearanceChangable {
         let key = keys[indexPath.section]
         let value = groupInfo[key]![indexPath.row]
         let title = value.replacingOccurrences(of: "(Objective-C)", with: "")
-        navigationController?.pushViewController(UIStoryboard(name: title, bundle: nil).instantiateInitialViewController()!, animated: true)
+        let vc = UIStoryboard(name: title, bundle: nil).instantiateInitialViewController()!
+        vc.title = title
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

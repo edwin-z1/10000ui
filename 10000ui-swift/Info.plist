@@ -39,8 +39,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>请允许访问您的音乐列表</string>
 	<key>NSCameraUsageDescription</key>
