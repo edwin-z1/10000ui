@@ -10,7 +10,7 @@ import UIKit
 
 protocol PullingRefreshing: NSObjectProtocol {
     func shouldRefresh(fraction: CGFloat) -> Bool
-    func stateDidUpdate(_ state: PullingState)
+    func stateDidUpdate(_ state: PullingState, fraction: CGFloat)
 }
 
 typealias PullingRefreshingView = PullingRefreshing & UIView
@@ -19,15 +19,13 @@ protocol PullingTransitioning: NSObjectProtocol {
     func shouldTransition(fraction: CGFloat) -> Bool
 }
 
-typealias PullingTransitioningViewController = PullingTransitioning & UIViewController
-
 enum PullingState {
-    case resting(fraction: CGFloat)
-    case pulling(fraction: CGFloat)
-    case willRefresh(fraction: CGFloat)
-    case refreshing(fraction: CGFloat)
-    case willTransition(fraction: CGFloat)
-    case transitioning(fraction: CGFloat)
+    case resting
+    case pulling
+    case willRefresh
+    case refreshing
+    case willTransition
+    case transitioning
 }
 
 enum DragDirection {
@@ -44,16 +42,17 @@ class PullingHeader: NSObject {
         }
     }
     
-    fileprivate(set) var state: PullingState = .resting(fraction: 0) {
+    private(set) var fraction: CGFloat = 0
+    fileprivate(set) var state: PullingState = .resting {
         didSet {
-            pullToRefreshView.stateDidUpdate(state)
+            pullToRefreshView.stateDidUpdate(state, fraction: fraction)
         }
     }
     
     fileprivate weak var scrollView: UIScrollView!
     fileprivate var pullToRefreshView: PullingRefreshingView!
     fileprivate var refreshClosure: ((PullingHeader) -> Void)!
-    fileprivate var pullToTransitionViewController: PullingTransitioningViewController?
+    fileprivate var pullingTransitioningDelegate: PullingTransitioning?
     fileprivate var transitionClosure: ((PullingHeader) -> Void)?
     
     fileprivate var contentSizeObservation: NSKeyValueObservation!
@@ -66,14 +65,14 @@ class PullingHeader: NSObject {
     convenience init(scrollView: UIScrollView!,
          pullToRefreshView toRefresh: PullingRefreshingView!,
          refreshClosure: ((PullingHeader) -> Void)!,
-         pullToTransitionViewController toTransition: PullingTransitioningViewController? = nil,
+         pullingTransitioningDelegate: PullingTransitioning? = nil,
          transitionClosure: ((PullingHeader) -> Void)? = nil) {
         
         self.init()
         self.scrollView = scrollView
         pullToRefreshView = toRefresh
         self.refreshClosure = refreshClosure
-        pullToTransitionViewController = toTransition
+        self.pullingTransitioningDelegate = pullingTransitioningDelegate
         self.transitionClosure = transitionClosure
         setup()
     }
@@ -85,11 +84,13 @@ extension PullingHeader {
         
         let inset = scrollViewDirectionInset - refreshViewDirectionLength
         animateScrollViewDirectionInset(inset)
-        state = .resting(fraction: 0)
+        fraction = 0
+        state = .resting
     }
     
     func endTransition() {
-        state = .resting(fraction: 0)
+        fraction = 0
+        state = .resting
     }
     
     func invalidateObservation() {
@@ -121,17 +122,17 @@ fileprivate extension PullingHeader {
             // 先判断松手后
             if self.scrollView.isTracking {
                 
-                let fraction = self.fraction(newOffset: offset)
+                self.fraction = self.caculateFraction(newOffset: offset)
                 
-                let shouldRefresh = self.pullToRefreshView.shouldRefresh(fraction: fraction)
-                if let shouldTransition = self.pullToTransitionViewController?.shouldTransition(fraction: fraction),
+                let shouldRefresh = self.pullToRefreshView.shouldRefresh(fraction: self.fraction)
+                if let shouldTransition = self.pullingTransitioningDelegate?.shouldTransition(fraction: self.fraction),
                     shouldTransition {
                     
                     switch self.state {
                     case .pulling: fallthrough
                     case .willRefresh: fallthrough
                     case .willTransition:
-                        self.state = .willTransition(fraction: fraction)
+                        self.state = .willTransition
                     default:break
                     }
                     
@@ -141,7 +142,7 @@ fileprivate extension PullingHeader {
                     case .pulling: fallthrough
                     case .willRefresh: fallthrough
                     case .willTransition:
-                        self.state = .willRefresh(fraction: fraction)
+                        self.state = .willRefresh
                     default:break
                     }
                     
@@ -152,7 +153,7 @@ fileprivate extension PullingHeader {
                     case .pulling: fallthrough
                     case .willRefresh: fallthrough
                     case .willTransition:
-                        self.state = .pulling(fraction: fraction)
+                        self.state = .pulling
                     default:break
                     }
                 }
@@ -173,7 +174,8 @@ fileprivate extension PullingHeader {
     
     func refresh() {
         
-        state = .refreshing(fraction: 1)
+        fraction = 1
+        state = .refreshing
         
         let inset = scrollViewDirectionInset + refreshViewDirectionLength
         animateScrollViewDirectionInset(inset)
@@ -182,7 +184,9 @@ fileprivate extension PullingHeader {
     
     func transition() {
         
-        state = .transitioning(fraction: 1)
+        fraction = 1
+        state = .transitioning
+        
         transitionClosure?(self)
     }
 }
@@ -207,7 +211,7 @@ fileprivate extension PullingHeader {
         }
     }
     
-    func fraction(newOffset: CGPoint) -> CGFloat {
+    func caculateFraction(newOffset: CGPoint) -> CGFloat {
         var offset: CGFloat = 0
         switch dragDirection {
         case .down:

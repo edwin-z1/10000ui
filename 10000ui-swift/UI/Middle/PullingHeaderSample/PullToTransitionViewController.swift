@@ -16,9 +16,3 @@ class PullToTransitionViewController: UIViewController {
     }
 
 }
-
-extension PullToTransitionViewController: PullingTransitioning {
-    func shouldTransition(fraction: CGFloat) -> Bool {
-        return fraction >= 1.3
-    }
-}

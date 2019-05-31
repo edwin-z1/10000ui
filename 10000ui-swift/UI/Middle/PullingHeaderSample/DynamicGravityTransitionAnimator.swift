@@ -11,7 +11,7 @@ import Foundation
 class DynamicGravityTransitionAnimator: NSObject {
     
     var isPresent = true
-    var dynamicAnimator :UIDynamicAnimator!
+    var dynamicAnimator: UIDynamicAnimator!
     weak var transitionContext: UIViewControllerContextTransitioning!
 }
 

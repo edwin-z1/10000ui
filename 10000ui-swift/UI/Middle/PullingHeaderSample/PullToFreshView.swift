@@ -26,24 +26,25 @@ extension PullToFreshView: PullingRefreshing {
         return shouldRefresh
     }
     
-    func stateDidUpdate(_ state: PullingState) {
+    func stateDidUpdate(_ state: PullingState, fraction: CGFloat) {
         switch state {
-        case .pulling(let fraction):
+        case .pulling:
             label.text = String(format: "pulling... %.2f", arguments: [fraction])
-        case .willRefresh(let fraction):
+        case .willRefresh:
             label.text = String(format: "relase to refresh... %.2f", arguments: [fraction])
-        case .refreshing(let fraction):
+        case .refreshing:
             indicator.startAnimating()
             indicator.isHidden = false
             label.text = String(format: "refreshing... %.2f", arguments: [fraction])
-        case .willTransition(let fraction):
+        case .willTransition:
             label.text = String(format: "relase to transition... %.2f", arguments: [fraction])
-        case .transitioning(let fraction):
+        case .transitioning:
             label.text = String(format: "transitioning... %.2f", arguments: [fraction])
-        case .resting(_):
+        case .resting:
             indicator.stopAnimating()
             indicator.isHidden = true
             label.text = "peace☺️"
         }
     }
+    
 }

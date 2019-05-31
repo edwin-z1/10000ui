@@ -22,18 +22,14 @@ class PullingHeaderSampleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let pullingRefreshView = pullToRefreshView as PullingRefreshingView
-        
-        let toTransitionViewController = PullToTransitionViewController.bs.instantiateFromStoryboard(name: "PullingHeader")
-        toTransitionViewController.transitioningDelegate = self
-        toTransitionViewController.modalPresentationStyle = .custom
-        
-        let pullingTransitionViewController = toTransitionViewController as PullingTransitioningViewController
-
         pullingHeader = PullingHeader(scrollView: scrollView, pullToRefreshView: pullingRefreshView, refreshClosure: { header in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 header.endRefresh()
             })
-        }, pullToTransitionViewController: pullingTransitionViewController, transitionClosure: { [weak self] header in
+        }, pullingTransitioningDelegate: self, transitionClosure: { [weak self] header in
+            let toTransitionViewController = PullToTransitionViewController.bs.instantiateFromStoryboard(name: "PullingHeader")
+            toTransitionViewController.transitioningDelegate = self
+            toTransitionViewController.modalPresentationStyle = .custom
             self?.present(toTransitionViewController, animated: true, completion: {
                 header.endTransition()
             })
@@ -43,6 +39,12 @@ class PullingHeaderSampleViewController: UIViewController {
 //        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 42)
 //        pullingHeader.dragDirection = .left
 //        label.text = "pull👈"
+    }
+}
+
+extension PullingHeaderSampleViewController: PullingTransitioning {
+    func shouldTransition(fraction: CGFloat) -> Bool {
+        return fraction >= 1.3
     }
 }
 
